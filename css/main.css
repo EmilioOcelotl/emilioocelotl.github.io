@@ -259,8 +259,8 @@ footer {
     width:99%;
   }
 
-  header li, header ul li + li + li {
-    width:20%;
+  header li, header ul li + li + li + li{
+    width:33%;
   }
 }
 
