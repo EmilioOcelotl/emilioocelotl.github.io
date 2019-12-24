@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Emilio Ocelotl</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- ESTILO -->
+
+<style>
+
+body {
+      background-color: black;
+      font-family: 'Montserrat';font-size: 16px;
+  }
+
+  .w3-container {
+    color: white;
+    background-color: black;
+    font-family: 'Montserrat';font-size: 16px;
+}
+
+
+.w3-container h3{
+    color: white;
+    font-family: 'Montserrat';font-size: 30px;
+}
+
+  
+.w3-container h2{
+    color: white;
+    font-family: 'Montserrat';font-size: 30px;
+}
+
+.w3-container h1{
+    color: white;
+    font-family: 'Montserrat';font-size: 40px;
+}
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #121212;
+  font-family: 'Montserrat';font-size: 18px;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color:  white;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: #141414;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #blue;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #B4B4B4;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.forma{
+  display: inline-block;
+  margin: 16px;
+}
+
+#paralelogramo {
+   width: 100px; 
+   height: 150px;    
+   background: linear-gradient(165deg, #FF96FF, #3B1FE3, #01FFFF, #48E15E);
+   -webkit-transform: skew(40deg); 
+   -moz-transform: skew(40deg); 
+   -o-transform: skew(40deg); 
+}
+
+</style>
+
+<!-- CUERPO -->
+
+<body>
+
+<!-- NAVBAT -->
+
+  <div class="navbar">
+  <!--<a href="#home">Home</a>-->
+
+<div class="dropdown">
+    <button class="dropbtn"><a href="index.html#inicio">Inicio</a> 
+      <i class=""></i>
+    </button>
+  </div>
+  
+  <div class="dropdown">
+    <button class="dropbtn"><a href="index.html#bio">Bio</a> 
+      <i class=""></i>
+    </button>
+  </div>
+  
+  <div class="dropdown">
+    <button class="dropbtn"><a>Proyectos</a> 
+      <i class=""></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="index.html#musicaeimagen">Música e Imagen</a>
+      <a href="index.html#piranhalab">PiranhaLab</a>
+      <a href="index.html#rggtrn">R G G T R N</a>
+      <a href="index.html#datos">Datos</a>
+      <a href="index.html#software">Software</a>
+      <a href="index.html#lcne">LCNE</a>
+    </div>
+  </div>
+  
+  <div class="dropdown">
+    <button class="dropbtn"><a href="index.html#publicaciones">Publicaciones</a> 
+      <i class=""></i>
+    </button>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn"><a href="index.html#contacto">Contacto</a> 
+      <i class=""></i>
+    </button>
+  </div>
+  
+<!--  <div class="dropdown">
+    <button class="dropbtn"><a href="comunidad.html">English</a>
+      <i class=""></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Próximos</a>
+    </div>
+  </div> -->
+  <!--<a href="#home">Home</a>-->
+
+</div>
+
+  <!-- Header -->
+<header class="w3-container w3-center w3-black" id="home">
+  <img class="w3-image" src="img/noche01.png" alt="img">
+    <div class="w3-display-middle w3-padding-small">
+      <!--<h1 class="w3-xxxlarge w3-wide"><b>Emilio  <br>Ocelotl</b></h1>-->
+    </div>
+</header>
+
+
+<div class="w3-content w3-left" style="max-width:2000px;margin-top:46px">
+
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="bio">
+    <h1 class="w3-wide">Emilio Ocelotl</h1>
+    <p>Ciudad de México, México (1989). Compositor e investigador. Realizó estudios de Sociología y Tecnología Musical en la Universidad Nacional Autónoma de México. Su actividad se centra en la práctica e investigación de la música por computadora, la música electroacústica y los estudios del software. Ha participado en residencias artísticas, giras, festivales, programas, seminarios, conferencias, simposios y encuentros en: Conferencia Internacional de Live Coding y Programa Prácticas de Vuelo del Centro Mexicano para la Música y las Artes Sonoras (Morelia, México), Seminario de Música Contemporánea FaM UNAM, Simposio Internacional de Código y Música /*vivo*/, Foro Internacional de Música Nueva Manuel Enríquez, Festival Internacional Cervantino, Fonoteca Nacional (Ciudad de México, México), Linux Audio Conference (Stanford, California), MediaLab-Prado (Madrid España), Hangar (Barcelona, España), Panke gallery (Berlin, Alemania), Simposio Internacional de Arte Electrónico ISEA (Manizales, Colombia), Encuentros de Investigación, Creación Sonora y Electroacústica La Escucha Errante (Bilbao, España), Festival Databit.me (Arles, Francia), Academia de las Artes (Berna, Suiza), Insonora Festival de Arte Sonoro e Interactivo (Madrid, España), Platohedro e ITM (Medellín, Colombia) y Algorave (Leeds, Newcastle, Hull y Londres, Reino Unido). Sus obras Altamisa (2016 para música mixta, electrónica y video) y Algoritmias (2013 percusiones y electrónica en vivo) han sido presentadas en el Foro Internacional de Música Nueva y en ambos casos, ha sido el encargado de la electrónica de ellas. Forma parte de LiveCodeNet Ensamble.</p>
+  </div>
+
+  <header class="w3-container w3-center w3-black" id="home">
+    <img class="w3-image" src="img/altamisa2.png" alt="img">
+    <div class="w3-display-middle w3-padding-small w3-opacity w3-black">
+      <!--<h1 class="w3-xxxlarge w3-wide"><b>Música e Imagen</b></h1>-->
+    </div>
+  </header>
+    
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide">Noches de las Estrellas</h2>
+    <p>Serie de piezas que resultaron de la colaboración con el programa de Arte, Ciencia y Tecnología, el Instituto de Astronomía de la UNAM, Rossana Lara, Rodrigo Treviño Frenk, Carles Tardío Pi, Leslie García y los participantes del Hackatón en 2018 y los colaboradores de la intervención audiovisual en 2019: Marianne Teixido, Eric Torres, Mitzi Olvera y Mateo Rodríguez.<br><br>
+      Las piezas exploran las posibilidades de la transducción de energías a escala humana de fenómnos que por sus magnitudes, son imposibles de percibir por los sentidos humanos. Las piezas consisten en una serie de visualizaciones/sonificaciones a partir de datos astronómicos proporcionados por dos grupos diferentes de investigadores del Instituto de Astronomía de la UNAM. La información referente a las investigaciones se puede encontrar en: <br><br>
+    </p>
+  </div>
+    
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide">Altamisa</h2>
+    <p>Altamisa es una pieza realizada en colaboración con Iracema de Andrade y Arianne Rodríguez. La pieza ha sido presentada en: Foro Internacional de Música Nueva Manuel Enríquez (15 de febrero de 2018). Fonoteca Nacional, México (22 de junio de 2017). Centro Multimedia del Centro Nacional de las Artes, México (2 de junio de 2017). Latitudes Sonoras, MUAC. Ciudad de México. México (12 y 13 de noviembre de 2016). Festival Internacional Cervantino en colaboración con el Centro Mexicano para la Música y Las Artes Sonoras. Museo Iconográfico del Quijote. Guanajuato, Guanajuato. México (12 de octubre de 2016).</p>
+    <div class="w3-container w3-center w3-padding-16">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/R_k9EqBZGug" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Altamisa en CMM del CENART 2 de junio de 2017</p>
+    </div>
+  </div>
+
+     
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide">Leviathan</h2>
+    <p>Leviathan fue una pieza para flauta Paetzold, electrónica y video. En esta pieza estuvieron involucrados Alejandro Brianza, Arianne Rodríguez y Esteban Betancur. La pieza ha sido presentada en Simposio Internacional de Arte Electrónico ISEA 2017 y 16vo Festival Internacional de la Imagen. Universidad de Caldas. Manizales, Colombia. 15 de Junio 2017.</p>
+  </div>
+
+
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide">Algoritmias</h2>
+  </div>
+
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide">Colaboración</h2>
+    <div class="w3-container w3-center w3-padding-16">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/PkRRz_Cbxy4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Topologías Temporales de Alejandro Franco y Diego Villaseñor.</p>
+    </div>
+    </div>
+
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="piranhalab">
+      <h1 class="w3-wide">PiranhaLab</h1>
+      <p>PiranhaLab es un laboratorio interdisciplinario que trabaja en las tripas del software. El laboratorio tiene como objetivo impulsar la práctica, el desarrollo, la investigación y la difusión de software orientado a la creación audiovisual. Enfoca su actividad en la comunidad que practica la Programación al Vuelo o Live Coding en México y Latinoamérica. Marianne Teixido y Emilio Ocelotl forman parte de PiranhaLab.</p>
+    </div>
+
+    <div class="w3-container w3-center w3-padding-16">
+    <h2 class="w3-wide"></h2>
+    <div class="w3-display-container">
+    <img class="w3-image" style="max-width:100%" src="img/posterTalleres.jpg" alt="talleres">
+    <p>27 mar a 27 jul 2019 - Talleres, Conversatorios y Algoraves. <br> Diseño de cartel: Chema Padilla.</p>
+    </div>
+    </div>
+
+    
+    <div class="w3-container w3-center w3-padding-16">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/zv-qsU9k4ME" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Flyer 360 de algorave de clausura. Diseño: PiranhaLab</p>
+    </div>
+
+
+    <header class="w3-container w3-center w3-black" id="home">
+      <img class="w3-image" src="img/valle01.jpg" alt="img">
+      <div class="w3-display-middle w3-padding-small w3-opacity w3-black">
+	<!-- <h1 class="w3-xxxlarge w3-wide"><b>eocelotl</b></h1> -->
+      </div>
+    </header>
+    
+    
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="rggtrn">
+      <h1 class="w3-wide">R G G T R N</h1>
+    </div>    
+
+    
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="datos">
+      <h1 class="w3-wide">Datos</h1>
+    </div>
+
+
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="software">
+      <h1 class="w3-wide">Software</h1>
+    </div>
+    
+
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="lcne">
+      <h1 class="w3-wide">L C N E</h1>
+    </div>
+     
+     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="publications">
+       <h1 class="w3-wide">Publicaciones</h1>
+
+      <h3><a href="https://dj.dancecult.net/index.php/dancecult/article/view/1066/962">Saborítmico: A Report From the Dance Floor in Mexico</a>
+     </div></h3>
+
+     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="contact">
+       <h1 class="w3-wide">Contacto</h1>
+    <p>                                                                                                                                             
+      Email:                                                                                                                           
+      <a href="mailto:emilio.ocelotl@gmail.com">emilio.ocelotl@gmail.com</a>                                                              
+    </p>   
+     </div>
+    
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xxlarge">
+  <a href="https://github.com/rggtrn"><i class="fa fa-github"></i></a>
+  <a href="https://www.facebook.com/rggtrn/"><i class="fa fa-facebook-official"></i></a>
+  <a href="https://www.instagram.com/rggtrn/"><i class="fa fa-instagram"></i></a>
+  <a href="https://twitter.com/rggtrn"><i class="fa fa-twitter"></i></a>
+  <a href="https://vimeo.com/rggtrn"><i class="fa fa-vimeo"></i></a>
+</footer>
+
+</body>
+
+</html>
+
