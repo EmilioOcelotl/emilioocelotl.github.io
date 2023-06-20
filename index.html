@@ -121,8 +121,11 @@ body {
 <!-- CUERPO -->
 
 <body>
-
-<!-- NAVBAT -->
+  <script src="https://unpkg.com/hydra-synth"></script> 
+  <script type="module" src="/index.js"></script>
+  <canvas id="myCanvas" width="500px" height="500px"></canvas>
+ 
+  <!-- NAVBAT -->
 
   <div class="navbar" style="max-width:800px">
   <!--<a href="#home">Home</a>-->
@@ -189,15 +192,16 @@ body {
 
   </div>
 
-  <!-- Header -->
+  <!-- Header
 <header class="w3-container w3-center w3-black" id="inicio">
   <img class="w3-image" src="img/os7.png" alt="img">
     <div class="w3-display-middle w3-padding-small">
-      <!--<h1 class="w3-xxxlarge w3-wide"><b>Emilio  <br>Ocelotl</b></h1>-->
+      <h1 class="w3-xxxlarge w3-wide"><b>Emilio  <br>Ocelotl</b></h1>
     </div>
-</header>
-
-
+</header> -->
+ <div id="three">
+  </div> 
+  
 
   <div class="w3-container w3-content w3-padding-64"  style="max-width:800px" id="bio">
     <h1 class="w3-wide">Emilio Ocelotl</h1>
@@ -233,13 +237,6 @@ body {
 	<li>16.01.2019. Algorave @ <a href="http://iclc.livecodenetwork.org/2019/ingles.html">ICLC 2019. MediaLab-Prado.</a> Madrid</li>
       </ul>
     </div>
-
-  <header class="w3-container w3-center w3-black">
-    <img class="w3-image" src="img/soC1.png" alt="img">
-    <div class="w3-display-middle w3-padding-small w3-opacity w3-black">
-      <!--<h1 class="w3-xxxlarge w3-wide"><b>Música e Imagen</b></h1>-->
-    </div>
-  </header>
 
   
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="musicaimagen">
@@ -415,14 +412,6 @@ body {
       <p>Topologías Temporales. Alejandro Franco,  Diego Villaseñor et al. 2019</p>
     </div>
     </div>
-
-
-  <header class="w3-container w3-center w3-black">
-    <img class="w3-image" src="img/data.png" alt="img">
-    <div class="w3-display-middle w3-padding-small w3-opacity w3-black">
-      <!--<h1 class="w3-xxxlarge w3-wide"><b>Música e Imagen</b></h1>-->
-    </div>
-  </header>
     
 
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="piranhalab">
@@ -472,13 +461,6 @@ body {
       <p>Algorave. Flyer: PiranhaLab</p>
     </div>
     
-    <header class="w3-container w3-center w3-black">
-      <img class="w3-image" src="img/valle01.jpg" alt="img">
-      <div class="w3-display-middle w3-padding-small w3-opacity w3-black">
-	<!-- <h1 class="w3-xxxlarge w3-wide"><b>eocelotl</b></h1> -->
-      </div>
-    </header>
-    
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="rggtrn">
       <h1 class="w3-wide">R G G T R N</h1>
       <p>RGGTRN (pronunciado reɣɣaeˈtɾon), inicialmente un duo de música electroacústica y mixta fundado en 2012 en la Ciudad de México, ha evolucionado en un colectivo que relaciona música algorítmica para bailar e improvisación audiovisual vinculada con el contexto Latinx de sus miembros.</p>
@@ -508,14 +490,6 @@ body {
     </div>
     </div>
 
-    <header class="w3-container w3-center w3-black">
-      <img class="w3-image" src="img/lcne02.JPG" alt="img">
-
-      <div class="w3-display-middle w3-padding-small w3-opacity w3-black">
-	<!-- <h1 class="w3-xxxlarge w3-wide"><b>eocelotl</b></h1> -->
-      </div>
-    </header>
-    
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="lcne">
       <h1 class="w3-wide">L C N E</h1>
       <p>LiveCodeNet Ensamble es un grupo de música por computadora que explora las posibilidades de la interconexión a través de una red local para realizar live coding, es decir, sus integrantes escriben código fuente para generar sonido de manera sincronizada a través de una red de computadoras. Sus presentaciones oscilan entre la música experimental, la improvisación y la música electrónica bailable</p>
