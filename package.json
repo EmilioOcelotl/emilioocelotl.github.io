@@ -20,9 +20,13 @@
   "homepage": "https://github.com/EmilioOcelotl/emilioocelotl.github.io#readme",
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "parcel": "^2.12.0"
+    "hydra-synth": "^1.3.29",
+    "parcel": "^2.12.0",
+    "three": "^0.164.1"
   },
   "devDependencies": {
-    "parcel-reporter-static-files-copy": "^1.5.3"
+    "events": "^3.3.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
+    "process": "^0.11.10"
   }
 }

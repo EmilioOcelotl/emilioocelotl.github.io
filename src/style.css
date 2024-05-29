@@ -1,0 +1,209 @@
+body {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;    
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+  font-size: 14px; 
+  background-color: #111;
+  color: #fff; 
+  }
+  
+  a h1 {
+    color: #fff; 
+    text-decoration: none;
+  }
+
+  main {
+    padding: 0 40px; 
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    margin: 0; 
+    text-align: left; 
+    font-weight: 400; 
+
+  }
+  
+  .projects, .colaborations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    margin-top: 20px;
+    margin-left: 5px; 
+    margin-right: 5px; 
+  }
+  
+  .project, .colaboration {
+    flex: 0 0 calc(33.33% - 10px); /* Ajusta el tamaño de las tarjetas */
+    margin-bottom: 10px; /* Espacio entre las tarjetas */
+  }
+  
+  .project a {
+    text-decoration: none;
+    color: inherit; 
+    display: block; 
+    background-color: #111; 
+    padding: 0px; 
+  }
+  
+  .project img {
+    width: 100%; 
+    height: auto; 
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .project, .colaboration {
+      flex: 0 0 calc(50% - 10px); /* Ajusta el tamaño de las tarjetas para pantallas más pequeñas */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .project, .colaboration {
+      flex: 0 0 calc(100% - 10px); /* Ajusta el tamaño de las tarjetas para pantallas aún más pequeñas */
+      margin-left: 0; 
+      margin-right: 0; 
+    }
+  }
+  
+  .project h3 {
+    margin-top: 10px; 
+  }
+  
+  .project p {
+    margin-top: 5px; 
+  }
+  
+  footer {
+    background-color: #fff;
+    color: #111;
+    text-align: center;
+    bottom: 10%;
+    width: 100%;
+  }
+  
+  nav {
+    float: right;
+    margin-top: 20px; 
+    margin-right: 40px;
+    margin-left: 20px;
+
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-left: 20px; /* Espacio entre elementos de la lista */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  #bio {
+    background-color: #111;
+    color: #fff;
+    margin-top: 80px; 
+    margin-bottom: 60px;
+
+  }  
+  
+  header {
+    display:relative;
+    color: white;
+    text-align: left; 
+  }
+  
+  .header-content {
+    display: flex; /* Usa flexbox para alinear elementos horizontalmente */
+    align-items: center; 
+  }
+  
+  h1 {
+    display: inline-block; /* Para que el cuadro del título ocupe solo el espacio necesario */
+    background-color: #333; /* Color de fondo del cuadro */
+    padding: 20px; /* Espacio alrededor del texto */
+    margin-top: 20px; 
+    margin-left: 40px;
+    text-align: left;
+    font-size: 16px; 
+    font-weight: 400; /* Selección de una variante más negrita de la fuente */
+    border-radius: 8px; /* Bordes redondeados */
+    transition-duration: 0.4s; 
+  }
+
+  h3 {
+    display: inline-block; /* Para que el cuadro del título ocupe solo el espacio necesario */
+    color: #fff; /* Color de fondo del cuadro */
+    margin-top: 20px; 
+    text-align: left;
+    font-size: 16px; 
+    font-weight: 400; /* Selección de una variante más negrita de la fuente */
+
+  }
+ 
+  @font-face {
+    font-family: 'Inter';
+    src: url('../static/font/Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .contact-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    margin-top: 40px;
+}
+
+a {
+  color: #fff; 
+  text-decoration: none; 
+}
+
+.container2 {
+  column-count: 2;
+  column-gap: 20px; 
+}
+
+.button {
+  background-color: #4CAF50; 
+  border: none; 
+  color: white; 
+  padding: 15px 32px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; 
+  margin: 4px 2px; 
+  cursor: pointer;
+  border-radius: 8px; 
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #45a049; 
+}
+
+@media screen and (max-width: 768px) {
+  .container2 {
+    column-count: 1; 
+  }
+}
+
+@media screen and (min-width: 768px){
+  .container2 {
+    column-count: 3; 
+  }
+}
