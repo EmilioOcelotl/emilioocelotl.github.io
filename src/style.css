@@ -169,7 +169,7 @@ body {
 
 a {
   color: #fff; 
-  text-decoration: none; 
+  text-decoration: underline; 
 }
 
 .container2 {
@@ -209,7 +209,20 @@ a {
 }
 
 .project-details {
-  text-align: center;
+  text-align: left;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.project-details p {
+  margin: 20px 0; 
+}
+
+@media screen and (max-width: 768px) {
+  .project-details {
+    margin-left: 2%;
+    margin-right: 2%; 
+  }
 }
 
 .carousel {
@@ -247,16 +260,17 @@ a {
   border: none; 
   color: white; 
   padding: 10px 32px; 
-  text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: block; 
   font-size: 16px; 
-  margin: 4px 2px; 
   cursor: pointer;
   border-radius: 4px; 
   transition-duration: 0.4s;
-  margin-top: 60px;
+  margin: 60px auto 4px; 
+  text-align: center; 
 }
+
+
 
 /* Media query for mobile devices */
 @media (max-width: 600px) {
