@@ -27,7 +27,8 @@ export const projects = [
         "./img/residencia.jpg",
         "./img/ccrma2024-1.jpg",
         "./img/ccrmaCel.jpg"
-      ]
+      ],
+      "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/fjBn5qU85QI?si=QpEU2ODarxtDuPZE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
     }
   },
   {
