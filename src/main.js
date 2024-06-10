@@ -33,8 +33,10 @@ function loadProjectDetails(project) {
       <h3>${project.title}</h3>
       <p>${project.details.fullDescription}</p>
       <div class="carousel">
-        ${project.details.images.map(img => `<img src="${img}" alt="${project.title}">`).join('')}
+        ${project.details.images.map(img => `<img src="${img}" loading="lazy" alt="${project.title}">`).join('')}
       </div>
+      ${project.details.videoEmbed ? `<div class="video-container">${project.details.videoEmbed}</div>` : ''}
+      ${project.details.audioSrc ? `<div class="audio-container">${project.details.audioSrc.map(audio => `<audio controls><source src="${audio}" type="audio/mpeg">Your browser does not support the audio element.</audio>`).join('')}</div>` : ''}
       <button id="backButton">VOLVER</button>
     </div>
   `;
