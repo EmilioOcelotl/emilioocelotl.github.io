@@ -20,7 +20,15 @@ export const projects = [
     "imgAlt": "stanford2024",
     "title": "Audio-Visual Sessions",
     "year": "2024",
-    "description": "Stanford Graduate Composers with M. Teixido and E. Ocelotl"
+    "description": "Stanford Graduate Composers with M. Teixido and E. Ocelotl",
+    "details": {
+      "fullDescription": "<p>Residencia artística realizada en Center for Computer Research in Music and Acoustics (CCRMA), Stanford junto con Marianne Teixido del 8 al 17 de enero de 2024.</p><p>Durante nuestra estancia trabajamos con 6 estudiantes de composición y presentamos dos conciertos: uno en CCRMA Stage y otro en Elliott Program Center.</p><p>Los estudiantes con los que colaboramos fueron: Celeste Betancur, Brian Brown, Tatiana Catanzaro, Anna Golubkova, Lemon Guo, Nick Shaheed.</p>",
+            "images": [
+        "./img/residencia.jpg",
+        "./img/ccrma2024-1.jpg",
+        "./img/ccrmaCel.jpg"
+      ]
+    }
   },
   {
     "href": "nime2023.html",
@@ -28,7 +36,14 @@ export const projects = [
     "imgAlt": "nime2023",
     "title": "NIME",
     "year": "2023",
-    "description": "Presentacion A/V en NIME junto con Marianne Teixido"
+    "description": "Presentacion A/V en NIME junto con Marianne Teixido",
+    "details": {
+      "fullDescription": "Presentación A/V en New Interfaces for Musical Expresion 2023.",
+            "images": [
+        "./img/nime1.jpg",
+        "./img/nime.jpg"
+      ]
+    }
   },
   {
     "href": "algorave2023.html",
@@ -80,7 +95,7 @@ export const projects = [
   },
   {
     "href": "noche.html",
-    "imgSrc": "./img/data.jpg",
+    "imgSrc": "./img/disco3.jpg",
     "imgAlt": "nocheDeLasEstrellas",
     "title": "Noche de las Estrellas",
     "year": "2019",

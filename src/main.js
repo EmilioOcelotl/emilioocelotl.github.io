@@ -33,7 +33,7 @@ function loadProjectDetails(project) {
       <h3>${project.title}</h3>
       <p>${project.details.fullDescription}</p>
       <div class="carousel">
-        ${project.details.images.map(img => `<img src="${img}" alt="${project.title}">`).join('')}
+        ${project.details.images.map(img => `<img src="${img}" loading="lazy" alt="${project.title}">`).join('')}
       </div>
       <button id="backButton">VOLVER</button>
     </div>
@@ -62,5 +62,5 @@ function initializeCarousel() {
   setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
-  }, 3000); 
+  }, 4500); 
 }
