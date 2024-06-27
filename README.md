@@ -12,8 +12,8 @@ Para probar localmente:
 
 Para construir: 
 
-`npm start`
+`npm run build`
 
 ## Radio
 
-
+Algunas referencias para montar una radio por internet se pueden encontrar en: [web-radio](https://0xacab.org/ocelotl/web-radio)
