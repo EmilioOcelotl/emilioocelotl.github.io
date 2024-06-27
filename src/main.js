@@ -1,4 +1,20 @@
 import { projects } from '../static/data/projects.js';
+import Plyr from 'plyr';
+
+// Expose player so it can be used from the console
+const player = new Plyr('#player', {
+  controls: [
+    'play-large', // The large play button in the center
+    'play', // Play/pause playback
+    'progress', // The progress bar and scrubber for playback and buffering
+    'current-time', // The current time of playback
+    'mute', // Toggle mute
+    'volume', // Volume control
+    'pip', // Picture-in-picture (currently Safari only)
+    'airplay', // Airplay (currently Safari only)
+  ]
+});
+window.player = player;
 
 document.addEventListener('DOMContentLoaded', () => {
   const projectsContainer = document.querySelector('.projects');

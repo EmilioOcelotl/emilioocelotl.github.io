@@ -7,7 +7,7 @@ export const projects = [
     "year": "2024",
     "description": "Escritura, JavaScript e investigación artística (en curso).",
     "details": {
-      "fullDescription": "<p>Tres Estudios Abiertos tiene lugar en una frontera donde el conocimiento y lo sensible se encuentran, se adscribe a la <emph>generación de nuevos modos de performance musical y a la apertura de canales innovadores para la presentación y difusión de la investigación artística en música</emph> (de Assis, 2018).</p><p>En este sentido surge la pregunta presente en el núcleo de esta investigación: ¿Qué aportes puede realizar la escritura de código a los nuevos modos del performance audiovisual y a la escritura de un documento reflexivo que involucra materiales como sonido, gráficos y texto en el contexto de la investigación artística?</p><p>La respuesta a esta pregunta parte del lenguaje de programación JavaScript. El resultado publicado como página web se puede consultar en: <a href='https://tres.ocelotl.cc/'>tres.ocelotl.cc</a>. Este proyecto está complementado con un repositorio que gestiona el trasfondo y que imprime el resultado de esta investigación como un archivo PDF jerarquizado.<h3>Referencias</h3><p>De Assis, P. (2018). Logic of Experimentation. Leuven University Press. <a href='https://doi.org/10.2307/j.ctv6zdcpg'>https://doi.org/10.2307/j.ctv6zdcpg</a></p>",
+      "fullDescription": "<p>Tres Estudios Abiertos tiene lugar en una frontera donde el conocimiento y lo sensible se encuentran, se adscribe a la <emph>generación de nuevos modos de performance musical y a la apertura de canales innovadores para la presentación y difusión de la investigación artística en música</emph> (de Assis, 2018).</p><p>En este sentido surge la pregunta presente en el núcleo de esta investigación: ¿Qué aportes puede realizar la escritura de código a los nuevos modos del performance audiovisual y a la escritura de un documento reflexivo que involucra materiales como sonido, gráficos y texto en el contexto de la investigación artística?</p><p>La respuesta a esta pregunta parte del lenguaje de programación JavaScript. El resultado publicado como página web se puede consultar en: <a href='https://tres.ocelotl.cc/'>tres.ocelotl.cc</a>. Este proyecto está complementado con un repositorio que gestiona el trasfondo y que imprime el resultado de esta investigación como un archivo PDF jerarquizado.</p><p>Código del proyecto disponible en: <a href='https://github.com/EmilioOcelotl/tres-front'>https://github.com/EmilioOcelotl/tres-front</a> y en <a href='https://github.com/EmilioOcelotl/tres-back'>https://github.com/EmilioOcelotl/tres-back</a></p><h3>Referencias</h3><p>De Assis, P. (2018). Logic of Experimentation. Leuven University Press. <a href='https://doi.org/10.2307/j.ctv6zdcpg'>https://doi.org/10.2307/j.ctv6zdcpg</a></p>",
       "images": [
         "./img/tres.jpg",
         "./img/tres2.jpg"
@@ -26,8 +26,10 @@ export const projects = [
       "images": [
         "./img/residencia.jpg",
         "./img/ccrma2024-1.jpg",
-        "./img/ccrmaCel.jpg"
-      ]
+        "./img/ccrmaCel.jpg",
+        "./img/sd.jpeg"
+      ],
+      "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/fjBn5qU85QI?si=QpEU2ODarxtDuPZE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
     }
   },
   {
@@ -92,7 +94,7 @@ export const projects = [
     "year": "2022",
     "description": "Ofuscación audiovisual en el navegador.",
     "details": {
-      "fullDescription": "<p>La ofuscación como motivo, la escritura como rodeo.</p><p>Anti es un llamado a la responsabilidad de los datos, al compromiso y el cuidado y a la realización de usuarixs que desdibujan las fronteras de la pasividad política y económica teniendo como epicentro lo sensible.</p><p><a href='https://anti.ocelotl.cc/'>https://anti.ocelotl.cc/</a></p><p>Proyecto apoyado por el Fondo Nacional para la Cultura y las Artes</p>",
+      "fullDescription": "<p>La ofuscación como motivo, la escritura como rodeo.</p><p>Anti es un llamado a la responsabilidad de los datos, al compromiso y el cuidado y a la realización de usuarixs que desdibujan las fronteras de la pasividad política y económica teniendo como epicentro lo sensible.</p><p><a href='https://anti.ocelotl.cc/'>https://anti.ocelotl.cc/</a></p><p>Código del proyecto: <a href='https://github.com/EmilioOcelotl/anti'>https://github.com/EmilioOcelotl/anti</a></p><p>Proyecto apoyado por el Fondo Nacional para la Cultura y las Artes</p>",
       "images": [
         "./img/anti2.jpg",
         "./img/anti.jpg",
