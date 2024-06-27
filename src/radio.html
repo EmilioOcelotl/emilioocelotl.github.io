@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E. Ocelotl</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Source Code Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+  <script src="https://kit.fontawesome.com/d644d18660.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="radio.html"><i class="fa-sharp fa-solid fa-radio"></i></a></li>
+      <li><a href="bio.html">BIO/CV</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
+  </nav>
+
+  <header >
+    <div class="header-content">
+      <a href="index.html">
+      <h1 >EMILIO OCELOTL</h1>
+      </a>
+    </div>
+  </header>
+  
+  <main>
+ 
+    <div class="project-details">
+        <h2>WEB-RADIO</h2>
+        <p>Mi relación con el sonido empieza y termina con la radio.</p>
+        <p>Selección de audios y música en formato radiofónico web. Algunas son creaciones mías, otras colaboraciones.</p>
+        <p>Créditos: Marianne Teixido, Luis N. del Ángel, Gabriel de Dios "El Hijo de Tere", Mariana Teutli y participantes del curso Sonoridad como Lenguaje Incluyente (CENART-OCI).</p>
+        <p>Referencias para montar una radio por internet: <a href="https://0xacab.org/ocelotl/web-radio">web-radio</a></p>
+    </div>
+  
+      <div class="audio-player">
+        <audio id="player" controls>
+          <source src="https://ocelotl.cc/stream/stream.mp3" type="audio/mpeg">
+          Tu navegador no soporta la reproducción de audio.
+        </audio>
+      </div>
+
+    <div class="project-details">
+      <button id="backButton" onclick="window.location.href = 'index.html'">VOLVER</button>
+    </div>
+
+  </main>
+  <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+  <script>
+    const player = new Plyr('#player');
+  </script>
+  <!--<script type="module" src="main.js"></script>-->
+  
+</body>
+</html>
