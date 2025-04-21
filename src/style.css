@@ -39,14 +39,15 @@ body {
 
   }
   
-  .projects, .colaborations {
+.projects, .colaborations {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; 
+    align-items: flex-start; /* Añade esta línea */
     margin-top: 30px;
     margin-left: 5px; 
     margin-right: 5px; 
-  }
+}
   
   .project, .colaboration {
     flex: 0 0 calc(33.33% - 10px); /* Ajusta el tamaño de las tarjetas */
