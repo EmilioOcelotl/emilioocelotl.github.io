@@ -1,4 +1,5 @@
 export const projects = [
+
   {
     "href": "src/tres.html",
     "imgSrc": "./img/tres2-r.jpg",
@@ -154,9 +155,15 @@ export const projects = [
     "href": "noche.html",
     "imgSrc": "./img/disco3-r.jpg",
     "imgAlt": "nocheDeLasEstrellas II",
-    "title": "Noche de las Estrellas",
+    "title": "Noche de las Estrellas II",
     "year": "2019",
-    "description": "Intervención estética de datos astronómicos"
+    "description": "Intervención audiovisual de datos astronómicos",
+    "details": {
+      "fullDescription": "<p>Intervención audiovisual de datos astronómicos. Este proyecto fue realizado en colaboración con ACT UNAM y el Instituto de Investigaciones astronómicas. En esta ocasión sonificamos y visualizamos datos de Jets astonómicos.</p>Repositorio: <a href='https://github.com/EmilioOcelotl/nocheDeLasEstrellas2019'>nocheDeLasEstrellas2019</a><p></p>",
+      "images": [
+        "./img/disco3.jpg", "./img/noche2019-1.jpg", "./img/noche01-r.png", "./img/noche2019-2.jpg", "./img/data.jpg", "./img/noche2019-3.jpg", "./img/noche02-r.png" 
+      ]
+    }
   },
   {
     "href": "linux.html",
