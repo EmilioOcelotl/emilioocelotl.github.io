@@ -152,16 +152,22 @@ export const projects = [
     "description": "Exploraciones entre código, sonido e imagen"
   },
   {
-    "href": "noche.html",
+    "href": "noche2.html",
     "imgSrc": "./img/disco3-r.jpg",
     "imgAlt": "nocheDeLasEstrellas II",
     "title": "Noche de las Estrellas II",
     "year": "2019",
     "description": "Intervención audiovisual de datos astronómicos",
     "details": {
-      "fullDescription": "<p>Intervención audiovisual de datos astronómicos. Este proyecto fue realizado en colaboración con ACT UNAM y el Instituto de Investigaciones astronómicas. En esta ocasión sonificamos y visualizamos datos de Jets astonómicos.</p>Repositorio: <a href='https://github.com/EmilioOcelotl/nocheDeLasEstrellas2019'>nocheDeLasEstrellas2019</a><p></p>",
+      "fullDescription": "<p>Intervención audiovisual de datos astronómicos. Este proyecto fue realizado en colaboración con ACT UNAM y el Instituto de Investigaciones astronómicas. En esta ocasión sonificamos y visualizamos datos de Jets astonómicos.</p><p>Repositorio: <a href='https://github.com/EmilioOcelotl/nocheDeLasEstrellas2019'>nocheDeLasEstrellas2019</a></p>",
       "images": [
-        "./img/disco3.jpg", "./img/noche2019-1.jpg", "./img/noche01-r.png", "./img/noche2019-2.jpg", "./img/data.jpg", "./img/noche2019-3.jpg", "./img/noche02-r.png" 
+        "./img/disco3.jpg", 
+        "./img/noche2019-1.jpg", 
+        "./img/noche01-r.png", 
+        "./img/noche2019-2.jpg", 
+        "./img/data.jpg", 
+        "./img/noche2019-3.jpg", 
+        "./img/noche02-r.png" 
       ]
     }
   },
