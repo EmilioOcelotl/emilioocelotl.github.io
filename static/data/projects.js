@@ -1,7 +1,7 @@
 export const projects = [
 
   {
-    "href": "src/tres.html",
+    "href": "src/tresEstudiosAbiertos.html",
     "imgSrc": "./img/tres2-r.jpg",
     "imgAlt": "TRES ESTUDIOS ABIERTOS",
     "title": "Tres Estudios Abiertos",
@@ -16,7 +16,7 @@ export const projects = [
     }
   },
   {
-    "href": "three.html",
+    "href": "threeStudies.html",
     "imgSrc": "./img/three2024-2.jpg",
     "imgAlt": "three2022",
     "title": "THREE.studies",
@@ -33,7 +33,7 @@ export const projects = [
     }
   },
   {
-    "href": "anti.html",
+    "href": "antiOfuscacion.html",
     "imgSrc": "./img/antiHydra2-r.jpg",
     "imgAlt": "anti2022",
     "title": "Anti",
@@ -98,7 +98,7 @@ export const projects = [
     }
   },
   {
-    "href": "xicalco.html",
+    "href": "xicalcoMusica.html",
     "imgSrc": "./img/xicalco-r.jpeg",
     "imgAlt": "xicalco2022",
     "title": "Xicalcoliuhqui",
