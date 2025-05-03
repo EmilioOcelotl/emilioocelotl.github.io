@@ -1,7 +1,7 @@
 export const projects = [
 
   {
-    "href": "tresEstudiosAbiertos.html",
+    "href": "tea.html",
     "imgSrc": "./img/tres2-r.jpg",
     "imgAlt": "TRES ESTUDIOS ABIERTOS",
     "title": "Tres Estudios Abiertos",
