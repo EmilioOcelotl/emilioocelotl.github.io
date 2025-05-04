@@ -42,3 +42,7 @@ Algunas referencias para montar una radio por internet se pueden encontrar en: [
     error_log /var/log/nginx/mipagin.com.error.log;
 }
 ``
+
+## Pendientes
+
+- Mover página personal a un subdominio para activar las subpáginas anteriores y que esto no afecte a todas las carpetas del proyecto. Ej: ocelotl.cc/trilium 
