@@ -1,6 +1,7 @@
 export const projects = [
+
   {
-    "href": "src/tres.html",
+    "href": "tea.html",
     "imgSrc": "./img/tres2-r.jpg",
     "imgAlt": "TRES ESTUDIOS ABIERTOS",
     "title": "Tres Estudios Abiertos",
@@ -15,7 +16,7 @@ export const projects = [
     }
   },
   {
-    "href": "three.html",
+    "href": "threeStudies.html",
     "imgSrc": "./img/three2024-2.jpg",
     "imgAlt": "three2022",
     "title": "THREE.studies",
@@ -32,7 +33,7 @@ export const projects = [
     }
   },
   {
-    "href": "anti.html",
+    "href": "antiOfuscacion.html",
     "imgSrc": "./img/antiHydra2-r.jpg",
     "imgAlt": "anti2022",
     "title": "Anti",
@@ -97,7 +98,7 @@ export const projects = [
     }
   },
   {
-    "href": "xicalco.html",
+    "href": "xicalcoMusica.html",
     "imgSrc": "./img/xicalco-r.jpeg",
     "imgAlt": "xicalco2022",
     "title": "Xicalcoliuhqui",
@@ -151,12 +152,24 @@ export const projects = [
     "description": "Exploraciones entre código, sonido e imagen"
   },
   {
-    "href": "noche.html",
+    "href": "noche2.html",
     "imgSrc": "./img/disco3-r.jpg",
     "imgAlt": "nocheDeLasEstrellas II",
-    "title": "Noche de las Estrellas",
+    "title": "Noche de las Estrellas II",
     "year": "2019",
-    "description": "Intervención estética de datos astronómicos"
+    "description": "Intervención audiovisual de datos astronómicos",
+    "details": {
+      "fullDescription": "<p>Intervención audiovisual de datos astronómicos. Este proyecto fue realizado en colaboración con ACT UNAM y el Instituto de Investigaciones astronómicas. En esta ocasión sonificamos y visualizamos datos de Jets astonómicos.</p><p>Repositorio: <a href='https://github.com/EmilioOcelotl/nocheDeLasEstrellas2019'>nocheDeLasEstrellas2019</a></p>",
+      "images": [
+        "./img/disco3.jpg", 
+        "./img/noche2019-1.jpg", 
+        "./img/noche01-r.png", 
+        "./img/noche2019-2.jpg", 
+        "./img/data.jpg", 
+        "./img/noche2019-3.jpg", 
+        "./img/noche02-r.png" 
+      ]
+    }
   },
   {
     "href": "linux.html",

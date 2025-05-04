@@ -16,14 +16,16 @@ const player = new Plyr('#player', {
 });
 window.player = player;
 
-document.addEventListener('DOMContentLoaded', () => {
+// Función para cargar la página principal
+function loadHomePage() {
   const projectsContainer = document.querySelector('.projects');
+  projectsContainer.innerHTML = ''; // Limpiar contenedor
 
   projects.forEach(project => {
     const projectElement = document.createElement('div');
     projectElement.classList.add('project');
     projectElement.innerHTML = `
-      <a href="#" data-href="${project.href}" class="project-link">
+      <a href="${project.href}" data-href="${project.href}" class="project-link">
         <img src="${project.imgSrc}" alt="${project.imgAlt}">
         <h3>${project.title}<br>${project.year}</h3>
         <p>${project.description}</p>
@@ -37,10 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const projectHref = e.currentTarget.getAttribute('data-href');
       const project = projects.find(p => p.href === projectHref);
-      loadProjectDetails(project);
+      if (project) {
+        loadProjectDetails(project);
+        // Actualizar la URL sin recargar la página
+        window.history.pushState({ project: project.id }, '', project.href);
+      }
     });
   });
-});
+}
 
 function loadProjectDetails(project) {
   const mainContent = document.querySelector('main');
@@ -58,7 +64,8 @@ function loadProjectDetails(project) {
   `;
 
   document.querySelector('#backButton').addEventListener('click', () => {
-    location.reload();
+    window.history.pushState({}, '', '/');
+    loadHomePage();
   });
 
   initializeCarousel();
@@ -66,6 +73,8 @@ function loadProjectDetails(project) {
 
 function initializeCarousel() {
   const carousel = document.querySelector('.carousel');
+  if (!carousel) return;
+  
   const images = carousel.querySelectorAll('img');
   let currentIndex = 0;
 
@@ -77,8 +86,56 @@ function initializeCarousel() {
 
   showImage(currentIndex);
 
-  setInterval(() => {
+  const interval = setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
-  }, 3000); 
+  }, 3000);
+
+  // Limpiar intervalo al salir de la página
+  return () => clearInterval(interval);
 }
+
+// Manejo del enrutamiento
+function handleRoute() {
+  const path = window.location.pathname.split('/').pop();
+  
+  // Si es la raíz o index.html, cargar la página principal
+  if (path === '' || path === 'index.html') {
+    loadHomePage();
+  } 
+  // Si es una página de proyecto, cargarla directamente
+  else {
+    const projectId = path.replace('.html', '');
+    const project = projects.find(p => p.href.includes(projectId));
+    if (project) {
+      loadProjectDetails(project);
+    } else {
+      // Redirigir a la página principal si el proyecto no existe
+      window.location.href = '/';
+    }
+  }
+}
+
+// Manejar el evento popstate (navegación con botones adelante/atrás)
+window.addEventListener('popstate', handleRoute);
+
+// Inicializar la aplicación cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+  handleRoute();
+  
+  // Configurar el reproductor si existe en la página actual
+  if (document.querySelector('#player')) {
+    window.player = new Plyr('#player', {
+      controls: [
+        'play-large',
+        'play',
+        'progress',
+        'current-time',
+        'mute',
+        'volume',
+        'pip',
+        'airplay'
+      ]
+    });
+  }
+});
