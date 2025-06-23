@@ -1,6 +1,39 @@
 export const projects = [
 
   {
+    "href": "risosc.html",
+    "imgSrc": "./img/risosc.jpg",
+    "imgAlt": "risosc",
+    "title": "RisOSC",
+    "year": "2025",
+    "description": "Impresiones risográficas con identificadores NFC y esculturas 3D",
+    "details": {
+      "fullDescription": "<p>Impresiones risográficas con identificadores NFC y esculturas 3D. Presentada en el marco de la muestra Algorítmica Íntima en Centro Cultural Grupo Afirme. Ciudad de México 2025.</p>", 
+      "images": [
+        "./img/risosc.jpg",
+        "./img/risosc2.jpeg",
+        "./img/risosc3.jpeg",
+
+      ]
+    }
+  },
+  {
+    "href": "synthaxis.html",
+    "imgSrc": "./img/synth2.jpeg",
+    "imgAlt": "synthaxis",
+    "title": "Error de Synthaxis",
+    "year": "2025",
+    "description": "Exploraciones sonoras y voces sintéticas",
+    "details": {
+      "fullDescription": "<p>Exploraciones sonoras y voces sintéticas. Presentada en conjunto con  Marianne Teixido en el marco de la celebración del 20° aniversario del festival Insonora en Madrid, España. 2025</p>",
+      "images": [
+        "./img/synth1.jpeg",
+        "./img/synth2.jpeg",
+        "./img/synth3.jpeg"
+      ]
+    }
+  },
+  {
     "href": "tea.html",
     "imgSrc": "./img/tres2-r.jpg",
     "imgAlt": "TRES ESTUDIOS ABIERTOS",
