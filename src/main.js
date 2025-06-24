@@ -59,7 +59,7 @@ function loadProjectDetails(project) {
       </div>
       ${project.details.videoEmbed ? `<div class="video-container">${project.details.videoEmbed}</div>` : ''}
       ${project.details.audioSrc ? `<div class="audio-container">${project.details.audioSrc.map(audio => `<audio controls><source src="${audio}" type="audio/mpeg">Your browser does not support the audio element.</audio>`).join('')}</div>` : ''}
-      <button id="backButton">VOLVER</button>
+     <button id="backButton" onclick="window.location.href = 'index.html'">VOLVER</button>
     </div>
   `;
 

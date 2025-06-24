@@ -30,6 +30,9 @@ export const projects = [
         "./img/synth1.jpeg",
         "./img/synth2.jpeg",
         "./img/synth3.jpeg"
+      ],
+      "audioSrc": [
+        "./snd/insonora.mp3",
       ]
     }
   },
