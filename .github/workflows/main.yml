@@ -10,18 +10,14 @@ permissions:
   id-token: write
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -32,11 +28,18 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload build output
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'  # Asegúrate que coincide con tu carpeta de output
+          path: ./dist
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        id: deploy
+        uses: actions/deploy-pages@v4
