@@ -1,31 +1,56 @@
-name: Deploy Static Site
+# Created by MichaelCurrin
+# https://gist.github.com/MichaelCurrin/a698731096f78240f653faf9a9127cba
+
+name: emilioocelotl.github.io Build and deploy
 
 on:
   push:
-    branches: [master, dev]
+    branches: [ master, dev ]
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
-  deploy:
+  # Build job
+  build:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm ci
+          npm run build
+
+      # Upload Artifact
+      - name: Upload production-ready build files
+        uses: actions/upload-pages-artifact@v2
+        with:
+          name: github-pages
+          path: ./dist
+    # <Not provided for brevity>
+    # At a minimum this job should upload artifacts using actions/upload-pages-artifact
+
+  # Deploy job
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: '.dist/'  # Tu carpeta con archivos estáticos
-      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
