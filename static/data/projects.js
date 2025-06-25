@@ -2,7 +2,7 @@ export const projects = [
 
   {
     "href": "risosc.html",
-    "imgSrc": "./img/risosc.jpg",
+    "imgSrc": "./img/risoscbanner.jpg",
     "imgAlt": "risosc",
     "title": "RisOSC",
     "year": "2025",
@@ -13,6 +13,7 @@ export const projects = [
         "./img/risosc.jpg",
         "./img/risosc2.jpeg",
         "./img/risosc3.jpeg",
+        "./img/risoscbanner.jpg"
 
       ]
     }
