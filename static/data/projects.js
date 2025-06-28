@@ -13,6 +13,7 @@ export const projects = [
         "./img/risosc4.jpg",
         "./img/risosc2.jpeg",
         "./img/risosc3.jpeg",
+        "./img/risoscbanner.jpg"
 
       ]
     }
@@ -119,6 +120,24 @@ export const projects = [
     }
   },
   {
+    "href": "presentaciones.html",
+    "imgSrc": "./img/valle01.jpg",
+    "imgAlt": "valle",
+    "title": "Presentaciones Auriovisuales Destacadas",
+    "year": "2011-2024",
+    "description": "Audio e imagen en vivo",
+    "details": {
+      "fullDescription": "<li>Emilio Ocelotl, Aaron Escobar y Dorian Sotomayor @ Concierto Post Transferencias Aurales, Ciudad de México, 2024</li><li>Emilio Ocelotl @ Valle de Bravo, 2019</li><li>RGGTRN @ ICLC. Nave de Terneras. Madrid, España. 2019</li><li>RGGTRN @ Algorave-Algorumba. Casa Rodante. Manizales, Colombia. 2017</li><li>Emilio Ocelotl y Luis Navarro @ Festival /*vivo*/ Auditorio del MUAC, UNAM. Ciudad de México 2012</li>",
+      "images": [
+        "./img/valle02.jpg",
+        "./img/rggtrnccd2.jpg",
+        "./img/rggtrnmadrid2019.jpg",
+        "./img/postrans.jpg",
+        "./img/algoraveCasaRodante.jpg"
+      ]
+    }
+  },
+  {
     "href": "algorave2023.html",
     "imgSrc": "./img/algorave2-r.jpg",
     "imgAlt": "algorave",
@@ -133,6 +152,7 @@ export const projects = [
       "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/-2E_Hc4lCBw?si=Z6cXaSI4IdL5RZwv' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
     }
   },
+
   {
     "href": "xicalcoMusica.html",
     "imgSrc": "./img/xicalco-r.jpeg",
