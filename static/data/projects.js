@@ -2,7 +2,7 @@ export const projects = [
 
   {
     "href": "risosc.html",
-    "imgSrc": "./img/risoscbanner.jpg",
+    "imgSrc": "./img/risosc4.jpg",
     "imgAlt": "risosc",
     "title": "RisOSC",
     "year": "2025",
@@ -10,7 +10,7 @@ export const projects = [
     "details": {
       "fullDescription": "<p>Impresiones risográficas con identificadores NFC y esculturas 3D. Presentada en el marco de la muestra Algorítmica Íntima en Centro Cultural Grupo Afirme. Ciudad de México 2025.</p>", 
       "images": [
-        "./img/risosc.jpg",
+        "./img/risosc4.jpg",
         "./img/risosc2.jpeg",
         "./img/risosc3.jpeg",
         "./img/risoscbanner.jpg"
