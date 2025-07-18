@@ -14,35 +14,27 @@ Para construir:
 
 `npm run build`
 
-## Radio
 
-Algunas referencias para montar una radio por internet se pueden encontrar en: [web-radio](https://0xacab.org/ocelotl/web-radio)
+## ocelotl.cc
 
-## Configuración en NGINX para Single Page Applications (SPA)
+Referencia para la organización actual del servidor Nginx en el dominio `ocelotl.cc`, incluyendo subdominios utilizados para proyectos, piezas, herramientas personales y el sitio principal de portafolio.
 
-``
-    # Configuración SPA - Todas las rutas van a index.html
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
-    
-    # Manejo correcto de archivos estáticos
-    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff2)$ {
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-        try_files $uri =404;
-    }
-    
-    # Otras configuraciones de seguridad y rendimiento
-    add_header X-Frame-Options "SAMEORIGIN";
-    add_header X-Content-Type-Options "nosniff";
-    add_header Referrer-Policy "strict-origin-when-cross-origin";
-    
-    access_log /var/log/nginx/mipagina.com.access.log;
-    error_log /var/log/nginx/mipagin.com.error.log;
-}
-``
+### Sitio principal
 
-## Pendientes
+- **ocelotl.cc** Este repositorio, SPA (Single Page Application) que actúa como portafolio principal.
 
-- Mover página personal a un subdominio para activar las subpáginas anteriores y que esto no afecte a todas las carpetas del proyecto. Ej: ocelotl.cc/trilium 
+### Subdominios activos
+
+- [anti.ocelotl.cc](https://github.com/EmilioOcelotl/anti) > La ofuscación como motivo, la escritura como rodeo.
+
+- [print.ocelotl.cc](https://github.com/EmilioOcelotl/tres-back) > Impresión de tesis de doctorado en formato PDF.
+
+- [risosc.ocelotl.cc](https://github.com/EmilioOcelotl/risosc) > Escrituras sobre lo escaso multiplicado y lo efímero único.
+
+- [stream.ocelotl.cc](https://0xacab.org/ocelotl/web-radio) > Servidor y cliente para transmitir por internet.
+
+- [three.ocelotl.cc](https://github.com/EmilioOcelotl/THREE.studies-II) > Audio y gráficos en el navegador.   
+
+- [tres.ocelotl.cc](https://github.com/EmilioOcelotl/tres-front) > Escrituras para el navegador. Tesis de doctorado.
+
+- [xicalco.ocelotl.cc](https://github.com/EmilioOcelotl/xicalcoliuhqui) > Colaboración con Marianne Teixido y Gabriel de Dios. 
