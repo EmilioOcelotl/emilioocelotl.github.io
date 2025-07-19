@@ -55,6 +55,14 @@ function loadProjectDetails(project) {
       <h3>${project.title}</h3>
       <p>${project.details.fullDescription}</p>
       ${project.details.embed3d ? `<div class="embed-3d-container">${project.details.embed3d}</div>` : ''}
+      ${project.details.localVideo ? `
+        <div class="local-video-container">
+          <video controls poster="${project.details.videoPoster || ''}">
+            <source src="${project.details.localVideo}" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+          </video>
+        </div>
+        ` : ''}
       ${project.details.videoEmbed ? `<div class="video-container">${project.details.videoEmbed}</div>` : ''}
       ${project.details.audioSrc ? `<div class="audio-container">${project.details.audioSrc.map(audio => `<audio controls><source src="${audio}" type="audio/mpeg">Your browser does not support the audio element.</audio>`).join('')}</div>` : ''}
       <div class="carousel">
