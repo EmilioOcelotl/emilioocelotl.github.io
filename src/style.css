@@ -417,3 +417,37 @@ h1:hover {
   color: #fff !important;
 }
 
+/* Contenedor responsivo que fuerza al iframe a adaptarse */
+.sketchfab-embed-wrapper {
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%; /* Relación 16:9 (ajusta si prefieres 4:3) */
+  height: 0;
+  overflow: hidden;
+  margin: 40px 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sketchfab-embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* El texto de créditos se posiciona mejor */
+.sketchfab-embed-wrapper p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 13px;
+  z-index: 10;
+}

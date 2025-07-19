@@ -15,7 +15,8 @@ export const projects = [
         "./img/risosc3.jpeg",
         "./img/risosc5.jpeg"
 
-      ]
+      ],
+      "embed3d": `<div class="sketchfab-embed-wrapper"><iframe title="risosc-01" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/9d273c827c854b1485c24fa8a1543669/embed?ui_theme=dark"></iframe><p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A44;"><a href="https://sketchfab.com/3d-models/risosc-01-9d273c827c854b1485c24fa8a1543669?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">risosc-01</a> by <a href="https://sketchfab.com/emilioocelotl?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">emilioocelotl</a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>`    
     }
   },
   {
