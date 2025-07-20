@@ -39,6 +39,25 @@ export const projects = [
     }
   },
   {
+    "href": "av-ccrma.html",
+    "imgSrc": "./img/ccrma.gif",
+    "imgAlt": "stanford2024",
+    "title": "Audio-Visual Sessions",
+    "year": "2024",
+    "description": "Stanford Graduate Composers with M. Teixido and E. Ocelotl",
+    "details": {
+      "fullDescription": "<p>Residencia artística realizada en Center for Computer Research in Music and Acoustics (CCRMA), Stanford junto con Marianne Teixido del 8 al 17 de enero de 2024.</p><p>Durante nuestra estancia trabajamos con 6 estudiantes de composición y presentamos dos conciertos: uno en CCRMA Stage y otro en Elliott Program Center.</p><p>Los estudiantes con los que colaboramos fueron: Celeste Betancur, Brian Brown, Tatiana Catanzaro, Anna Golubkova, Lemon Guo, Nick Shaheed.</p>",
+      "images": [
+        "./img/residencia-r.jpg",
+        "./img/ccrma2024-1-r.jpg",
+        "./img/ccrmaCel-r.jpg",
+        "./img/sd-r.jpeg"
+      ],
+      "localVideo": "./videos/ccrma-web.mp4", 
+      "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/fjBn5qU85QI?si=QpEU2ODarxtDuPZE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+    }
+  },
+  {
     "href": "tea.html",
     "imgSrc": "./img/tres2-r.jpg",
     "imgAlt": "TRES ESTUDIOS ABIERTOS",
@@ -71,7 +90,7 @@ export const projects = [
     }
   },
   {
-    "href": "antiOfuscacion.html",
+    "href": "anti.html",
     "imgSrc": "./img/antiHydra2-r.jpg",
     "imgAlt": "anti2022",
     "title": "Anti",
@@ -84,25 +103,6 @@ export const projects = [
         "./img/anti-r.jpg",
         "./img/antiHydra2-r.jpg"
       ]
-    }
-  },
-  {
-    "href": "stanford2024.html",
-    "imgSrc": "./img/residencia-r.jpg",
-    "imgAlt": "stanford2024",
-    "title": "Audio-Visual Sessions",
-    "year": "2024",
-    "description": "Stanford Graduate Composers with M. Teixido and E. Ocelotl",
-    "details": {
-      "fullDescription": "<p>Residencia artística realizada en Center for Computer Research in Music and Acoustics (CCRMA), Stanford junto con Marianne Teixido del 8 al 17 de enero de 2024.</p><p>Durante nuestra estancia trabajamos con 6 estudiantes de composición y presentamos dos conciertos: uno en CCRMA Stage y otro en Elliott Program Center.</p><p>Los estudiantes con los que colaboramos fueron: Celeste Betancur, Brian Brown, Tatiana Catanzaro, Anna Golubkova, Lemon Guo, Nick Shaheed.</p>",
-      "images": [
-        "./img/residencia-r.jpg",
-        "./img/ccrma2024-1-r.jpg",
-        "./img/ccrmaCel-r.jpg",
-        "./img/sd-r.jpeg"
-      ],
-      "localVideo": "./videos/ccrma-web.mp4", 
-      "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/fjBn5qU85QI?si=QpEU2ODarxtDuPZE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
     }
   },
   {
