@@ -185,7 +185,7 @@ export const projects = [
     "year": "2021",
     "description": "PUMPUMYACHKAN Festival Asimtria",
     "details": {
-      "fullDescription": "Presentación A/V en Cusco, Perú en el marco de PUMPUMYACHKAN Festival Asimtria",
+      "fullDescription": "<p>Presentación A/V en Cusco, Perú en el marco de PUMPUMYACHKAN Festival Asimtria</p><p><a href='https://ia904501.us.archive.org/25/items/memoria_pumpum16_cusco/memoria_virtual.pdf'>Memoria Pumpum 16</a></p>",
       "images": [
         "./img/cusco-r.jpg"
       ],
