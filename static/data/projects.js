@@ -8,8 +8,10 @@ export const projects = [
     "year": "2025",
     "description": "Impresiones risográficas con identificadores NFC y esculturas 3D",
     "details": {
-      "fullDescription": "<p>RisOSC. Escrituras sobre lo escaso multiplicado y lo efímero único.</p><p>Impresiones risográficas con identificadores NFC y esculturas 3D. Se divide en 5 partes:</p><li>Web. Páginas que se abren en dispositivos móviles o en el escritorio cuando una etiqueta NFC es leída.</li><li>Server. Gestión de lecturas y envío de mensajes vía sockets a la página general y a las páginas específicas.</li><li>Firmware. Dispositivo personalizado que lee etiquetas NFC, en este caso no es necesario un teléfono.</li><li>Export. Los renders pueden exportarse como OBJs para usarse en otros contextos.</li><li>Scripts. La página principal puede ejecutarse en una computadora de manera automática para la exhibición.</li><p>El repositorio del proyecto se puede encontrar en: <a href='https://github.com/EmilioOcelotl/risosc'>RisOSC</a></p><p>Presentada en el marco de la muestra Algorítmica Íntima en Centro Cultural Grupo Afirme. Ciudad de México 2025.</p>", 
+      "fullDescription": "<p>RisOSC. Escrituras sobre lo escaso multiplicado y lo efímero único.</p><p>Impresiones risográficas con identificadores NFC y esculturas 3D. Se divide en 5 partes:</p><li>Web. Páginas que se abren en dispositivos móviles o en el escritorio cuando una etiqueta NFC es leída.</li><li>Server. Gestión de lecturas y envío de mensajes vía sockets a la página general y a las páginas específicas.</li><li>Firmware. Dispositivo personalizado que lee etiquetas NFC, en este caso no es necesario un teléfono.</li><li>Export. Los renders pueden exportarse como OBJs para usarse en otros contextos.</li><li>Scripts. La página principal puede ejecutarse en una computadora de manera automática para la exhibición.</li><p>El repositorio del proyecto se puede encontrar en: <a href='https://github.com/EmilioOcelotl/risosc'>RisOSC</a></p><p>Presentada en el marco de la muestra Algorítmica Íntima en Centro de Cultura Digital. Ciudad de México 2025.</p>", 
       "images": [
+        "./img/risosc16nov.jpg",
+        "./img/risoscccd.jpeg",
         "./img/risosc4.jpg",
         "./img/risosc2.jpeg",
         "./img/risosc3.jpeg",
