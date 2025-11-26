@@ -3,7 +3,7 @@ import { projects_en } from '../static/data/projects-en.js';
 import Plyr from 'plyr';
 
 // Configuración de idioma
-let currentLanguage = 'es';
+let currentLanguage = 'en';
 let currentProjects = projects;
 
 // Expose player so it can be used from the console
@@ -21,6 +21,22 @@ const player = new Plyr('#player', {
 });
 window.player = player;
 
+// Función para actualizar textos de navegación
+function updateNavigationText() {
+    const bioLink = document.getElementById('bioLink');
+    const contactLink = document.getElementById('contactLink');
+    
+    if (bioLink && contactLink) {
+        if (currentLanguage === 'es') {
+            bioLink.textContent = 'BIO';
+            contactLink.textContent = 'CONTACTO';
+        } else {
+            bioLink.textContent = 'BIO';
+            contactLink.textContent = 'CONTACT';
+        }
+    }
+}
+
 // Función para cambiar el idioma
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
@@ -35,6 +51,9 @@ function toggleLanguage() {
     } else {
         textSpan.textContent = 'EN';
     }
+    
+    // Actualizar textos de navegación
+    updateNavigationText();
     
     // Recargar el contenido según la página actual
     const path = window.location.pathname.split('/').pop();
@@ -97,70 +116,72 @@ function loadHomePage() {
         });
     });
     window.scrollTo(0, 0);
-
 }
 
 function loadProjectDetails(project) {
-    console.log('Cargando detalles para:', project.title);
-    const mainContent = document.querySelector('main');
-    if (!mainContent) {
-        console.error('No se encontró el elemento main');
-        return;
-    }
-    
-    // Textos dinámicos según idioma
-    const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
-    
-    mainContent.innerHTML = `
-        <div class="project-details">
-            <h3>${project.title}</h3>
-            <p>${project.details.fullDescription}</p>
-            ${project.details.localVideo ? `
-                <div class="local-video-container">
-                    <video controls poster="${project.details.videoPoster || ''}">
-                        <source src="${project.details.localVideo}" type="video/mp4">
-                        ${currentLanguage === 'es' ? 'Tu navegador no soporta videos HTML5.' : 'Your browser does not support HTML5 video.'}
-                    </video>
-                </div>
-            ` : ''}
-            ${project.details.videoEmbed ? `
-                <div class="video-container">${project.details.videoEmbed}</div>
-            ` : ''}
-            ${project.details.audioSrc ? `
-                <div class="audio-container">
-                    ${project.details.audioSrc.map(audio => `
-                        <audio controls>
-                            <source src="${audio}" type="audio/mpeg">
-                            ${currentLanguage === 'es' ? 'Tu navegador no soporta el elemento de audio.' : 'Your browser does not support the audio element.'}
-                        </audio>
-                    `).join('')}
-                </div>
-            ` : ''}
-            <div class="carousel">
-                ${project.details.images.map(img => `
-                    <img src="${img}" loading="lazy" alt="${project.title}">
-                `).join('')}
-            </div>
-            ${project.details.embed3d ? `
-                <div class="embed-3d-container">${project.details.embed3d}</div>
-            ` : ''}
-            <button id="backButton" class="back-button">${backButtonText}</button>
-        </div>
-    `;
+  console.log('Cargando detalles para:', project.title);
+  const mainContent = document.querySelector('main');
+  if (!mainContent) {
+      console.error('No se encontró el elemento main');
+      return;
+  }
+  
+  // Textos dinámicos según idioma
+  const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
+  
+  mainContent.innerHTML = `
+      <div class="project-details">
+          <h3>${project.title}</h3>
+          <p>${project.details.fullDescription}</p>
+          ${project.details.localVideo ? `
+              <div class="local-video-container">
+                  <video controls poster="${project.details.videoPoster || ''}">
+                      <source src="${project.details.localVideo}" type="video/mp4">
+                      ${currentLanguage === 'es' ? 'Tu navegador no soporta videos HTML5.' : 'Your browser does not support HTML5 video.'}
+                  </video>
+              </div>
+          ` : ''}
+          ${project.details.videoEmbed ? `
+              <div class="video-container">${project.details.videoEmbed}</div>
+          ` : ''}
+          ${project.details.audioSrc ? `
+              <div class="audio-container">
+                  ${project.details.audioSrc.map(audio => `
+                      <audio controls>
+                          <source src="${audio}" type="audio/mpeg">
+                          ${currentLanguage === 'es' ? 'Tu navegador no soporta el elemento de audio.' : 'Your browser does not support the audio element.'}
+                      </audio>
+                  `).join('')}
+              </div>
+          ` : ''}
+          <div class="carousel">
+              ${project.details.images.map(img => `
+                  <img src="${img}" loading="lazy" alt="${project.title}">
+              `).join('')}
+          </div>
+          ${project.details.embed3d ? `
+              <div class="embed-3d-container">${project.details.embed3d}</div>
+          ` : ''}
+          <button id="backButton" class="back-button">${backButtonText}</button>
+      </div>
+  `;
 
-    // CORRECCIÓN: Usar setTimeout para asegurar que el DOM esté actualizado
-    setTimeout(() => {
-        const backButton = document.getElementById('backButton');
-        console.log('Buscando botón volver...', backButton);
-        if (backButton) {
-            console.log('Agregando event listener al botón volver');
-            backButton.addEventListener('click', handleBackButton);
-        } else {
-            console.error('No se encontró el botón volver');
-        }
-    }, 0);
+  // CORRECCIÓN: Usar setTimeout para asegurar que el DOM esté actualizado
+  setTimeout(() => {
+      const backButton = document.getElementById('backButton');
+      console.log('Buscando botón volver...', backButton);
+      if (backButton) {
+          console.log('Agregando event listener al botón volver');
+          backButton.addEventListener('click', handleBackButton);
+      } else {
+          console.error('No se encontró el botón volver');
+      }
+      
+      // RESETEO DEL SCROLL: Desplazar al inicio cuando se cargan los detalles
+      window.scrollTo(0, 0);
+  }, 0);
 
-    initializeCarousel();
+  initializeCarousel();
 }
 
 // Función separada para manejar el botón volver
@@ -194,21 +215,25 @@ function initializeCarousel() {
 }
 
 // Manejo del enrutamiento
+// Manejo del enrutamiento
 function handleRoute() {
-    const path = window.location.pathname.split('/').pop();
-    console.log('Manejando ruta:', path);
-    
-    if (path === '' || path === 'index.html' || path === '/') {
-        loadHomePage();
-    } else {
-        const projectId = path.replace('.html', '');
-        const project = currentProjects.find(p => p.href.includes(projectId));
-        if (project) {
-            loadProjectDetails(project);
-        } else {
-            window.location.href = '/';
-        }
-    }
+  const path = window.location.pathname.split('/').pop();
+  console.log('Manejando ruta:', path);
+  
+  // Resetear scroll en cada cambio de ruta
+  window.scrollTo(0, 0);
+  
+  if (path === '' || path === 'index.html' || path === '/') {
+      loadHomePage();
+  } else {
+      const projectId = path.replace('.html', '');
+      const project = currentProjects.find(p => p.href.includes(projectId));
+      if (project) {
+          loadProjectDetails(project);
+      } else {
+          window.location.href = '/';
+      }
+  }
 }
 
 // Manejar el evento popstate (navegación con botones adelante/atrás)
@@ -237,6 +262,9 @@ document.addEventListener('DOMContentLoaded', () => {
             textSpan.textContent = 'EN';
         }
     }
+    
+    // Actualizar textos de navegación al inicializar
+    updateNavigationText();
     
     handleRoute();
     
