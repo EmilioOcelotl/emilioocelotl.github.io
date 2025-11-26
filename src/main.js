@@ -22,55 +22,91 @@ const player = new Plyr('#player', {
 window.player = player;
 
 // Función para actualizar textos de navegación
-function updateNavigationText() {
-    const bioLink = document.getElementById('bioLink');
-    const contactLink = document.getElementById('contactLink');
-    
-    if (bioLink && contactLink) {
-        if (currentLanguage === 'es') {
-            bioLink.textContent = 'BIO';
-            contactLink.textContent = 'CONTACTO';
-        } else {
-            bioLink.textContent = 'BIO';
-            contactLink.textContent = 'CONTACT';
-        }
-    }
+// Función para cargar la página de contacto
+function loadContactPage() {
+  console.log('Cargando página de contacto...');
+  const mainContent = document.querySelector('main');
+  if (!mainContent) return;
+  
+  // Textos dinámicos según idioma
+  const contactTitle = currentLanguage === 'es' ? 'Contacto' : 'Contact';
+  const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
+  
+  mainContent.innerHTML = `
+      <div class="project-details">
+          <section id="contact">
+              <h2>${contactTitle}</h2>
+              <div>
+                  <i class="contact-icon fas fa-envelope"></i>
+                  <a href="mailto:emilio.ocelotl@gmail.com">emilio.ocelotl@gmail.com</a>
+              </div>
+              <div>
+                  <i class="contact-icon fab fa-github"></i>
+                  <a href="https://github.com/EmilioOcelotl">EmilioOcelotl</a>
+              </div>
+              <div>
+                  <i class="contact-icon fab fa-instagram"></i>
+                  <a href="https://www.instagram.com/emilio.ocelotl/">EmilioOcelotl</a>
+              </div> 
+              <div>
+                  <i class="contact-icon fab fa-linkedin"></i>
+                  <a href="https://www.linkedin.com/in/emilio-ocelotl-reyes-777061ab">EmilioOcelotl</a>
+              </div> 
+          </section>
+      </div>
+      <div class="project-details">
+          <button id="backButton" class="back-button">${backButtonText}</button>
+      </div>
+  `;
+
+  // Agregar event listener al botón volver
+  setTimeout(() => {
+      const backButton = document.getElementById('backButton');
+      if (backButton) {
+          backButton.addEventListener('click', handleBackButton);
+      }
+  }, 0);
+  
+  // Resetear scroll
+  window.scrollTo(0, 0);
 }
 
 // Función para cambiar el idioma
 function toggleLanguage() {
-    currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
-    currentProjects = currentLanguage === 'es' ? projects : projects_en;
-    
-    // Actualizar el botón de idioma
-    const toggleBtn = document.getElementById('languageToggle');
-    const textSpan = toggleBtn.querySelector('.lang-text');
-    
-    if (currentLanguage === 'es') {
-        textSpan.textContent = 'ES';
-    } else {
-        textSpan.textContent = 'EN';
-    }
-    
-    // Actualizar textos de navegación
-    updateNavigationText();
-    
-    // Recargar el contenido según la página actual
-    const path = window.location.pathname.split('/').pop();
-    if (path === '' || path === 'index.html' || path === '/') {
-        loadHomePage();
-    } else {
-        const projectId = path.replace('.html', '');
-        const project = currentProjects.find(p => p.href.includes(projectId));
-        if (project) {
-            loadProjectDetails(project);
-        } else {
-            loadHomePage();
-        }
-    }
-    
-    // Guardar preferencia de idioma
-    localStorage.setItem('preferredLanguage', currentLanguage);
+  currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+  currentProjects = currentLanguage === 'es' ? projects : projects_en;
+  
+  // Actualizar el botón de idioma
+  const toggleBtn = document.getElementById('languageToggle');
+  const textSpan = toggleBtn.querySelector('.lang-text');
+  
+  if (currentLanguage === 'es') {
+      textSpan.textContent = 'ES';
+  } else {
+      textSpan.textContent = 'EN';
+  }
+  
+  // Actualizar textos de navegación
+  updateNavigationText();
+  
+  // Recargar el contenido según la página actual
+  const path = window.location.pathname.split('/').pop();
+  if (path === '' || path === 'index.html' || path === '/') {
+      loadHomePage();
+  } else if (path === 'contacto.html') {
+      loadContactPage(); // NUEVO: Recargar contacto en el idioma correcto
+  } else {
+      const projectId = path.replace('.html', '');
+      const project = currentProjects.find(p => p.href.includes(projectId));
+      if (project) {
+          loadProjectDetails(project);
+      } else {
+          loadHomePage();
+      }
+  }
+  
+  // Guardar preferencia de idioma
+  localStorage.setItem('preferredLanguage', currentLanguage);
 }
 
 // Función para cargar la página principal
@@ -215,7 +251,6 @@ function initializeCarousel() {
 }
 
 // Manejo del enrutamiento
-// Manejo del enrutamiento
 function handleRoute() {
   const path = window.location.pathname.split('/').pop();
   console.log('Manejando ruta:', path);
@@ -225,6 +260,8 @@ function handleRoute() {
   
   if (path === '' || path === 'index.html' || path === '/') {
       loadHomePage();
+  } else if (path === 'contacto.html') {
+      loadContactPage(); // NUEVO: Manejar página de contacto
   } else {
       const projectId = path.replace('.html', '');
       const project = currentProjects.find(p => p.href.includes(projectId));
@@ -284,3 +321,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Función para actualizar textos de navegación
+function updateNavigationText() {
+  const bioLink = document.getElementById('bioLink');
+  const contactLink = document.getElementById('contactLink');
+  const languageToggle = document.getElementById('languageToggle');
+  
+  if (bioLink && contactLink) {
+      if (currentLanguage === 'es') {
+          bioLink.textContent = 'BIO';
+          contactLink.textContent = 'CONTACTO';
+      } else {
+          bioLink.textContent = 'BIO';
+          contactLink.textContent = 'CONTACT';
+      }
+  }
+  
+  // Actualizar el texto del botón de idioma si existe
+  if (languageToggle) {
+      const textSpan = languageToggle.querySelector('.lang-text');
+      if (textSpan) {
+          textSpan.textContent = currentLanguage === 'es' ? 'ES' : 'EN';
+      }
+  }
+}
