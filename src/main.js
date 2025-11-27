@@ -1,5 +1,6 @@
 import { projects } from '../static/data/projects.js';
 import { projects_en } from '../static/data/projects-en.js';
+import { bioContent } from '../static/data/bio-content.js';
 import Plyr from 'plyr';
 
 // Configuración de idioma
@@ -71,6 +72,80 @@ function loadContactPage() {
   window.scrollTo(0, 0);
 }
 
+// Función para cargar la página BIO
+function loadBioPage() {
+  console.log('Cargando página BIO...');
+  const mainContent = document.querySelector('main');
+  if (!mainContent) return;
+  
+  const content = bioContent[currentLanguage];
+  
+  mainContent.innerHTML = `
+      <section id="bio">
+          <h2>${content.bioTitle}</h2>
+          <section>
+              <h3></h3>
+              <div class="container2">
+                  <p>${content.bioText1}</p>
+                  <p>${content.bioText2}</p>
+                  <p>${content.bioText3}</p>
+              </div>
+          </section>
+
+          <h2>${content.trajectory}</h2> 
+          <section>
+              <h3>${content.awards}</h3>
+              <div class="container2">
+                  ${content.awardsList.map(item => `<li>${item}</li>`).join('')}
+              </div>
+          </section>
+          
+          <section>
+              <h3>${content.works}</h3>
+              <div class="container2">
+                  ${content.worksList.map(item => `<li>${item}</li>`).join('')}
+              </div>
+          </section>
+          
+          <section>
+              <h3>${content.teaching}</h3>
+              <div class="container2">
+                  ${content.teachingList.map(item => `<li>${item}</li>`).join('')}
+              </div>
+          </section>
+          
+          <section>
+              <h3>${content.collaboration}</h3>
+              <div class="container2">
+                  ${content.collaborationList.map(item => `<li>${item}</li>`).join('')}
+              </div>
+          </section>
+          
+          <section>
+              <h3>${content.publications}</h3>
+              <div class="container2">
+                  ${content.publicationsList.map(item => `<li>${item}</li>`).join('')}
+              </div>
+          </section>
+          
+          <div class="project-details">
+              <button id="backButton" class="back-button">${content.backButton}</button>
+          </div>
+      </section>
+  `;
+
+  // Agregar event listener al botón volver
+  setTimeout(() => {
+      const backButton = document.getElementById('backButton');
+      if (backButton) {
+          backButton.addEventListener('click', handleBackButton);
+      }
+  }, 0);
+  
+  // Resetear scroll
+  window.scrollTo(0, 0);
+}
+
 // Función para cambiar el idioma
 function toggleLanguage() {
   currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
@@ -93,8 +168,10 @@ function toggleLanguage() {
   const path = window.location.pathname.split('/').pop();
   if (path === '' || path === 'index.html' || path === '/') {
       loadHomePage();
+  } else if (path === 'bio.html') {
+      loadBioPage(); // NUEVO: Recargar BIO en el idioma correcto
   } else if (path === 'contacto.html') {
-      loadContactPage(); // NUEVO: Recargar contacto en el idioma correcto
+      loadContactPage();
   } else {
       const projectId = path.replace('.html', '');
       const project = currentProjects.find(p => p.href.includes(projectId));
@@ -260,8 +337,10 @@ function handleRoute() {
   
   if (path === '' || path === 'index.html' || path === '/') {
       loadHomePage();
+  } else if (path === 'bio.html') {
+      loadBioPage(); // NUEVO: Manejar página BIO
   } else if (path === 'contacto.html') {
-      loadContactPage(); // NUEVO: Manejar página de contacto
+      loadContactPage();
   } else {
       const projectId = path.replace('.html', '');
       const project = currentProjects.find(p => p.href.includes(projectId));

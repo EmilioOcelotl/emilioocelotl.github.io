@@ -24,7 +24,7 @@ export const projects_en = [
         "href": "synthaxis.html",
         "imgSrc": "./img/synth2.jpeg",
         "imgAlt": "synthaxis",
-        "title": "Synthaxis Error",
+        "title": "Error de Synthaxis",
         "year": "2025",
         "description": "Sound explorations and synthetic voices",
         "details": {
