@@ -63,7 +63,7 @@ export const projects_en = [
         "imgSrc": "./img/tres2-r.jpg",
         "imgAlt": "TRES ESTUDIOS ABIERTOS",
         "title": "Tres Estudios Abiertos",
-        "year": "2020-2024",
+        "year": "2020-2025",
         "description": "Writing, JavaScript, and artistic research (ongoing)",
         "details": {
           "fullDescription": "<p>Tres Estudios Abiertos takes place at the intersection of knowledge and the sensible, and it is connected to the <emph>generation of new modes of musical performance and the opening of innovative channels for the presentation and dissemination of artistic research in music</emph> (de Assis, 2018).</p><p>Within this framework arises the central question of this research: What contributions can code writing make to new modes of audiovisual performance and to the creation of a reflective document that integrates sound, graphics, and text in the context of artistic research?</p><p>The answer lies in the JavaScript programming language. The result, published as a web page, can be explored at: <a href='https://tres.ocelotl.cc/'>tres.ocelotl.cc</a>. This project is complemented by a repository that manages the background and generates a structured PDF file with the results of the research.</p><p>Project code available at: <a href='https://github.com/EmilioOcelotl/tres-front'>https://github.com/EmilioOcelotl/tres-front</a> and <a href='https://github.com/EmilioOcelotl/tres-back'>https://github.com/EmilioOcelotl/tres-back</a></p><h3>References</h3><p>De Assis, P. (2018). Logic of Experimentation. Leuven University Press. <a href='https://doi.org/10.2307/j.ctv6zdcpg'>https://doi.org/10.2307/j.ctv6zdcpg</a></p>",

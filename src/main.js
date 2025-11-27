@@ -357,48 +357,48 @@ window.addEventListener('popstate', handleRoute);
 
 // Inicializar la aplicación cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM cargado, inicializando aplicación...');
-    // Cargar idioma preferido desde localStorage
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage) {
-        currentLanguage = savedLanguage;
-        currentProjects = currentLanguage === 'es' ? projects : projects_en;
-    }
-    
-    // Configurar el botón de idioma
-    const toggleBtn = document.getElementById('languageToggle');
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', toggleLanguage);
-        
-        // Establecer estado inicial del botón
-        const textSpan = toggleBtn.querySelector('.lang-text');
-        if (currentLanguage === 'es') {
-            textSpan.textContent = 'ES';
-        } else {
-            textSpan.textContent = 'EN';
-        }
-    }
-    
-    // Actualizar textos de navegación al inicializar
-    updateNavigationText();
-    
-    handleRoute();
-    
-    // Configurar el reproductor si existe en la página actual
-    if (document.querySelector('#player')) {
-        window.player = new Plyr('#player', {
-            controls: [
-                'play-large',
-                'play',
-                'progress',
-                'current-time',
-                'mute',
-                'volume',
-                'pip',
-                'airplay'
-            ]
-        });
-    }
+  console.log('DOM cargado, inicializando aplicación...');
+  // Cargar idioma preferido desde localStorage
+  const savedLanguage = localStorage.getItem('preferredLanguage');
+  if (savedLanguage) {
+      currentLanguage = savedLanguage;
+      currentProjects = currentLanguage === 'es' ? projects : projects_en;
+  }
+  
+  // Configurar el botón de idioma
+  const toggleBtn = document.getElementById('languageToggle');
+  if (toggleBtn) {
+      toggleBtn.addEventListener('click', toggleLanguage);
+      
+      // CORRECCIÓN: Establecer estado inicial del botón (idioma al que se puede cambiar)
+      const textSpan = toggleBtn.querySelector('.lang-text');
+      if (currentLanguage === 'es') {
+          textSpan.textContent = 'EN'; // Si está en español, mostrar "EN" para cambiar a inglés
+      } else {
+          textSpan.textContent = 'ES'; // Si está en inglés, mostrar "ES" para cambiar a español
+      }
+  }
+  
+  // Actualizar textos de navegación al inicializar
+  updateNavigationText();
+  
+  handleRoute();
+  
+  // Configurar el reproductor si existe en la página actual
+  if (document.querySelector('#player')) {
+      window.player = new Plyr('#player', {
+          controls: [
+              'play-large',
+              'play',
+              'progress',
+              'current-time',
+              'mute',
+              'volume',
+              'pip',
+              'airplay'
+          ]
+      });
+  }
 });
 
 // Función para actualizar textos de navegación
@@ -417,11 +417,13 @@ function updateNavigationText() {
       }
   }
   
-  // Actualizar el texto del botón de idioma si existe
+  // CORRECCIÓN: Mostrar el idioma AL QUE se puede cambiar, no el actual
   if (languageToggle) {
       const textSpan = languageToggle.querySelector('.lang-text');
       if (textSpan) {
-          textSpan.textContent = currentLanguage === 'es' ? 'ES' : 'EN';
+          // Si el idioma actual es español, mostrar "EN" (para cambiar a inglés)
+          // Si el idioma actual es inglés, mostrar "ES" (para cambiar a español)
+          textSpan.textContent = currentLanguage === 'es' ? 'EN' : 'ES';
       }
   }
 }
