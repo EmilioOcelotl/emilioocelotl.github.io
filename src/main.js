@@ -1,11 +1,13 @@
 import { projects } from '../static/data/projects.js';
 import { projects_en } from '../static/data/projects-en.js';
 import { bioContent } from '../static/data/bio-content.js';
+import { blogPosts } from '../static/data/blog-content.js';
+import { blogPosts_en } from '../static/data/blog-content-en.js';
 import Plyr from 'plyr';
 
 // Configuración de idioma
-let currentLanguage = 'en';
-let currentProjects = projects;
+let currentLanguage = 'en'; // Default to English if no preference saved
+let currentProjects = projects_en; // Default to English projects
 
 // Expose player so it can be used from the console
 const player = new Plyr('#player', {
@@ -22,7 +24,6 @@ const player = new Plyr('#player', {
 });
 window.player = player;
 
-// Función para actualizar textos de navegación
 // Función para cargar la página de contacto
 function loadContactPage() {
   console.log('Cargando página de contacto...');
@@ -34,7 +35,7 @@ function loadContactPage() {
   const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
   
   mainContent.innerHTML = `
-      <div class="project-details">
+      <div class="project-details"> <!-- Wrap in project-details for centering -->
           <section id="contact">
               <h2>${contactTitle}</h2>
               <div>
@@ -54,9 +55,9 @@ function loadContactPage() {
                   <a href="https://www.linkedin.com/in/emilio-ocelotl-reyes-777061ab">EmilioOcelotl</a>
               </div> 
           </section>
-      </div>
-      <div class="project-details">
-          <button id="backButton" class="back-button">${backButtonText}</button>
+          <div class="button-wrapper"> <!-- Wrapper for button styling -->
+              <button id="backButton" class="back-button">${backButtonText}</button>
+          </div>
       </div>
   `;
 
@@ -81,57 +82,58 @@ function loadBioPage() {
   const content = bioContent[currentLanguage];
   
   mainContent.innerHTML = `
-      <section id="bio">
-          <h2>${content.bioTitle}</h2>
-          <section>
-              <h3></h3>
-              <div class="container2">
-                  <p>${content.bioText1}</p>
-                  <p>${content.bioText2}</p>
-                  <p>${content.bioText3}</p>
-              </div>
-          </section>
+      <div class="project-details"> <!-- Wrap all content for centering -->
+          <section id="bio">
+              <h2>${content.bioTitle}</h2>
+              <section>
+                  <h3></h3>
+                  <div class="container2">
+                      <p>${content.bioText1}</p>
+                      <p>${content.bioText2}</p>
+                      <p>${content.bioText3}</p>
+                  </div>
+              </section>
 
-          <h2>${content.trajectory}</h2> 
-          <section>
-              <h3>${content.awards}</h3>
-              <div class="container2">
-                  ${content.awardsList.map(item => `<li>${item}</li>`).join('')}
-              </div>
+              <h2>${content.trajectory}</h2> 
+              <section>
+                  <h3>${content.awards}</h3>
+                  <div class="container2">
+                      ${content.awardsList.map(item => `<li>${item}</li>`).join('')}
+                  </div>
+              </section>
+              
+              <section>
+                  <h3>${content.works}</h3>
+                  <div class="container2">
+                      ${content.worksList.map(item => `<li>${item}</li>`).join('')}
+                  </div>
+              </section>
+              
+              <section>
+                  <h3>${content.teaching}</h3>
+                  <div class="container2">
+                      ${content.teachingList.map(item => `<li>${item}</li>`).join('')}
+                  </div>
+              </section>
+              
+              <section>
+                  <h3>${content.collaboration}</h3>
+                  <div class="container2">
+                      ${content.collaborationList.map(item => `<li>${item}</li>`).join('')}
+                  </div>
+              </section>
+              
+              <section>
+                  <h3>${content.publications}</h3>
+                  <div class="container2">
+                      ${content.publicationsList.map(item => `<li>${item}</li>`).join('')}
+                  </div>
+              </section>
           </section>
-          
-          <section>
-              <h3>${content.works}</h3>
-              <div class="container2">
-                  ${content.worksList.map(item => `<li>${item}</li>`).join('')}
-              </div>
-          </section>
-          
-          <section>
-              <h3>${content.teaching}</h3>
-              <div class="container2">
-                  ${content.teachingList.map(item => `<li>${item}</li>`).join('')}
-              </div>
-          </section>
-          
-          <section>
-              <h3>${content.collaboration}</h3>
-              <div class="container2">
-                  ${content.collaborationList.map(item => `<li>${item}</li>`).join('')}
-              </div>
-          </section>
-          
-          <section>
-              <h3>${content.publications}</h3>
-              <div class="container2">
-                  ${content.publicationsList.map(item => `<li>${item}</li>`).join('')}
-              </div>
-          </section>
-          
-          <div class="project-details">
+          <div class="button-wrapper"> <!-- Wrapper for button styling -->
               <button id="backButton" class="back-button">${content.backButton}</button>
           </div>
-      </section>
+      </div>
   `;
 
   // Agregar event listener al botón volver
@@ -146,43 +148,113 @@ function loadBioPage() {
   window.scrollTo(0, 0);
 }
 
+// NUEVO: Función para cargar la página BLOG (ES)
+function loadBlogPage() {
+  console.log('Cargando página BLOG (ES)...');
+  const mainContent = document.querySelector('main');
+  if (!mainContent) return;
+  
+  const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
+  const sortedBlogPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  mainContent.innerHTML = `
+      <div class="project-details"> <!-- Wrap in project-details for centering -->
+          <section id="blog-content">
+              <h2>Blog</h2>
+           </section>
+          <section id="blog-content">
+
+              ${sortedBlogPosts.map(post => `
+                  <article class="blog-post">
+                      <h2>${post.title}</h2>
+                      <p class="blog-date">${post.date}</p>
+                      <p>${post.content}</p>
+                  </article>
+              `).join('')}
+          </section>
+          <div class="button-wrapper"> <!-- Wrapper for button styling -->
+              <button id="backButton" class="back-button">${backButtonText}</button>
+          </div>
+      </div>
+  `;
+  // Add event listener to the back button
+  setTimeout(() => {
+      const backButton = document.getElementById('backButton');
+      if (backButton) {
+          backButton.addEventListener('click', handleBackButton);
+      }
+  }, 0);
+  
+  // Reset scroll
+  window.scrollTo(0, 0);
+  updateButtonText(); // Update button text based on current language
+}
+
+// NUEVO: Función para cargar la página BLOG (EN)
+function loadBlogEnPage() {
+  console.log('Cargando página BLOG (EN)...');
+  const mainContent = document.querySelector('main');
+  if (!mainContent) return;
+  
+  const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
+  const sortedBlogPosts = [...blogPosts_en].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  mainContent.innerHTML = `
+      <div class="project-details"> <!-- Wrap in project-details for centering -->
+          <section id="blog-content">
+              <h1>Blog</h1>
+              ${sortedBlogPosts.map(post => `
+                  <article class="blog-post">
+                      <h2>${post.title}</h2>
+                      <p class="blog-date">${post.date}</p>
+                      <p>${post.content}</p>
+                  </article>
+              `).join('')}
+          </section>
+          <div class="button-wrapper"> <!-- Wrapper for button styling -->
+              <button id="backButton" class="back-button">${backButtonText}</button>
+          </div>
+      </div>
+  `;
+  // Add event listener to the back button
+  setTimeout(() => {
+      const backButton = document.getElementById('backButton');
+      if (backButton) {
+          backButton.addEventListener('click', handleBackButton);
+      }
+  }, 0);
+  
+  // Reset scroll
+  window.scrollTo(0, 0);
+  updateButtonText(); // Update button text based on current language
+}
+
+
 // Función para cambiar el idioma
 function toggleLanguage() {
-  currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+  const currentPath = window.location.pathname.split('/').pop();
+  const newLanguage = currentLanguage === 'es' ? 'en' : 'es';
+
+  console.log(`Toggling language from ${currentLanguage} to ${newLanguage}`);
+
+  // Update language and projects for the next render
+  currentLanguage = newLanguage;
   currentProjects = currentLanguage === 'es' ? projects : projects_en;
-  
-  // Actualizar el botón de idioma
+
+  // Update the language toggle button text
   const toggleBtn = document.getElementById('languageToggle');
   const textSpan = toggleBtn.querySelector('.lang-text');
-  
-  if (currentLanguage === 'es') {
-      textSpan.textContent = 'ES';
-  } else {
-      textSpan.textContent = 'EN';
+  if (textSpan) {
+      textSpan.textContent = currentLanguage === 'es' ? 'EN' : 'ES';
   }
-  
-  // Actualizar textos de navegación
-  updateNavigationText();
-  
-  // Recargar el contenido según la página actual
-  const path = window.location.pathname.split('/').pop();
-  if (path === '' || path === 'index.html' || path === '/') {
-      loadHomePage();
-  } else if (path === 'bio.html') {
-      loadBioPage(); // NUEVO: Recargar BIO en el idioma correcto
-  } else if (path === 'contacto.html') {
-      loadContactPage();
-  } else {
-      const projectId = path.replace('.html', '');
-      const project = currentProjects.find(p => p.href.includes(projectId));
-      if (project) {
-          loadProjectDetails(project);
-      } else {
-          loadHomePage();
-      }
-  }
-  
-  // Guardar preferencia de idioma
+
+  // --- Remove direct URL navigation for blog pages --- 
+  // The handleRoute function will now manage content based on the updated currentLanguage
+
+  // Call handleRoute to re-render the current page with the new language
+  handleRoute();
+
+  // Save preference
   localStorage.setItem('preferredLanguage', currentLanguage);
 }
 
@@ -243,7 +315,7 @@ function loadProjectDetails(project) {
   const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
   
   mainContent.innerHTML = `
-      <div class="project-details">
+      <div class="project-details"> <!-- Wrapper for centering -->
           <h3>${project.title}</h3>
           <p>${project.details.fullDescription}</p>
           ${project.details.localVideo ? `
@@ -275,7 +347,9 @@ function loadProjectDetails(project) {
           ${project.details.embed3d ? `
               <div class="embed-3d-container">${project.details.embed3d}</div>
           ` : ''}
-          <button id="backButton" class="back-button">${backButtonText}</button>
+          <div class="button-wrapper"> <!-- Wrapper for button styling -->
+              <button id="backButton" class="back-button">${backButtonText}</button>
+          </div>
       </div>
   `;
 
@@ -327,7 +401,16 @@ function initializeCarousel() {
     return () => clearInterval(interval);
 }
 
-// Manejo del enrutamiento
+// Helper to update button text consistently
+function updateButtonText() {
+    const backButton = document.getElementById('backButton');
+    const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
+    if (backButton) {
+        backButton.textContent = backButtonText;
+    }
+}
+
+// Manejar el enrutamiento
 function handleRoute() {
   const path = window.location.pathname.split('/').pop();
   console.log('Manejando ruta:', path);
@@ -338,15 +421,22 @@ function handleRoute() {
   if (path === '' || path === 'index.html' || path === '/') {
       loadHomePage();
   } else if (path === 'bio.html') {
-      loadBioPage(); // NUEVO: Manejar página BIO
+      loadBioPage();
   } else if (path === 'contacto.html') {
       loadContactPage();
-  } else {
+  } else if (path === 'blog.html') { // Added for Spanish blog
+      loadBlogPage();
+  } else if (path === 'blog-en.html') { // Added for English blog
+      loadBlogEnPage();
+  } else { // Fallback for projects or unknown paths
       const projectId = path.replace('.html', '');
-      const project = currentProjects.find(p => p.href.includes(projectId));
+      // Ensure currentProjects is loaded based on currentLanguage before searching
+      const projectsToSearch = currentLanguage === 'es' ? projects : projects_en;
+      const project = projectsToSearch.find(p => p.href.includes(projectId));
       if (project) {
           loadProjectDetails(project);
       } else {
+          // If it's not a known page or project, redirect to home
           window.location.href = '/';
       }
   }
@@ -362,27 +452,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedLanguage = localStorage.getItem('preferredLanguage');
   if (savedLanguage) {
       currentLanguage = savedLanguage;
-      currentProjects = currentLanguage === 'es' ? projects : projects_en;
+  } else {
+      // Default language based on index.html lang attribute if available, otherwise default to Spanish.
+      // Assuming index.html has lang="es", we default to Spanish.
+      currentLanguage = 'es';
   }
+  currentProjects = currentLanguage === 'es' ? projects : projects_en;
   
   // Configurar el botón de idioma
   const toggleBtn = document.getElementById('languageToggle');
   if (toggleBtn) {
       toggleBtn.addEventListener('click', toggleLanguage);
       
-      // CORRECCIÓN: Establecer estado inicial del botón (idioma al que se puede cambiar)
+      // Set initial state of the button (language to switch TO)
       const textSpan = toggleBtn.querySelector('.lang-text');
-      if (currentLanguage === 'es') {
-          textSpan.textContent = 'EN'; // Si está en español, mostrar "EN" para cambiar a inglés
-      } else {
-          textSpan.textContent = 'ES'; // Si está en inglés, mostrar "ES" para cambiar a español
+      if (textSpan) {
+          textSpan.textContent = currentLanguage === 'es' ? 'EN' : 'ES';
       }
   }
   
   // Actualizar textos de navegación al inicializar
   updateNavigationText();
   
-  handleRoute();
+  handleRoute(); // Initial route handling
   
   // Configurar el reproductor si existe en la página actual
   if (document.querySelector('#player')) {
@@ -405,24 +497,24 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateNavigationText() {
   const bioLink = document.getElementById('bioLink');
   const contactLink = document.getElementById('contactLink');
-  const languageToggle = document.getElementById('languageToggle');
   
   if (bioLink && contactLink) {
       if (currentLanguage === 'es') {
-          bioLink.textContent = 'BIO';
+          bioLink.textContent = 'BIO'; // Keeping BIO consistent across languages
           contactLink.textContent = 'CONTACTO';
       } else {
-          bioLink.textContent = 'BIO';
+          bioLink.textContent = 'BIO'; // Keeping BIO consistent
           contactLink.textContent = 'CONTACT';
       }
   }
   
-  // CORRECCIÓN: Mostrar el idioma AL QUE se puede cambiar, no el actual
+  // Update the language toggle button text to reflect the language you can switch TO
+  const languageToggle = document.getElementById('languageToggle');
   if (languageToggle) {
       const textSpan = languageToggle.querySelector('.lang-text');
       if (textSpan) {
-          // Si el idioma actual es español, mostrar "EN" (para cambiar a inglés)
-          // Si el idioma actual es inglés, mostrar "ES" (para cambiar a español)
+          // If the current language is Spanish, show "EN" (to change to English).
+          // If the current language is English, show "ES" (to change to Spanish).
           textSpan.textContent = currentLanguage === 'es' ? 'EN' : 'ES';
       }
   }
