@@ -1,7 +1,6 @@
 import PDFDocument from 'pdfkit';
 import fs from 'fs';
 import path from 'path';
-import { projects } from '../static/data/projects.js';
 
 // Configuración de estilos
 const COLORS = {
@@ -20,7 +19,7 @@ const FONTS = {
   bold: 'Courier-Bold'
 };
 
-// Símbolos en lugar de emojis para compatibilidad
+// Símbolos (vacíos según tus modificaciones)
 const SYMBOLS = {
   video: '',
   audio: '',
@@ -32,8 +31,26 @@ const SYMBOLS = {
 // URL base para enlaces
 const BASE_URL = 'https://ocelotl.cc';
 
+// Textos traducibles
+const TEXTS = {
+  es: {
+    portfolio: 'PORTFOLIO',
+    generatedOn: 'Portafolio generado el',
+    seeCompleteProject: 'Ver proyecto completo:',
+    attachments: 'Archivos adjuntos:',
+    continues: '(continúa)'
+  },
+  en: {
+    portfolio: 'PORTFOLIO',
+    generatedOn: 'Portfolio generated on',
+    seeCompleteProject: 'See complete project:',
+    attachments: 'Attached files:',
+    continues: '(continues)'
+  }
+};
+
 // Función para crear la portada
-function createCoverPage(doc) {
+function createCoverPage(doc, language = 'es') {
   const pageWidth = doc.page.width;
   const pageHeight = doc.page.height;
   
@@ -60,12 +77,12 @@ function createCoverPage(doc) {
       align: 'left'
     });
   
-  // Subtítulo
+  // Subtítulo (traducible)
   doc
     .font(FONTS.body)
     .fontSize(14)
     .fillColor(COLORS.secondary)
-    .text('PORTFOLIO', 80, pageHeight / 2 - 15, {
+    .text(TEXTS[language].portfolio, 80, pageHeight / 2 - 15, {
       width: pageWidth - 160,
       align: 'left'
     });
@@ -92,17 +109,6 @@ function createCoverPage(doc) {
       width: 25,
       align: 'right'
     });
-  
-  // URL del portafolio en línea
-  /*
-  doc
-    .font(FONTS.body)
-    .fontSize(9)
-    .fillColor(COLORS.secondary)
-    .text('ocelotl.cc', pageWidth - 100, pageHeight - 40, {
-      align: 'right'
-    });
-    */
 }
 
 // Función mejorada para parsear HTML y manejar enlaces
@@ -258,7 +264,7 @@ function estimateProjectHeight(doc, project, contentWidth) {
 }
 
 // Función para renderizar archivos adjuntos (audio/video)
-function renderAttachments(doc, project, startX, startY, contentWidth) {
+function renderAttachments(doc, project, startX, startY, contentWidth, language = 'es') {
   let currentY = startY;
   const attachments = [];
   
@@ -292,18 +298,15 @@ function renderAttachments(doc, project, startX, startY, contentWidth) {
       .font(FONTS.body)
       .fontSize(9)
       .fillColor(COLORS.secondary)
-      .text('Archivos adjuntos:', startX, currentY, {
+      .text(TEXTS[language].attachments, startX, currentY, {
         width: contentWidth
       });
     
     currentY += 15;
     
     attachments.forEach(attachment => {
-      // const icon = attachment.type === 'audio' ? '🔊' : '🎬';
       const text = ` ${attachment.name}`;
       
-      // Crear enlace para el archivo
-      const textWidth = doc.widthOfString(text, { fontSize: 8 });
       doc
         .font(FONTS.body)
         .fontSize(8)
@@ -347,7 +350,7 @@ function renderSimpleText(doc, text, x, y, width) {
 }
 
 // Función para renderizar un proyecto
-function renderProject(doc, project, startY, isFirst = false) {
+function renderProject(doc, project, startY, isFirst = false, language = 'es') {
   const marginLeft = 80;
   const contentWidth = doc.page.width - marginLeft - 50;
   let currentY = startY;
@@ -454,7 +457,7 @@ function renderProject(doc, project, startY, isFirst = false) {
   
   // Renderizar archivos adjuntos (audio/video)
   if (project.details && (project.details.audioSrc || project.details.localVideo)) {
-    currentY = renderAttachments(doc, project, marginLeft, currentY, contentWidth);
+    currentY = renderAttachments(doc, project, marginLeft, currentY, contentWidth, language);
   }
   
   // Imagen principal (si existe)
@@ -517,25 +520,6 @@ function renderProject(doc, project, startY, isFirst = false) {
     }
   }
   
-  /*
-  // Enlace al proyecto completo
-  if (project.href) {
-    const projectUrl = `${BASE_URL}/${project.href}`;
-    
-    doc
-      .font(FONTS.body)
-      .fontSize(9)
-      .fillColor(COLORS.link)
-      .text(`🔗 Ver proyecto completo: ${projectUrl}`, marginLeft, currentY, {
-        width: contentWidth,
-        link: projectUrl,
-        underline: true
-      });
-    
-    currentY += 20;
-  }
-    */
-  
   // Espacio entre proyectos
   currentY += 20;
   
@@ -543,8 +527,50 @@ function renderProject(doc, project, startY, isFirst = false) {
 }
 
 // Función principal para generar el PDF
-async function generatePortfolio() {
-  console.log('🎨 Generando portafolio artístico con portada...');
+async function generatePortfolio(language = 'en') {
+  console.log(`🎨 Generando portafolio artístico (${language}) con portada...`);
+  
+  // Cargar proyectos según el idioma
+  // Cargar proyectos según el idioma
+  let projects;
+  try {
+    if (language === 'en') {
+      // Import dinámico para el archivo en inglés - usa 'projects_en'
+      const module = await import('../static/data/projects-en.js');
+      projects = module.projects_en;  // ¡Aquí está el cambio!
+    } else {
+      // Import dinámico para el archivo en español
+      const module = await import('../static/data/projects.js');
+      projects = module.projects;
+    }
+    
+    // Verificar si la exportación existe
+    if (!projects) {
+      throw new Error(`No se encontró la exportación en ${language === 'en' ? 'projects-en.js' : 'projects.js'}`);
+    }
+ } catch (error) {
+    console.error(`❌ Error al cargar proyectos en ${language}:`, error.message);
+    
+    // Intentar cargar el español como fallback
+    try {
+      const module = await import('../static/data/projects.js');
+      if (module && module.projects) {
+        projects = module.projects;
+        language = 'es';
+        console.log('✓ Usando proyectos en español como fallback');
+      } else {
+        throw new Error('No se encontró la exportación en español');
+      }
+    } catch (fallbackError) {
+      console.error('❌ Error crítico: No se pudo cargar ningún archivo de proyectos');
+      throw new Error('No se pudo cargar los datos de proyectos');
+    }
+  }
+
+  // Verificar que projects se cargó correctamente
+  if (!projects || !Array.isArray(projects)) {
+    throw new Error('Los proyectos no se cargaron correctamente o no son un array');
+  }
   
   // Crear documento PDF
   const doc = new PDFDocument({
@@ -554,19 +580,35 @@ async function generatePortfolio() {
   });
   
   // Configurar pipe de salida
-  const outputPath = path.join(process.cwd(), 'portfolio.pdf');
+  const outputFilename = language === 'en' ? 'portfolio-en.pdf' : 'portfolio.pdf';
+  const outputPath = path.join(process.cwd(), outputFilename);
   const stream = fs.createWriteStream(outputPath);
   doc.pipe(stream);
   
-  // Agregar metadatos
-  doc.info.Title = 'Portafolio Artístico - Emilio Ocelotl';
-  doc.info.Author = 'Emilio Ocelotl';
-  doc.info.Subject = 'Portafolio de proyectos artísticos audiovisuales';
-  doc.info.Keywords = 'arte, sonido, audiovisual, código, live coding';
+  // Agregar metadatos (traducibles)
+  const metadata = {
+    es: {
+      Title: 'Portafolio Artístico - Emilio Ocelotl',
+      Author: 'Emilio Ocelotl',
+      Subject: 'Portafolio de proyectos artísticos audiovisuales',
+      Keywords: 'arte, sonido, audiovisual, código, live coding'
+    },
+    en: {
+      Title: 'Artistic Portfolio - Emilio Ocelotl',
+      Author: 'Emilio Ocelotl',
+      Subject: 'Portfolio of audiovisual artistic projects',
+      Keywords: 'art, sound, audiovisual, code, live coding'
+    }
+  };
+  
+  doc.info.Title = metadata[language].Title;
+  doc.info.Author = metadata[language].Author;
+  doc.info.Subject = metadata[language].Subject;
+  doc.info.Keywords = metadata[language].Keywords;
   
   // 1. CREAR PORTADA
   console.log('📄 Creando portada...');
-  createCoverPage(doc);
+  createCoverPage(doc, language);
   
   // 2. AGREGAR NUEVA PÁGINA PARA LOS PROYECTOS
   doc.addPage();
@@ -596,28 +638,6 @@ async function generatePortfolio() {
   
   currentY = 80;
   
-  // Título de la sección de proyectos
-  /*
-  doc
-    .font(FONTS.title)
-    .fontSize(20)
-    .fillColor(COLORS.primary)
-    .text('PROYECTOS', 80, 40, {
-      width: contentWidth
-    });
-  */
-    /*
-  // Nota sobre enlaces
-  doc
-    .font(FONTS.body)
-    .fontSize(8)
-    .fillColor(COLORS.secondary)
-    .text('* Los títulos y enlaces en azul son interactivos en el PDF', 80, 60, {
-      width: contentWidth
-    });
-  currentY = 80;
-    */
-
   // Renderizar cada proyecto
   for (let i = 0; i < projectsToRender.length; i++) {
     const project = projectsToRender[i];
@@ -634,22 +654,11 @@ async function generatePortfolio() {
       currentY = 40;
       drawTimeline();
       
-      // Título de página continua
-      /*
-      doc
-        .font(FONTS.body)
-        .fontSize(10)
-        .fillColor(COLORS.secondary)
-        .text('(continúa)', 80, 40, {
-          width: contentWidth
-        });
-        */
-      
       currentY = 60;
     }
     
     // Renderizar proyecto
-    currentY = renderProject(doc, project, currentY, i === 0);
+    currentY = renderProject(doc, project, currentY, i === 0, language);
     
     // Asegurar que no nos pasamos del límite de la página
     if (currentY > doc.page.height - 80) {
@@ -658,42 +667,37 @@ async function generatePortfolio() {
       currentY = 40;
       drawTimeline();
       
-      /*
-      doc
-        .font(FONTS.body)
-        .fontSize(10)
-        .fillColor(COLORS.secondary)
-        .text('(continúa)', 80, 40, {
-          width: contentWidth
-        });
-      
       currentY = 60;
-      */
     }
   }
   
   // Pie de página final
   doc.addPage();
+  
+  // Formatear fecha según el idioma
+  let formattedDate;
+  if (language === 'en') {
+    formattedDate = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  } else {
+    formattedDate = new Date().toLocaleDateString('es-MX', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  }
+  
   doc
     .font(FONTS.body)
     .fontSize(10)
     .fillColor(COLORS.secondary)
-    .text(`Portafolio generado el ${new Date().toLocaleDateString('es-MX')}`, 80, doc.page.height - 60, {
+    .text(`${TEXTS[language].generatedOn} ${formattedDate}`, 80, doc.page.height - 60, {
       width: doc.page.width - 160,
       align: 'center'
     });
-  
-    /*
-  doc
-    .font(FONTS.body)
-    .fontSize(9)
-    .fillColor(COLORS.link)
-    .text('Visita el portafolio completo en: ocelotl.cc', 80, doc.page.height - 40, {
-      width: doc.page.width - 160,
-      align: 'center',
-      link: 'https://ocelotl.cc'
-    });
-    */
   
   // Finalizar documento
   doc.end();
@@ -703,6 +707,7 @@ async function generatePortfolio() {
       console.log(`✅ PDF generado exitosamente: ${outputPath}`);
       console.log(`📄 ${currentPage} páginas totales (incluye portada)`);
       console.log(`🔗 Enlaces interactivos habilitados`);
+      console.log(`🌐 Idioma: ${language === 'en' ? 'Inglés' : 'Español'}`);
       resolve(outputPath);
     });
     
@@ -713,9 +718,14 @@ async function generatePortfolio() {
   });
 }
 
-// Si se ejecuta directamente
+// Si se ejecuta directamente con parámetro de idioma
 if (import.meta.url === `file://${process.argv[1]}`) {
-  generatePortfolio().catch(console.error);
+  // Verificar si se especificó un idioma como argumento
+  const languageArg = process.argv.find(arg => arg === '--en' || arg === '--es');
+  const language = languageArg === '--es' ? 'es' : 'en';
+  
+  generatePortfolio(language).catch(console.error);
 }
 
+// Exportar por defecto la función con soporte para idioma
 export default generatePortfolio;
