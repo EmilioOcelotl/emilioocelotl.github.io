@@ -41,7 +41,7 @@ export const projects_en = [
       },
       {
         "href": "av-ccrma.html",
-        "imgSrc": "./img/ccrma.gif",
+        "imgSrc": "./img/residencia-r.jpg",
         "imgAlt": "stanford2024",
         "title": "Audio-Visual Sessions",
         "year": "2024",
