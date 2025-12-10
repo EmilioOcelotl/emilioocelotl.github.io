@@ -2,9 +2,9 @@
 export const bioContent = {
     es: {
       bioTitle: "Bio",
-      bioText1: "Artista e investigador con base en la Ciudad de México. Realizó estudios de Sociología y Tecnología Musical en la Universidad Nacional Autónoma de México. Ha participado en residencias artísticas en CCRMA (Stanford), Hangar (Barcelona), y presentado su trabajo en festivales internacionales como ISEA, Algorave UK y el Festival Internacional Cervantino.",
-      bioText2: "Su trabajo explora los umbrales entre sonido, imagen y código, donde los sistemas computacionales son extensiones de la percepción. A través de lenguajes algorítmicos y dispositivos electrónicos, construye entornos donde lo invisible—flujos y patrones—adquiere forma. Esta práctica es un proceso cíclico: un diálogo constante entre creación y reflexión",
-      bioText3: "Concibe el arte como un espacio relacional, donde la tecnología no es solo herramienta sino materia de cuestionamiento. Cada proyecto es un ejercicio de traducción: algoritmos que revelan su poética oculta. En ese cruce de capas surge un territorio donde lo experimental se define por el desborde de los formatos.",
+      bioText1: "Inicio en el cruce entre sociología y música. Mis primeras investigaciones definieron piezas a partir de materiales grabados en vivo, grabaciones de campo y granulaciones hechas con la computadora. Ahí apareció la pregunta que sigue guiando mi práctica: explorar las posibilidades del sonido atravesado por lo musical, el arte sonoro y la observación.",
+      bioText2: "En la búsqueda de respuestas me encontré con prácticas como el Live Coding, que me permitió entender el sonido como un espacio de interacción y performance. La colaboración con artistas y comunidades se volvió un eje central y la experiencia compartida empezó a moldear mi proceso creativo.",
+      bioText3: "El sonido define mi práctica actual, donde la computadora funciona como interlocutor, el sonido como materia y la dificultad para comunicar estos procesos como una motivación para crear. Cada proyecto es un sistema de experimentación donde percepción, interacción y reflexión se reúnen y permiten que lo invisible tome forma.",
       trajectory: "Trayectoria",
       awards: "Premios, Distinciones y Residencias",
       awardsList: [
@@ -56,9 +56,9 @@ export const bioContent = {
     },
     en: {
       bioTitle: "Bio",
-      bioText1: "Artist and researcher based in Mexico City. He studied Sociology and Music Technology at the National Autonomous University of Mexico. He has participated in artistic residencies at CCRMA (Stanford), Hangar (Barcelona), and presented his work at international festivals such as ISEA, Algorave UK, and the International Cervantino Festival.",
-      bioText2: "His work explores the thresholds between sound, image, and code, where computational systems are extensions of perception. Through algorithmic languages and electronic devices, he constructs environments where the invisible—flows and patterns—takes shape. This practice is a cyclical process: a constant dialogue between creation and reflection.",
-      bioText3: "He conceives art as a relational space, where technology is not just a tool but a subject of questioning. Each project is an exercise in translation: algorithms that reveal their hidden poetics. At this intersection of layers emerges a territory where the experimental is defined by the overflow of formats.",
+      bioText1: "I begin at the intersection of sociology and music. My early research shaped works built from live recordings, field recordings and computer-based granulation. That was when the question that still guides my practice emerged: exploring the possibilities of sound as it moves through music, sound art and observation.",
+      bioText2: "In searching for answers I encountered practices like Live Coding (on-the-fly programming), which allowed me to understand sound as a space of interaction and performance. Collaboration with artists and communities became a central element, and shared experience began to shape my creative process.",
+      bioText3: "Sound defines my current practice, where the computer acts as an interlocutor, sound becomes the material, and the difficulty of communicating these processes becomes a motivation to create. Each project functions as an experimental system where perception, interaction and reflection meet and allow the invisible to take form.",
       trajectory: "Trajectory",
       awards: "Awards, Distinctions and Residencies",
       awardsList: [
