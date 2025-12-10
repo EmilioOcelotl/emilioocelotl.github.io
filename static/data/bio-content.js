@@ -1,7 +1,7 @@
 // static/data/bio-content.js
 export const bioContent = {
     es: {
-      bioTitle: "Bio",
+      bioTitle: "Emilio Ocelotl",
       bioText1: "Inicio en el cruce entre sociología y música. Mis primeras investigaciones definieron piezas a partir de materiales grabados en vivo, grabaciones de campo y granulaciones hechas con la computadora. Ahí apareció la pregunta que sigue guiando mi práctica: explorar las posibilidades del sonido atravesado por lo musical, el arte sonoro y la observación.",
       bioText2: "En la búsqueda de respuestas me encontré con prácticas como el Live Coding, que me permitió entender el sonido como un espacio de interacción y performance. La colaboración con artistas y comunidades se volvió un eje central y la experiencia compartida empezó a moldear mi proceso creativo.",
       bioText3: "El sonido define mi práctica actual, donde la computadora funciona como interlocutor, el sonido como materia y la dificultad para comunicar estos procesos como una motivación para crear. Cada proyecto es un sistema de experimentación donde percepción, interacción y reflexión se reúnen y permiten que lo invisible tome forma.",
@@ -47,15 +47,15 @@ export const bioContent = {
       publications: "Publicaciones",
       publicationsList: [
         "Panorama. Escritura de espacios libres e inmersivos para el performance audiovisual en <a href='https://www.repositorio.fam.unam.mx/handle/123456789/139'>Algoritmos Arruinados. Perspectivas situadas de tecnología musical.</a> Escrito por E. Ocelotl, D. Sotomayor y M. Teixido. Publicado por UNAM. 2022",
-        "<a href='https://zenodo.org/record/3715410#.X_4RjXWYVhE'>Aproximaciones al término Electroacústica en México.</a> Presented at the Electroacoustic Music Studies Network (EMS), Franco, A., Dávila, R., & Ocelotl, Emilio. Mexico City: Zenodo. http://doi.org/10.5281/zenodo.3715410",
+        "<a href='https://zenodo.org/record/3715410#.X_4RjXWYVhE'>Aproximaciones al término Electroacústica en México.</a> Presented at the Electroacoustic Music Studies Network (EMS), Franco, A., Dávila, R., & Ocelotl, Emilio. Mexico City.",
         "<a href='https://zenodo.org/records/4091446'>Bellacode: localized textual interfaces for live coding music.</a> CO-AUTOR. Madrid, España. Enero de 2019. Aceptado y publicado en las memorias de la Conferencia Internacional de Live Coding. Escrito por L. N. Del Angel, D. Ogborn, E. Ocelotl y M. Teixido",
-        "<a href='https://dj.dancecult.net/index.php/dancecult/article/view/1066'>Saborítmico: A report from the dance floor in Mexico.</a> CO-AUTOR. Online. Noviembre 2018. Aceptado y publicado en Dancecult: Journal of Electronic Dance Music Culture. DOI del artículo: <a href='http://dx.doi.org/10.12801/1947-5403.2018.10.01.11'>http://dx.doi.org/10.12801/1947-5403.2018.10.01.11</a>. Escrito por E. Ocelotl, M. Teixido y L. N. Del Angel. febrero 2021",
+        "<a href='https://dj.dancecult.net/index.php/dancecult/article/view/1066'>Saborítmico: A report from the dance floor in Mexico.</a> CO-AUTOR. Online. Noviembre 2018. Aceptado y publicado en Dancecult: Journal of Electronic Dance Music Culture. DOI del artículo: <a href='http://dx.doi.org/10.12801/1947-5403.2018.10.01.11'>doi</a>. Escrito por E. Ocelotl, M. Teixido y L. N. Del Angel. febrero 2021",
         "<a href='https://drive.google.com/file/d/1haihAd45sRI_Ef_XZYsDz1GKORvjNANx/view'>Pull push. Flujos de trabajo distribuidos y no lineales en el performance, la producción y la investigación de sistemas audiovisuales interactivos.</a> Manizales, Colombia. AUTOR. Mayo 2018. Aceptado y publicado en las memorias del Festival Internacional de la Imagen."
       ],
       backButton: "VOLVER"
     },
     en: {
-      bioTitle: "Bio",
+      bioTitle: "Emilio Ocelotl",
       bioText1: "I begin at the intersection of sociology and music. My early research shaped works built from live recordings, field recordings and computer-based granulation. That was when the question that still guides my practice emerged: exploring the possibilities of sound as it moves through music, sound art and observation.",
       bioText2: "In searching for answers I encountered practices like Live Coding (on-the-fly programming), which allowed me to understand sound as a space of interaction and performance. Collaboration with artists and communities became a central element, and shared experience began to shape my creative process.",
       bioText3: "Sound defines my current practice, where the computer acts as an interlocutor, sound becomes the material, and the difficulty of communicating these processes becomes a motivation to create. Each project functions as an experimental system where perception, interaction and reflection meet and allow the invisible to take form.",
@@ -101,9 +101,9 @@ export const bioContent = {
       publications: "Publications",
       publicationsList: [
         "Panorama. Writing of free and immersive spaces for audiovisual performance in <a href='https://www.repositorio.fam.unam.mx/handle/123456789/139'>Algoritmos Arruinados. Perspectivas situadas de tecnología musical.</a> Written by E. Ocelotl, D. Sotomayor and M. Teixido. Published by UNAM. 2022",
-        "<a href='https://zenodo.org/record/3715410#.X_4RjXWYVhE'>Aproximaciones al término Electroacústica en México.</a> Presented at the Electroacoustic Music Studies Network (EMS), Franco, A., Dávila, R., & Ocelotl, Emilio. Mexico City: Zenodo. http://doi.org/10.5281/zenodo.3715410",
+        "<a href='https://zenodo.org/record/3715410#.X_4RjXWYVhE'>Aproximaciones al término Electroacústica en México.</a> Presented at the Electroacoustic Music Studies Network (EMS), Franco, A., Dávila, R., & Ocelotl, Emilio. Mexico City.",
         "<a href='https://zenodo.org/records/4091446'>Bellacode: localized textual interfaces for live coding music.</a> CO-AUTHOR. Madrid, Spain. January 2019. Accepted and published in the proceedings of the International Live Coding Conference. Written by L. N. Del Angel, D. Ogborn, E. Ocelotl and M. Teixido",
-        "<a href='https://dj.dancecult.net/index.php/dancecult/article/view/1066'>Saborítmico: A report from the dance floor in Mexico.</a> CO-AUTHOR. Online. November 2018. Accepted and published in Dancecult: Journal of Electronic Dance Music Culture. Article DOI: <a href='http://dx.doi.org/10.12801/1947-5403.2018.10.01.11'>http://dx.doi.org/10.12801/1947-5403.2018.10.01.11</a>. Written by E. Ocelotl, M. Teixido and L. N. Del Angel. February 2021",
+        "<a href='https://dj.dancecult.net/index.php/dancecult/article/view/1066'>Saborítmico: A report from the dance floor in Mexico.</a> CO-AUTHOR. Online. November 2018. Accepted and published in Dancecult: Journal of Electronic Dance Music Culture. Article DOI: <a href='http://dx.doi.org/10.12801/1947-5403.2018.10.01.11'>doi</a>. Written by E. Ocelotl, M. Teixido and L. N. Del Angel. February 2021",
         "<a href='https://drive.google.com/file/d/1haihAd45sRI_Ef_XZYsDz1GKORvjNANx/view'>Pull push. Distributed and non-linear workflows in the performance, production and research of interactive audiovisual systems.</a> Manizales, Colombia. AUTHOR. May 2018. Accepted and published in the proceedings of the International Image Festival."
       ],
       backButton: "BACK"
