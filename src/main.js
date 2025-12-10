@@ -247,6 +247,8 @@ function toggleLanguage() {
         textSpan.textContent = currentLanguage === 'es' ? 'EN' : 'ES';
     }
 
+    updateNavigationText(); 
+
     // --- Remove direct URL navigation for blog pages --- 
     // The handleRoute function will now manage content based on the updated currentLanguage
 
