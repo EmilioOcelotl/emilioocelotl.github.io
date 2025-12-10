@@ -9,7 +9,8 @@ const COLORS = {
   secondary: '#666666',
   accent: '#2a5c85',
   lightGray: '#f5f5f5',
-  timeline: '#cccccc'
+  timeline: '#cccccc',
+  link: '#2a5c85'
 };
 
 const FONTS = {
@@ -21,11 +22,15 @@ const FONTS = {
 
 // Símbolos en lugar de emojis para compatibilidad
 const SYMBOLS = {
-  video: '[]',
-  audio: '[]',
-  web: '[]',
-  '3d': '[]'
+  video: '',
+  audio: '',
+  web: '',
+  '3d': '',
+  link: ''
 };
+
+// URL base para enlaces
+const BASE_URL = 'https://ocelotl.cc';
 
 // Función para crear la portada
 function createCoverPage(doc) {
@@ -88,20 +93,39 @@ function createCoverPage(doc) {
       align: 'right'
     });
   
-  // Pie de página en la portada
-  const currentDate = new Date().toLocaleDateString('es-MX', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-  
+  // URL del portafolio en línea
+  /*
+  doc
+    .font(FONTS.body)
+    .fontSize(9)
+    .fillColor(COLORS.secondary)
+    .text('ocelotl.cc', pageWidth - 100, pageHeight - 40, {
+      align: 'right'
+    });
+    */
 }
 
-// Función para parsear HTML simple
+// Función mejorada para parsear HTML y manejar enlaces
 function parseSimpleHTML(text) {
-  if (!text) return '';
+  if (!text) return { text: '', links: [] };
   
-  return text
+  // Primero, extraer todos los enlaces para manejarlos por separado
+  const linkRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*>(.*?)<\/a>/g;
+  const links = [];
+  let match;
+  let processedText = text;
+  
+  // Encontrar y reemplazar enlaces
+  while ((match = linkRegex.exec(text)) !== null) {
+    links.push({
+      original: match[0],
+      url: match[2],
+      text: match[3]
+    });
+  }
+  
+  // Reemplazar etiquetas HTML básicas
+  processedText = processedText
     .replace(/<p>/g, '\n')
     .replace(/<\/p>/g, '\n')
     .replace(/<br\/?>/g, '\n')
@@ -111,9 +135,18 @@ function parseSimpleHTML(text) {
     .replace(/<\/h3>/g, '\n')
     .replace(/<li>/g, '• ')
     .replace(/<\/li>/g, '\n')
-    .replace(/<a href='([^']+)'>([^<]+)<\/a>/g, '$2 ($1)')
-    .replace(/<a href="([^"]+)">([^<]+)<\/a>/g, '$2 ($1)')
     .trim();
+  
+  // Reemplazar enlaces con marcadores
+  links.forEach((link, i) => {
+    const marker = `[LINK${i}]`;
+    processedText = processedText.replace(link.original, `${link.text} ${marker}`);
+  });
+  
+  return {
+    text: processedText,
+    links: links
+  };
 }
 
 // Función para obtener símbolos basados en el tipo de contenido
@@ -127,6 +160,9 @@ function getContentSymbols(project) {
   if (project.description.toLowerCase().includes('web') || 
       project.description.toLowerCase().includes('navegador')) symbols.push(SYMBOLS.web);
   
+  // Siempre agregar símbolo de enlace si tiene href
+  if (project.href) symbols.push(SYMBOLS.link);
+  
   return symbols.length > 0 ? ` ${symbols.join(' ')}` : '';
 }
 
@@ -137,6 +173,36 @@ function imageExists(imagePath) {
   } catch (error) {
     return false;
   }
+}
+
+// Función para verificar si un archivo existe en el servidor
+function fileExistsOnServer(filePath) {
+  // Lista de extensiones de archivo que queremos verificar
+  const validExtensions = ['.mp3', '.wav', '.ogg', '.mp4', '.mov', '.avi', '.webm'];
+  const extension = path.extname(filePath).toLowerCase();
+  
+  return validExtensions.includes(extension);
+}
+
+// Función para generar URL completa
+function getFullUrl(relativePath) {
+  if (!relativePath) return '';
+  
+  // Si ya es una URL completa, devolverla tal cual
+  if (relativePath.startsWith('http://') || relativePath.startsWith('https://')) {
+    return relativePath;
+  }
+  
+  // Limpiar la ruta
+  const cleanPath = relativePath.replace(/^\.\//, '');
+  
+  // Si es un archivo de audio/video, usar la ruta directa
+  if (fileExistsOnServer(cleanPath)) {
+    return `${BASE_URL}/${cleanPath}`;
+  }
+  
+  // Para HTML y otros, usar la ruta base
+  return `${BASE_URL}/${cleanPath}`;
 }
 
 // Función para calcular la altura aproximada que ocupará un proyecto
@@ -154,14 +220,24 @@ function estimateProjectHeight(doc, project, contentWidth) {
   
   // Altura de la descripción completa
   if (project.details && project.details.fullDescription) {
-    const parsedDescription = parseSimpleHTML(project.details.fullDescription);
-    height += doc.heightOfString(parsedDescription, {
+    const parsedResult = parseSimpleHTML(project.details.fullDescription);
+    const textHeight = doc.heightOfString(parsedResult.text, {
       width: contentWidth,
       fontSize: 10,
       lineGap: 3
-    }) + 15;
+    });
+    height += textHeight + 20;
   } else {
     height += 10;
+  }
+  
+  // Altura de archivos adjuntos (audio/video)
+  if (project.details && project.details.audioSrc && project.details.audioSrc.length > 0) {
+    height += (project.details.audioSrc.length * 15) + 10;
+  }
+  
+  if (project.details && project.details.localVideo) {
+    height += 20;
   }
   
   // Altura de la imagen (si existe) - AUMENTADA
@@ -172,10 +248,102 @@ function estimateProjectHeight(doc, project, contentWidth) {
     }
   }
   
+  // Espacio para enlace al proyecto
+  height += 20;
+  
   // Espacio final entre proyectos
   height += 30;
   
   return height;
+}
+
+// Función para renderizar archivos adjuntos (audio/video)
+function renderAttachments(doc, project, startX, startY, contentWidth) {
+  let currentY = startY;
+  const attachments = [];
+  
+  if (project.details) {
+    // Archivos de audio
+    if (project.details.audioSrc && project.details.audioSrc.length > 0) {
+      project.details.audioSrc.forEach(audioFile => {
+        const fullUrl = getFullUrl(audioFile);
+        attachments.push({
+          type: 'audio',
+          name: path.basename(audioFile),
+          url: fullUrl
+        });
+      });
+    }
+    
+    // Archivos de video local
+    if (project.details.localVideo) {
+      const fullUrl = getFullUrl(project.details.localVideo);
+      attachments.push({
+        type: 'video',
+        name: path.basename(project.details.localVideo),
+        url: fullUrl
+      });
+    }
+  }
+  
+  // Renderizar los enlaces a archivos
+  if (attachments.length > 0) {
+    doc
+      .font(FONTS.body)
+      .fontSize(9)
+      .fillColor(COLORS.secondary)
+      .text('Archivos adjuntos:', startX, currentY, {
+        width: contentWidth
+      });
+    
+    currentY += 15;
+    
+    attachments.forEach(attachment => {
+      // const icon = attachment.type === 'audio' ? '🔊' : '🎬';
+      const text = ` ${attachment.name}`;
+      
+      // Crear enlace para el archivo
+      const textWidth = doc.widthOfString(text, { fontSize: 8 });
+      doc
+        .font(FONTS.body)
+        .fontSize(8)
+        .fillColor(COLORS.link)
+        .text(text, startX, currentY, {
+          width: contentWidth,
+          link: attachment.url,
+          underline: true
+        });
+      
+      currentY += 12;
+    });
+  }
+  
+  return currentY;
+}
+
+// Versión simplificada: renderizar texto sin manejar enlaces complejos inline
+function renderSimpleText(doc, text, x, y, width) {
+  if (!text) return y;
+  
+  // Primero, eliminar todos los marcadores de enlace y procesar texto básico
+  const cleanText = text.replace(/\[LINK\d+\]/g, '');
+  
+  doc
+    .font(FONTS.body)
+    .fontSize(10)
+    .fillColor(COLORS.primary)
+    .text(cleanText, x, y, {
+      width: width,
+      lineGap: 3
+    });
+  
+  // Calcular la nueva altura
+  const textHeight = doc.heightOfString(cleanText, {
+    width: width,
+    lineGap: 3
+  });
+  
+  return y + textHeight;
 }
 
 // Función para renderizar un proyecto
@@ -202,7 +370,7 @@ function renderProject(doc, project, startY, isFirst = false) {
     .circle(60, currentY, 4)
     .fill();
   
-  // Año con símbolos (sin emojis)
+  // Año con símbolos
   const yearWithSymbols = `${project.year}${getContentSymbols(project)}`;
   
   doc
@@ -214,14 +382,28 @@ function renderProject(doc, project, startY, isFirst = false) {
       align: 'right'
     });
   
-  // Título del proyecto
-  doc
-    .font(FONTS.title)
-    .fontSize(16)
-    .fillColor(COLORS.primary)
-    .text(project.title, marginLeft, currentY, {
-      width: contentWidth
-    });
+  // Título del proyecto como enlace
+  const projectUrl = project.href ? `${BASE_URL}/${project.href}` : null;
+  
+  if (projectUrl) {
+    doc
+      .font(FONTS.title)
+      .fontSize(16)
+      .fillColor(COLORS.link)
+      .text(project.title, marginLeft, currentY, {
+        width: contentWidth,
+        link: projectUrl,
+        underline: true
+      });
+  } else {
+    doc
+      .font(FONTS.title)
+      .fontSize(16)
+      .fillColor(COLORS.primary)
+      .text(project.title, marginLeft, currentY, {
+        width: contentWidth
+      });
+  }
   
   currentY += 25;
   
@@ -236,37 +418,52 @@ function renderProject(doc, project, startY, isFirst = false) {
   
   currentY += 20;
   
-  // Descripción completa (parseada)
+  // Descripción completa (versión simplificada)
   if (project.details && project.details.fullDescription) {
-    const parsedDescription = parseSimpleHTML(project.details.fullDescription);
+    const parsedResult = parseSimpleHTML(project.details.fullDescription);
     
-    doc
-      .font(FONTS.body)
-      .fontSize(10)
-      .fillColor(COLORS.primary)
-      .text(parsedDescription, marginLeft, currentY, {
-        width: contentWidth,
-        lineGap: 3
+    // Primero renderizar el texto sin enlaces
+    currentY = renderSimpleText(doc, parsedResult.text, marginLeft, currentY, contentWidth);
+    
+    // Luego agregar los enlaces como una lista al final de la descripción
+    if (parsedResult.links && parsedResult.links.length > 0) {
+      currentY += 10;
+      
+      parsedResult.links.forEach((link, index) => {
+        const fullUrl = getFullUrl(link.url);
+        const linkText = `${index + 1}. ${link.text}: ${fullUrl}`;
+        
+        doc
+          .font(FONTS.body)
+          .fontSize(9)
+          .fillColor(COLORS.link)
+          .text(linkText, marginLeft, currentY, {
+            width: contentWidth,
+            link: fullUrl,
+            underline: true
+          });
+        
+        currentY += 12;
       });
+    }
     
-    // Calcular altura del texto
-    const textHeight = doc.heightOfString(parsedDescription, {
-      width: contentWidth,
-      lineGap: 3
-    });
-    
-    currentY += textHeight + 15;
+    currentY += 15;
   } else {
     currentY += 10;
   }
   
-  // Imagen principal (si existe) - AHORA MÁS GRANDE
+  // Renderizar archivos adjuntos (audio/video)
+  if (project.details && (project.details.audioSrc || project.details.localVideo)) {
+    currentY = renderAttachments(doc, project, marginLeft, currentY, contentWidth);
+  }
+  
+  // Imagen principal (si existe)
   if (project.imgSrc) {
     const imagePath = path.join(process.cwd(), 'static', project.imgSrc.replace('./', ''));
     
     if (imageExists(imagePath)) {
       try {
-        // Calcular dimensiones - AHORA MÁS GRANDES
+        // Calcular dimensiones
         const maxWidth = contentWidth;
         const maxHeight = 250;
         
@@ -298,7 +495,7 @@ function renderProject(doc, project, startY, isFirst = false) {
           .lineWidth(0.5)
           .stroke();
         
-        // Pie de foto opcional (usando imgAlt)
+        // Pie de foto opcional
         if (project.imgAlt) {
           currentY += finalHeight + 5;
           doc
@@ -320,8 +517,27 @@ function renderProject(doc, project, startY, isFirst = false) {
     }
   }
   
+  /*
+  // Enlace al proyecto completo
+  if (project.href) {
+    const projectUrl = `${BASE_URL}/${project.href}`;
+    
+    doc
+      .font(FONTS.body)
+      .fontSize(9)
+      .fillColor(COLORS.link)
+      .text(`🔗 Ver proyecto completo: ${projectUrl}`, marginLeft, currentY, {
+        width: contentWidth,
+        link: projectUrl,
+        underline: true
+      });
+    
+    currentY += 20;
+  }
+    */
+  
   // Espacio entre proyectos
-  currentY += 40;
+  currentY += 20;
   
   return currentY;
 }
@@ -334,7 +550,7 @@ async function generatePortfolio() {
   const doc = new PDFDocument({
     size: 'A4',
     margin: 40,
-    autoFirstPage: true // Cambiado a true para que cree la primera página automáticamente
+    autoFirstPage: true
   });
   
   // Configurar pipe de salida
@@ -356,10 +572,10 @@ async function generatePortfolio() {
   doc.addPage();
   console.log('📄 Página de proyectos...');
   
-  // Tomar solo los primeros 9 proyectos
+  // Tomar solo los primeros 12 proyectos
   const projectsToRender = projects.slice(0, 12);
   
-  let currentPage = 2; // Ya tenemos página 1 (portada) y página 2 (proyectos)
+  let currentPage = 2;
   let currentY = 60;
   const contentWidth = doc.page.width - 80 - 40;
   
@@ -378,8 +594,30 @@ async function generatePortfolio() {
   
   drawTimeline();
   
-  currentY = 80; // Empezar después del título
+  currentY = 80;
   
+  // Título de la sección de proyectos
+  /*
+  doc
+    .font(FONTS.title)
+    .fontSize(20)
+    .fillColor(COLORS.primary)
+    .text('PROYECTOS', 80, 40, {
+      width: contentWidth
+    });
+  */
+    /*
+  // Nota sobre enlaces
+  doc
+    .font(FONTS.body)
+    .fontSize(8)
+    .fillColor(COLORS.secondary)
+    .text('* Los títulos y enlaces en azul son interactivos en el PDF', 80, 60, {
+      width: contentWidth
+    });
+  currentY = 80;
+    */
+
   // Renderizar cada proyecto
   for (let i = 0; i < projectsToRender.length; i++) {
     const project = projectsToRender[i];
@@ -393,8 +631,21 @@ async function generatePortfolio() {
       console.log(`→ Nueva página necesaria para: ${project.title}`);
       doc.addPage();
       currentPage++;
-      currentY = 60;
+      currentY = 40;
       drawTimeline();
+      
+      // Título de página continua
+      /*
+      doc
+        .font(FONTS.body)
+        .fontSize(10)
+        .fillColor(COLORS.secondary)
+        .text('(continúa)', 80, 40, {
+          width: contentWidth
+        });
+        */
+      
+      currentY = 60;
     }
     
     // Renderizar proyecto
@@ -404,10 +655,45 @@ async function generatePortfolio() {
     if (currentY > doc.page.height - 80) {
       doc.addPage();
       currentPage++;
-      currentY = 60;
+      currentY = 40;
       drawTimeline();
+      
+      /*
+      doc
+        .font(FONTS.body)
+        .fontSize(10)
+        .fillColor(COLORS.secondary)
+        .text('(continúa)', 80, 40, {
+          width: contentWidth
+        });
+      
+      currentY = 60;
+      */
     }
   }
+  
+  // Pie de página final
+  doc.addPage();
+  doc
+    .font(FONTS.body)
+    .fontSize(10)
+    .fillColor(COLORS.secondary)
+    .text(`Portafolio generado el ${new Date().toLocaleDateString('es-MX')}`, 80, doc.page.height - 60, {
+      width: doc.page.width - 160,
+      align: 'center'
+    });
+  
+    /*
+  doc
+    .font(FONTS.body)
+    .fontSize(9)
+    .fillColor(COLORS.link)
+    .text('Visita el portafolio completo en: ocelotl.cc', 80, doc.page.height - 40, {
+      width: doc.page.width - 160,
+      align: 'center',
+      link: 'https://ocelotl.cc'
+    });
+    */
   
   // Finalizar documento
   doc.end();
@@ -416,7 +702,7 @@ async function generatePortfolio() {
     stream.on('finish', () => {
       console.log(`✅ PDF generado exitosamente: ${outputPath}`);
       console.log(`📄 ${currentPage} páginas totales (incluye portada)`);
-      console.log(`🖼️  Imágenes en tamaño grande (250px de altura máxima)`);
+      console.log(`🔗 Enlaces interactivos habilitados`);
       resolve(outputPath);
     });
     
