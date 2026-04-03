@@ -449,25 +449,32 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateNavigationText() {
     const bioLink = document.getElementById('bioLink');
     const contactLink = document.getElementById('contactLink');
+    const path = window.location.pathname.split('/').pop();
 
     if (bioLink && contactLink) {
         if (currentLanguage === 'es') {
-            bioLink.textContent = 'BIO'; // Keeping BIO consistent across languages
+            bioLink.textContent = 'BIO';
             contactLink.textContent = 'CONTACTO';
         } else {
-            bioLink.textContent = 'BIO'; // Keeping BIO consistent
+            bioLink.textContent = 'BIO';
             contactLink.textContent = 'CONTACT';
         }
+
+        // aria-current: marca el link activo para lectores de pantalla
+        bioLink.setAttribute('aria-current', path === 'bio.html' ? 'page' : 'false');
+        contactLink.setAttribute('aria-current', path === 'contacto.html' ? 'page' : 'false');
     }
 
-    // Update the language toggle button text to reflect the language you can switch TO
     const languageToggle = document.getElementById('languageToggle');
     if (languageToggle) {
         const textSpan = languageToggle.querySelector('.lang-text');
         if (textSpan) {
-            // If the current language is Spanish, show "EN" (to change to English).
-            // If the current language is English, show "ES" (to change to Spanish).
             textSpan.textContent = currentLanguage === 'es' ? 'EN' : 'ES';
         }
+        // aria-label dinámico según el idioma al que se va a cambiar
+        languageToggle.setAttribute(
+            'aria-label',
+            currentLanguage === 'es' ? 'Switch to English' : 'Cambiar a español'
+        );
     }
 }
