@@ -9,6 +9,15 @@ import Plyr from 'plyr';
 let currentLanguage = 'en'; // Default to English if no preference saved
 let currentProjects = projects_en; // Default to English projects
 
+let carouselInterval = null;
+
+// Si la imagen usa la variante -r (responsive), construye un srcset con ambas versiones
+function buildSrcset(src) {
+    if (!src.includes('-r.')) return '';
+    const full = src.replace('-r.', '.');
+    return `srcset="${full} 1200w, ${src} 600w"`;
+}
+
 // Expose player so it can be used from the console
 const player = new Plyr('#player', {
     controls: [
@@ -26,7 +35,6 @@ window.player = player;
 
 // Función para cargar la página de contacto
 function loadContactPage() {
-    console.log('Cargando página de contacto...');
     const mainContent = document.querySelector('main');
     if (!mainContent) return;
 
@@ -75,7 +83,6 @@ function loadContactPage() {
 
 // Función para cargar la página BIO
 function loadBioPage() {
-    console.log('Cargando página BIO...');
     const mainContent = document.querySelector('main');
     if (!mainContent) return;
 
@@ -147,36 +154,32 @@ function loadBioPage() {
     window.scrollTo(0, 0);
 }
 
-// NUEVO: Función para cargar la página BLOG (ES)
+// Función para cargar la página BLOG
 function loadBlogPage() {
-    console.log('Cargando página BLOG (ES)...');
     const mainContent = document.querySelector('main');
     if (!mainContent) return;
 
     const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
-    const sortedBlogPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const posts = currentLanguage === 'es' ? blogPosts : blogPosts_en;
+    const sortedBlogPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
 
     mainContent.innerHTML = `
-      <div class="project-details"> <!-- Wrap in project-details for centering -->
+      <div class="project-details">
           <section id="blog-content">
               <h2>Blog</h2>
-           </section>
-          <section id="blog-content">
-
               ${sortedBlogPosts.map(post => `
                   <article class="blog-post">
-                      <h2>${post.title}</h2>
+                      <h3>${post.title}</h3>
                       <p class="blog-date">${post.date}</p>
                       <p>${post.content}</p>
                   </article>
               `).join('')}
           </section>
-          <div class="button-wrapper"> <!-- Wrapper for button styling -->
+          <div class="button-wrapper">
               <button id="backButton" class="back-button">${backButtonText}</button>
           </div>
       </div>
   `;
-    // Add event listener to the back button
     setTimeout(() => {
         const backButton = document.getElementById('backButton');
         if (backButton) {
@@ -184,48 +187,7 @@ function loadBlogPage() {
         }
     }, 0);
 
-    // Reset scroll
     window.scrollTo(0, 0);
-    updateButtonText(); // Update button text based on current language
-}
-
-// NUEVO: Función para cargar la página BLOG (EN)
-function loadBlogEnPage() {
-    console.log('Cargando página BLOG (EN)...');
-    const mainContent = document.querySelector('main');
-    if (!mainContent) return;
-
-    const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
-    const sortedBlogPosts = [...blogPosts_en].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    mainContent.innerHTML = `
-      <div class="project-details"> <!-- Wrap in project-details for centering -->
-          <section id="blog-content">
-              <h1>Blog</h1>
-              ${sortedBlogPosts.map(post => `
-                  <article class="blog-post">
-                      <h2>${post.title}</h2>
-                      <p class="blog-date">${post.date}</p>
-                      <p>${post.content}</p>
-                  </article>
-              `).join('')}
-          </section>
-          <div class="button-wrapper"> <!-- Wrapper for button styling -->
-              <button id="backButton" class="back-button">${backButtonText}</button>
-          </div>
-      </div>
-  `;
-    // Add event listener to the back button
-    setTimeout(() => {
-        const backButton = document.getElementById('backButton');
-        if (backButton) {
-            backButton.addEventListener('click', handleBackButton);
-        }
-    }, 0);
-
-    // Reset scroll
-    window.scrollTo(0, 0);
-    updateButtonText(); // Update button text based on current language
 }
 
 
@@ -234,7 +196,6 @@ function toggleLanguage() {
     const currentPath = window.location.pathname.split('/').pop();
     const newLanguage = currentLanguage === 'es' ? 'en' : 'es';
 
-    console.log(`Toggling language from ${currentLanguage} to ${newLanguage}`);
 
     // Update language and projects for the next render
     currentLanguage = newLanguage;
@@ -261,7 +222,6 @@ function toggleLanguage() {
 
 // Función para cargar la página principal
 function loadHomePage() {
-    console.log('Cargando página principal...');
     const mainContent = document.querySelector('main');
     if (!mainContent) return;
 
@@ -281,7 +241,7 @@ function loadHomePage() {
         projectElement.classList.add('project');
         projectElement.innerHTML = `
             <a href="${project.href}" data-href="${project.href}" class="project-link">
-                <img src="${project.imgSrc}" alt="${project.imgAlt}">
+                <img src="${project.imgSrc}" ${buildSrcset(project.imgSrc)} sizes="(max-width: 768px) 100vw, 33vw" alt="${project.imgAlt}">
                 <h3>${project.title}<br>${project.year}</h3>
                 <p>${project.description}</p>
             </a>
@@ -295,7 +255,6 @@ function loadHomePage() {
             const projectHref = e.currentTarget.getAttribute('data-href');
             const project = currentProjects.find(p => p.href === projectHref);
             if (project) {
-                console.log('Cargando detalles del proyecto:', project.title);
                 loadProjectDetails(project);
                 window.history.pushState({ project: project.id }, '', project.href);
             }
@@ -305,12 +264,8 @@ function loadHomePage() {
 }
 
 function loadProjectDetails(project) {
-    console.log('Cargando detalles para:', project.title);
     const mainContent = document.querySelector('main');
-    if (!mainContent) {
-        console.error('No se encontró el elemento main');
-        return;
-    }
+    if (!mainContent) return;
 
     // Textos dinámicos según idioma
     const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
@@ -342,7 +297,7 @@ function loadProjectDetails(project) {
           ` : ''}
           <div class="carousel">
               ${project.details.images.map(img => `
-                  <img src="${img}" loading="lazy" alt="${project.title}">
+                  <img src="${img}" ${buildSrcset(img)} sizes="(max-width: 768px) 100vw, 60vw" loading="lazy" alt="${project.title}">
               `).join('')}
           </div>
           ${project.details.embed3d ? `
@@ -354,15 +309,10 @@ function loadProjectDetails(project) {
       </div>
   `;
 
-    // CORRECCIÓN: Usar setTimeout para asegurar que el DOM esté actualizado
     setTimeout(() => {
         const backButton = document.getElementById('backButton');
-        console.log('Buscando botón volver...', backButton);
         if (backButton) {
-            console.log('Agregando event listener al botón volver');
             backButton.addEventListener('click', handleBackButton);
-        } else {
-            console.error('No se encontró el botón volver');
         }
 
         // RESETEO DEL SCROLL: Desplazar al inicio cuando se cargan los detalles
@@ -372,14 +322,21 @@ function loadProjectDetails(project) {
     initializeCarousel();
 }
 
-// Función separada para manejar el botón volver
 function handleBackButton() {
-    console.log('Botón volver clickeado');
+    if (carouselInterval !== null) {
+        clearInterval(carouselInterval);
+        carouselInterval = null;
+    }
     window.history.pushState({}, '', '/');
     loadHomePage();
 }
 
 function initializeCarousel() {
+    if (carouselInterval !== null) {
+        clearInterval(carouselInterval);
+        carouselInterval = null;
+    }
+
     const carousel = document.querySelector('.carousel');
     if (!carousel) return;
 
@@ -394,12 +351,10 @@ function initializeCarousel() {
 
     showImage(currentIndex);
 
-    const interval = setInterval(() => {
+    carouselInterval = setInterval(() => {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
     }, 3000);
-
-    return () => clearInterval(interval);
 }
 
 // Helper to update button text consistently
@@ -414,7 +369,6 @@ function updateButtonText() {
 // Manejar el enrutamiento
 function handleRoute() {
     const path = window.location.pathname.split('/').pop();
-    console.log('Manejando ruta:', path);
 
     // Resetear scroll en cada cambio de ruta
     window.scrollTo(0, 0);
@@ -425,10 +379,8 @@ function handleRoute() {
         loadBioPage();
     } else if (path === 'contacto.html') {
         loadContactPage();
-    } else if (path === 'blog.html') { // Added for Spanish blog
+    } else if (path === 'blog.html' || path === 'blog-en.html') {
         loadBlogPage();
-    } else if (path === 'blog-en.html') { // Added for English blog
-        loadBlogEnPage();
     } else { // Fallback for projects or unknown paths
         const projectId = path.replace('.html', '');
         // Ensure currentProjects is loaded based on currentLanguage before searching
@@ -448,7 +400,6 @@ window.addEventListener('popstate', handleRoute);
 
 // Inicializar la aplicación cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM cargado, inicializando aplicación...');
     // Cargar idioma preferido desde localStorage
     const savedLanguage = localStorage.getItem('preferredLanguage');
     if (savedLanguage) {
@@ -471,6 +422,16 @@ document.addEventListener('DOMContentLoaded', () => {
             textSpan.textContent = currentLanguage === 'es' ? 'EN' : 'ES';
         }
     }
+
+    // Interceptar links del nav para mantener navegación SPA
+    document.querySelectorAll('nav a[href]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            window.history.pushState({}, '', href);
+            handleRoute();
+        });
+    });
 
     // Actualizar textos de navegación al inicializar
     updateNavigationText();

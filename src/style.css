@@ -150,7 +150,7 @@ body {
   }  
   
   header {
-    display:relative;
+    position: relative;
     color: white;
     text-align: left; 
   }
@@ -187,6 +187,7 @@ body {
     src: url('../static/font/Inter-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
 
   .contact-icon {
