@@ -106,7 +106,9 @@ body {
   
   nav {
     float: right;
-    margin-top: 20px; 
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
     margin-right: 45px;
     margin-left: 20px;
   }

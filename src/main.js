@@ -423,16 +423,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Interceptar links del nav para mantener navegación SPA
-    document.querySelectorAll('nav a[href]').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const href = link.getAttribute('href');
-            window.history.pushState({}, '', href);
-            handleRoute();
-        });
-    });
-
     // Actualizar textos de navegación al inicializar
     updateNavigationText();
 
