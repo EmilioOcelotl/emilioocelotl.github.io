@@ -52,19 +52,13 @@ body {
   }
   
 .projects, .colaborations {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    align-items: flex-start; /* Añade esta línea */
     margin-top: 30px;
-    margin-left: 5px; 
-    margin-right: 5px; 
+    transition: opacity 0.3s ease;
 }
-  
+
   .project, .colaboration {
-    flex: 0 0 calc(33.33% - 10px); /* Ajusta el tamaño de las tarjetas */
-    margin-bottom: 50px; /* Espacio entre las tarjetas */
-    
+    width: calc(33.33% - 14px);
+    margin-bottom: 20px;
   }
   
   .project a {
@@ -83,15 +77,13 @@ body {
 
   @media screen and (max-width: 768px) {
     .project, .colaboration {
-      flex: 0 0 calc(50% - 10px); /* Ajusta el tamaño de las tarjetas para pantallas más pequeñas */
+      width: calc(50% - 10px);
     }
   }
-  
+
   @media screen and (max-width: 480px) {
     .project, .colaboration {
-      flex: 0 0 calc(100% - 10px); /* Ajusta el tamaño de las tarjetas para pantallas aún más pequeñas */
-      margin-left: 0; 
-      margin-right: 0; 
+      width: 100%;
     }
   }
   

@@ -4,12 +4,42 @@ import { bioContent } from '../static/data/bio-content.js';
 import { blogPosts } from '../static/data/blog-content.js';
 import { blogPosts_en } from '../static/data/blog-content-en.js';
 import Plyr from 'plyr';
+import Masonry from 'masonry-layout';
+import imagesLoaded from 'imagesloaded';
 
 // Configuración de idioma
 let currentLanguage = 'en'; // Default to English if no preference saved
 let currentProjects = projects_en; // Default to English projects
 
 let carouselInterval = null;
+let masonryInstance = null;
+
+function initMasonry() {
+    if (masonryInstance) {
+        masonryInstance.destroy();
+        masonryInstance = null;
+    }
+    const container = document.querySelector('.projects');
+    if (!container) return;
+
+    container.style.opacity = '0';
+
+    masonryInstance = new Masonry(container, {
+        itemSelector: '.project',
+        percentPosition: true,
+        gutter: 20,
+        transitionDuration: 0
+    });
+
+    imagesLoaded(container, () => {
+        if (masonryInstance) {
+            masonryInstance.layout();
+            requestAnimationFrame(() => {
+                container.style.opacity = '1';
+            });
+        }
+    });
+}
 
 // Si la imagen usa la variante -r (responsive), construye un srcset con ambas versiones
 function buildSrcset(src) {
@@ -241,7 +271,7 @@ function loadHomePage() {
         projectElement.classList.add('project');
         projectElement.innerHTML = `
             <a href="${project.href}" data-href="${project.href}" class="project-link">
-                <img src="${project.imgSrc}" ${buildSrcset(project.imgSrc)} sizes="(max-width: 768px) 100vw, 33vw" alt="${project.imgAlt}">
+                <img src="${project.imgSrc}" ${buildSrcset(project.imgSrc)} sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="${project.imgAlt}">
                 <h3>${project.title}<br>${project.year}</h3>
                 <p>${project.description}</p>
             </a>
@@ -260,7 +290,9 @@ function loadHomePage() {
             }
         });
     });
+
     window.scrollTo(0, 0);
+    initMasonry();
 }
 
 function loadProjectDetails(project) {
