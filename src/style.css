@@ -8,24 +8,25 @@ html {
 }
 
 :root {
-  --accent-color: #ffffff;
-  --accent-hover: #35a7bba4;
+  --accent-color: #35a7bb;
+  --accent-hover: rgba(53, 167, 187, 0.6);
   --color-bg: #000;
-  --color-surface: #333;
+  --color-surface: #1a1a1a;
   --color-text: #fff;
-  --color-overlay-subtle: rgba(255, 255, 255, 0.05);
-  --color-border: rgba(255, 255, 255, 0.1);
+  --color-overlay-subtle: rgba(255, 255, 255, 0.04);
+  --color-border: rgba(255, 255, 255, 0.08);
   --color-overlay-dark: rgba(0, 0, 0, 0.7);
 }
 
 body {
   font-family: "Exo 2", sans-serif;
   font-optical-sizing: auto;
-  font-style: normal;    
+  font-style: normal;
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
-  font-size: 16px; 
+  font-size: 16px;
+  line-height: 1.7;
   background-color: var(--color-bg);
   color: var(--color-text);
   }
@@ -44,10 +45,10 @@ body {
   }
   
   h2 {
-    margin: 0; 
-    text-align: left; 
-    font-weight: 400; 
-
+    margin: 0;
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: 0.1em;
   }
   
 .projects, .colaborations {
@@ -137,16 +138,43 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
-  
+
   nav ul li {
-    display: inline;
-    margin-left: 10px; /* Espacio entre elementos de la lista */
+    margin: 0;
+  }
+
+  .language-toggle {
+    background: transparent;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+    font-family: "Exo 2", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  .language-toggle:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
   }
   
   nav ul li a {
     text-decoration: none;
     color: var(--color-text);
+    letter-spacing: 0.12em;
+    font-size: 13px;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a[aria-current="page"] {
+    color: var(--accent-color);
   }
   
   #bio {
@@ -169,25 +197,26 @@ body {
   }
   
   h1 {
-    display: inline-block; /* Para que el cuadro del título ocupe solo el espacio necesario */
-    background-color: var(--color-surface);
-    padding: 10px 20px;
-    margin-top: 20px;
+    display: inline-block;
+    margin-top: 24px;
     margin-left: 45px;
+    padding-bottom: 6px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.28em;
     text-align: left;
-    font-size: 16px; 
-    font-weight: 400; /* Selección de una variante más negrita de la fuente */
-    border-radius: 8px; /* Bordes redondeados */
-    transition-duration: 0.4s; 
+    border-bottom: 1px solid var(--accent-color);
+    transition: border-color 0.4s ease;
   }
 
   h3 {
     display: inline-block;
     color: var(--color-text);
-    margin-top: 20px; 
+    margin-top: 20px;
     text-align: left;
-    font-size: 20px; 
-    font-weight: 400;   
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
   }
  
   @font-face {
@@ -245,16 +274,9 @@ a {
     margin-right: 1%; 
   }
   h1 {
-    display: inline-block; /* Para que el cuadro del título ocupe solo el espacio necesario */
-    background-color: var(--color-surface);
-    padding: 10px;
-    margin-top: 20px;
-    margin-left: 40px;
-    text-align: left;
-    font-size: 16px; 
-    font-weight: 400; /* Selección de una variante más negrita de la fuente */
-    border-radius: 8px; /* Bordes redondeados */
-    transition-duration: 0.4s; 
+    font-size: 16px;
+    margin-left: 20px;
+    letter-spacing: 0.2em;
   }
 }
 
@@ -299,29 +321,25 @@ h1:hover {
 
 #backButton {
   font-family: "Exo 2", sans-serif;
-  background-color: var(--color-surface);
-  border: none;
-  color: var(--color-text);
-  padding: 10px 32px; 
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 10px 32px;
   text-decoration: none;
-  display: block; 
-  font-size: 16px; 
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.15em;
   cursor: pointer;
-  border-radius: 4px; 
-  transition-duration: 0.4s;
-  margin: 60px auto 4px; 
-  text-align: center; 
-  width: 100%; 
+  border-radius: 2px;
+  transition: background 0.3s ease, color 0.3s ease;
+  margin: 60px auto 4px;
+  text-align: center;
+  width: 100%;
 }
 
-#backButton {
+#backButton:hover {
   background: var(--accent-color);
   color: var(--color-bg);
-  font-weight: bold;
-}
-#backButton:hover {
-  background: var(--accent-hover);
-  color: var(--color-text);
 }
 
 /* Media query for mobile devices */
