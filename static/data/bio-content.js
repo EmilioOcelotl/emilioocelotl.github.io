@@ -41,6 +41,7 @@ export const bioContent = {
       collaboration: "Colaboración",
       collaborationList: [
         "PiranhaLab. CDMX. Representante del proyecto: PiranhaLab. Ciclo de talleres para la implementación y difusión de interfaces basadas en código para el performance audiovisual junto con Marianne Teixido. Proyecto beneficiario del Programa de Apoyo a la Docencia, Investigación y Difusión de las Artes.",
+        "PiranhaLab. CDMX. Colaboración en curso. Talleres de infraestructura autónoma y tecnología comunitaria con artistas y comunidades.",
         "RGGTRN. CDMX. Representante del proyecto: Presentación Audiovisual en la Conferencia Internacional de Live Coding (ICLC) con el Sistema personalizado Orbit, apoyado por el Programa de Apoyos Especiales del Fondo Nacional para la Cultura y las Artes. Madrid (ES).",
         "Representante del proyecto: Bellacode Tour apoyado por Ayudas a la Movilidad de Músicos del Programa de Fomento De las Músicas Iberoamericanas (IBERMUSICAS) emisión 2017. Ciudad de México (MX), Bogotá, Manizales y Medellín (CO), Lima (PE) y Quito (EC)."
       ],
@@ -95,6 +96,7 @@ export const bioContent = {
       collaboration: "Collaboration",
       collaborationList: [
         "PiranhaLab. CDMX. Project representative: PiranhaLab. Workshop cycle for the implementation and dissemination of code-based interfaces for audiovisual performance together with Marianne Teixido. Project beneficiary of the Program for Support of Teaching, Research and Dissemination of the Arts.",
+        "PiranhaLab. CDMX. Ongoing collaboration. Workshops on autonomous infrastructure and community technology with artists and communities.",
         "RGGTRN. CDMX. Project representative: Audiovisual Presentation at the International Live Coding Conference (ICLC) with the customized Orbit System, supported by the Special Support Program of the National Fund for Culture and the Arts. Madrid (ES).",
         "Project representative: Bellacode Tour supported by the Mobility Grants for Musicians of the IBERMUSICAS Program, 2017 edition. Mexico City (MX), Bogotá, Manizales and Medellín (CO), Lima (PE) and Quito (EC)."
       ],
