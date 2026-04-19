@@ -58,33 +58,48 @@ function createCoverPage(doc, language = 'es') {
 
   doc.rect(0, 0, pageWidth, pageHeight).fill('#ffffff');
 
-  const midY = pageHeight / 2 - 40;
-
-  doc
-    .font(FONTS.title)
-    .fontSize(28)
-    .fillColor(COLORS.primary)
-    .text('Emilio Ocelotl', margin, midY, { width: pageWidth - margin * 2 });
-
-  doc
-    .font(FONTS.italic)
-    .fontSize(12)
-    .fillColor(COLORS.secondary)
-    .text(TEXTS[language].portfolio, margin, midY + 38, { width: pageWidth - margin * 2 });
+  // Bloque de nombre en el tercio inferior
+  const blockY = pageHeight * 0.55;
 
   doc
     .strokeColor('#000000')
     .lineWidth(0.5)
-    .moveTo(margin, midY + 62)
-    .lineTo(pageWidth - margin, midY + 62)
+    .moveTo(margin, blockY - 20)
+    .lineTo(pageWidth - margin, blockY - 20)
     .stroke();
 
+  doc
+    .font(FONTS.title)
+    .fontSize(32)
+    .fillColor(COLORS.primary)
+    .text('Emilio Ocelotl', margin, blockY, { width: pageWidth - margin * 2 });
+
+  doc
+    .font(FONTS.body)
+    .fontSize(11)
+    .fillColor(COLORS.secondary)
+    .text(TEXTS[language].portfolio, margin, blockY + 44, { width: pageWidth - margin * 2 });
+
+  doc
+    .font(FONTS.body)
+    .fontSize(11)
+    .fillColor(COLORS.secondary)
+    .text('ocelotl.cc', margin, blockY + 62, {
+      width: pageWidth - margin * 2,
+      link: 'https://ocelotl.cc',
+      underline: false
+    });
+
+  // Año abajo a la derecha
   const year = new Date().getFullYear().toString();
   doc
     .font(FONTS.body)
-    .fontSize(10)
+    .fontSize(9)
     .fillColor(COLORS.secondary)
-    .text(year, margin, midY + 74, { width: pageWidth - margin * 2 });
+    .text(year, margin, pageHeight - margin - 10, {
+      width: pageWidth - margin * 2,
+      align: 'right'
+    });
 }
 
 // Función mejorada para parsear HTML y manejar enlaces
@@ -373,6 +388,21 @@ function renderProject(doc, project, startY, isFirst = false, language = 'es') {
 
   currentY += 22;
 
+  // Enlace al proyecto
+  if (projectUrl) {
+    doc
+      .font(FONTS.body)
+      .fontSize(9)
+      .fillColor(COLORS.secondary)
+      .text(projectUrl, margin, currentY, {
+        width: contentWidth,
+        link: projectUrl,
+        underline: true,
+        lineBreak: false
+      });
+    currentY += 16;
+  }
+
   // Descripción breve
   doc
     .font(FONTS.italic)
@@ -553,7 +583,7 @@ async function generatePortfolio(language = 'en') {
   doc.addPage();
   console.log('📄 Página de proyectos...');
   
-  const projectsToRender = projects;
+  const projectsToRender = projects.filter(p => p.details && p.details.fullDescription);
   
   let currentPage = 2;
   let currentY = 60;

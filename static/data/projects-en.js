@@ -126,7 +126,7 @@ export const projects_en = [
         "href": "presentaciones.html",
         "imgSrc": "./img/valle01.jpg",
         "imgAlt": "valle",
-        "title": "Presentaciones Audiovisuales Destacadas",
+        "title": "A/V Presentations",
         "year": "2011-2024",
         "description": "Live audio and visuals",
         "details": {
