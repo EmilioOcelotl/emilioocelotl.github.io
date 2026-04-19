@@ -1,25 +1,26 @@
 import PDFDocument from 'pdfkit';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const FONTS_DIR = path.resolve(__dirname, '../../memoria-transvolcánica/render/fonts');
 
 // Configuración de estilos
 const COLORS = {
   primary: '#000000',
-  secondary: '#666666',
-  accent: '#2a5c85',
-  lightGray: '#f5f5f5',
-  timeline: '#cccccc',
-  link: '#2a5c85'
+  secondary: '#555555',
+  accent: '#000000',
+  link: '#1a1a1a'
 };
 
 const FONTS = {
-  title: 'Courier-Bold',
-  body: 'Courier-Bold',
-  italic: 'Courier-Bold',
-  bold: 'Courier-Bold'
+  title: 'Syne-ExtraBold',
+  bold: 'Syne-Bold',
+  body: 'Inconsolata-Regular',
+  italic: 'Inconsolata-Regular'
 };
 
-// Símbolos (vacíos según tus modificaciones)
 const SYMBOLS = {
   video: '',
   audio: '',
@@ -53,62 +54,37 @@ const TEXTS = {
 function createCoverPage(doc, language = 'es') {
   const pageWidth = doc.page.width;
   const pageHeight = doc.page.height;
-  
-  // Fondo minimalista
+  const margin = 60;
+
   doc.rect(0, 0, pageWidth, pageHeight).fill('#ffffff');
-  
-  // Línea de tiempo vertical sutil en la portada
-  doc
-    .strokeColor(COLORS.timeline)
-    .lineWidth(0.5)
-    .moveTo(60, 100)
-    .lineTo(60, pageHeight - 100)
-    .dash(3, { space: 3 })
-    .stroke()
-    .undash();
-  
-  // Nombre principal - grande y centrado
+
+  const midY = pageHeight / 2 - 40;
+
   doc
     .font(FONTS.title)
-    .fontSize(36)
+    .fontSize(28)
     .fillColor(COLORS.primary)
-    .text('EMILIO OCELOTL', 80, pageHeight / 2 - 60, {
-      width: pageWidth - 160,
-      align: 'left'
-    });
-  
-  // Subtítulo (traducible)
+    .text('Emilio Ocelotl', margin, midY, { width: pageWidth - margin * 2 });
+
   doc
-    .font(FONTS.body)
-    .fontSize(14)
+    .font(FONTS.italic)
+    .fontSize(12)
     .fillColor(COLORS.secondary)
-    .text(TEXTS[language].portfolio, 80, pageHeight / 2 - 15, {
-      width: pageWidth - 160,
-      align: 'left'
-    });
-  
-  // Línea decorativa bajo el nombre
+    .text(TEXTS[language].portfolio, margin, midY + 38, { width: pageWidth - margin * 2 });
+
   doc
-    .strokeColor(COLORS.accent)
-    .lineWidth(1)
-    .moveTo(80, pageHeight / 2 + 10)
-    .lineTo(300, pageHeight / 2 + 10)
+    .strokeColor('#000000')
+    .lineWidth(0.5)
+    .moveTo(margin, midY + 62)
+    .lineTo(pageWidth - margin, midY + 62)
     .stroke();
-  
-  // Año en la timeline de la portada
-  doc
-    .fillColor(COLORS.accent)
-    .circle(60, pageHeight / 2, 6)
-    .fill();
-  
+
+  const year = new Date().getFullYear().toString();
   doc
     .font(FONTS.body)
     .fontSize(10)
-    .fillColor(COLORS.accent)
-    .text('2025', 30, pageHeight / 2 - 8, {
-      width: 25,
-      align: 'right'
-    });
+    .fillColor(COLORS.secondary)
+    .text(year, margin, midY + 74, { width: pageWidth - margin * 2 });
 }
 
 // Función mejorada para parsear HTML y manejar enlaces
@@ -327,202 +303,154 @@ function renderAttachments(doc, project, startX, startY, contentWidth, language 
 // Versión simplificada: renderizar texto sin manejar enlaces complejos inline
 function renderSimpleText(doc, text, x, y, width) {
   if (!text) return y;
-  
-  // Primero, eliminar todos los marcadores de enlace y procesar texto básico
+
   const cleanText = text.replace(/\[LINK\d+\]/g, '');
-  
+
   doc
     .font(FONTS.body)
-    .fontSize(10)
+    .fontSize(11)
     .fillColor(COLORS.primary)
     .text(cleanText, x, y, {
       width: width,
-      lineGap: 3
+      lineGap: 4
     });
-  
-  // Calcular la nueva altura
+
   const textHeight = doc.heightOfString(cleanText, {
     width: width,
-    lineGap: 3
+    fontSize: 11,
+    lineGap: 4
   });
-  
+
   return y + textHeight;
 }
 
 // Función para renderizar un proyecto
 function renderProject(doc, project, startY, isFirst = false, language = 'es') {
-  const marginLeft = 80;
-  const contentWidth = doc.page.width - marginLeft - 50;
+  const margin = 60;
+  const contentWidth = doc.page.width - margin * 2;
   let currentY = startY;
-  
-  // Línea vertical de timeline (si no es el primer proyecto)
+
+  // Separador entre proyectos
   if (!isFirst) {
     doc
-      .strokeColor(COLORS.timeline)
+      .strokeColor('#cccccc')
       .lineWidth(0.5)
-      .moveTo(60, currentY - 20)
-      .lineTo(60, currentY)
-      .dash(2, { space: 2 })
-      .stroke()
-      .undash();
+      .moveTo(margin, currentY)
+      .lineTo(doc.page.width - margin, currentY)
+      .stroke();
+    currentY += 20;
   }
-  
-  // Punto en la timeline
+
+  // Año
   doc
-    .fillColor(COLORS.accent)
-    .circle(60, currentY, 4)
-    .fill();
-  
-  // Año con símbolos
-  const yearWithSymbols = `${project.year}${getContentSymbols(project)}`;
-  
-  doc
-    .font(FONTS.body)
-    .fontSize(9)
-    .fillColor(COLORS.accent)
-    .text(yearWithSymbols, 30, currentY - 6, {
-      width: 25,
-      align: 'right'
-    });
-  
-  // Título del proyecto como enlace
+    .font(FONTS.italic)
+    .fontSize(10)
+    .fillColor(COLORS.secondary)
+    .text(project.year, margin, currentY, { width: contentWidth });
+
+  currentY += 16;
+
+  // Título
   const projectUrl = project.href ? `${BASE_URL}/${project.href}` : null;
-  
+
   if (projectUrl) {
     doc
       .font(FONTS.title)
       .fontSize(16)
-      .fillColor(COLORS.link)
-      .text(project.title, marginLeft, currentY, {
+      .fillColor(COLORS.primary)
+      .text(project.title, margin, currentY, {
         width: contentWidth,
         link: projectUrl,
-        underline: true
+        underline: false
       });
   } else {
     doc
       .font(FONTS.title)
       .fontSize(16)
       .fillColor(COLORS.primary)
-      .text(project.title, marginLeft, currentY, {
-        width: contentWidth
-      });
+      .text(project.title, margin, currentY, { width: contentWidth });
   }
-  
-  currentY += 25;
-  
-  // Descripción breve (en gris, itálica)
+
+  currentY += 22;
+
+  // Descripción breve
   doc
     .font(FONTS.italic)
     .fontSize(11)
     .fillColor(COLORS.secondary)
-    .text(project.description, marginLeft, currentY, {
-      width: contentWidth
-    });
-  
-  currentY += 20;
-  
-  // Descripción completa (versión simplificada)
+    .text(project.description, margin, currentY, { width: contentWidth, lineGap: 3 });
+
+  currentY += doc.heightOfString(project.description, { width: contentWidth, fontSize: 11, lineGap: 3 }) + 10;
+
+  // Descripción completa
   if (project.details && project.details.fullDescription) {
     const parsedResult = parseSimpleHTML(project.details.fullDescription);
-    
-    // Primero renderizar el texto sin enlaces
-    currentY = renderSimpleText(doc, parsedResult.text, marginLeft, currentY, contentWidth);
-    
-    // Luego agregar los enlaces como una lista al final de la descripción
+    currentY = renderSimpleText(doc, parsedResult.text, margin, currentY, contentWidth);
+
     if (parsedResult.links && parsedResult.links.length > 0) {
-      currentY += 10;
-      
+      currentY += 8;
       parsedResult.links.forEach((link, index) => {
         const fullUrl = getFullUrl(link.url);
-        const linkText = `${index + 1}. ${link.text}: ${fullUrl}`;
-        
+        const linkText = `${link.text}: ${fullUrl}`;
         doc
           .font(FONTS.body)
           .fontSize(9)
-          .fillColor(COLORS.link)
-          .text(linkText, marginLeft, currentY, {
+          .fillColor(COLORS.secondary)
+          .text(linkText, margin, currentY, {
             width: contentWidth,
             link: fullUrl,
             underline: true
           });
-        
-        currentY += 12;
+        currentY += 14;
       });
     }
-    
-    currentY += 15;
-  } else {
+
     currentY += 10;
+  } else {
+    currentY += 8;
   }
-  
-  // Renderizar archivos adjuntos (audio/video)
+
+  // Archivos adjuntos
   if (project.details && (project.details.audioSrc || project.details.localVideo)) {
-    currentY = renderAttachments(doc, project, marginLeft, currentY, contentWidth, language);
+    currentY = renderAttachments(doc, project, margin, currentY, contentWidth, language);
   }
-  
-  // Imagen principal (si existe)
+
+  // Imagen principal
   if (project.imgSrc) {
     const imagePath = path.join(process.cwd(), 'static', project.imgSrc.replace('./', ''));
-    
     if (imageExists(imagePath)) {
       try {
-        // Calcular dimensiones
         const maxWidth = contentWidth;
-        const maxHeight = 250;
-        
+        const maxHeight = 220;
         const imageBuffer = fs.readFileSync(imagePath);
         const imageSize = doc.openImage(imageBuffer);
-        
-        // Calcular dimensiones manteniendo proporción
+
         let finalWidth = maxWidth;
         let finalHeight = (imageSize.height / imageSize.width) * maxWidth;
-        
-        // Si es más alta que el máximo, escalar por altura
         if (finalHeight > maxHeight) {
           finalHeight = maxHeight;
           finalWidth = (imageSize.width / imageSize.height) * maxHeight;
         }
-        
-        // Centrar horizontalmente
-        const imageX = marginLeft + (contentWidth - finalWidth) / 2;
-        
-        doc.image(imageBuffer, imageX, currentY, {
-          width: finalWidth,
-          height: finalHeight
-        });
-        
-        // Borde gris fino alrededor de la imagen
-        doc
-          .rect(imageX, currentY, finalWidth, finalHeight)
-          .strokeColor('#e0e0e0')
-          .lineWidth(0.5)
-          .stroke();
-        
-        // Pie de foto opcional
-        if (project.imgAlt) {
-          currentY += finalHeight + 5;
-          doc
-            .font(FONTS.body)
-            .fontSize(8)
-            .fillColor(COLORS.secondary)
-            .text(project.imgAlt, marginLeft, currentY, {
-              width: contentWidth,
-              align: 'center'
-            });
-          currentY += 15;
-        } else {
-          currentY += finalHeight + 15;
+
+        // Si la imagen no cabe en el espacio restante, nueva página
+        if (currentY + finalHeight > doc.page.height - margin - 40) {
+          doc.addPage();
+          currentY = 60;
         }
-        
+
+        currentY += 14;
+        const imageX = margin + (contentWidth - finalWidth) / 2;
+        doc.image(imageBuffer, imageX, currentY, { width: finalWidth, height: finalHeight });
+        currentY += finalHeight + 16;
       } catch (error) {
         console.warn(`No se pudo cargar la imagen: ${imagePath}`, error.message);
       }
     }
   }
-  
+
   // Espacio entre proyectos
-  currentY += 20;
-  
+  currentY += 24;
+
   return currentY;
 }
 
@@ -576,8 +504,19 @@ async function generatePortfolio(language = 'en') {
   const doc = new PDFDocument({
     size: 'A4',
     margin: 40,
-    autoFirstPage: true
+    autoFirstPage: true,
+    bufferPages: true
   });
+
+  // Registrar fuentes personalizadas
+  doc.registerFont('Syne-ExtraBold', path.join(FONTS_DIR, 'Syne-ExtraBold.ttf'));
+  doc.registerFont('Syne-Bold', path.join(FONTS_DIR, 'Syne-Bold.ttf'));
+  doc.registerFont('Inconsolata-Regular', path.join(FONTS_DIR, 'Inconsolata-Regular.ttf'));
+  doc.registerFont('Inconsolata-Bold', path.join(FONTS_DIR, 'Inconsolata-Bold.ttf'));
+
+  // Contar páginas para numerar al final
+  let pageCount = 0;
+  doc.on('pageAdded', () => { pageCount++; });
   
   // Configurar pipe de salida
   const outputFilename = language === 'en' ? 'portfolio-en.pdf' : 'portfolio.pdf';
@@ -614,59 +553,31 @@ async function generatePortfolio(language = 'en') {
   doc.addPage();
   console.log('📄 Página de proyectos...');
   
-  // Tomar solo los primeros 12 proyectos
-  const projectsToRender = projects.slice(0, 12);
+  const projectsToRender = projects;
   
   let currentPage = 2;
   let currentY = 60;
-  const contentWidth = doc.page.width - 80 - 40;
-  
-  // Dibujar línea de tiempo en la página de proyectos
-  const drawTimeline = () => {
-    const pageHeight = doc.page.height;
-    doc
-      .strokeColor(COLORS.timeline)
-      .lineWidth(0.5)
-      .moveTo(60, 40)
-      .lineTo(60, pageHeight - 40)
-      .dash(2, { space: 2 })
-      .stroke()
-      .undash();
-  };
-  
-  drawTimeline();
-  
-  currentY = 80;
-  
+  const contentWidth = doc.page.width - 120;
+
   // Renderizar cada proyecto
   for (let i = 0; i < projectsToRender.length; i++) {
     const project = projectsToRender[i];
     console.log(`Procesando: ${project.title}`);
-    
-    // Estimar altura del proyecto
+
     const estimatedHeight = estimateProjectHeight(doc, project, contentWidth);
-    
-    // Verificar si necesitamos nueva página ANTES de renderizar
-    if (currentY + estimatedHeight > doc.page.height - 40) {
-      console.log(`→ Nueva página necesaria para: ${project.title}`);
+
+    if (currentY + estimatedHeight > doc.page.height - 60) {
+      console.log(`→ Nueva página para: ${project.title}`);
       doc.addPage();
       currentPage++;
-      currentY = 40;
-      drawTimeline();
-      
       currentY = 60;
     }
-    
-    // Renderizar proyecto
+
     currentY = renderProject(doc, project, currentY, i === 0, language);
-    
-    // Asegurar que no nos pasamos del límite de la página
+
     if (currentY > doc.page.height - 80) {
       doc.addPage();
       currentPage++;
-      currentY = 40;
-      drawTimeline();
-      
       currentY = 60;
     }
   }
@@ -699,6 +610,27 @@ async function generatePortfolio(language = 'en') {
       align: 'center'
     });
   
+  // Numerar páginas (excepto portada = página 0)
+  const range = doc.bufferedPageRange();
+  for (let i = 1; i < range.count; i++) {
+    doc.switchToPage(range.start + i);
+
+    const savedBottom = doc.page.margins.bottom;
+    doc.page.margins.bottom = 0;
+
+    doc
+      .font('Inconsolata-Regular')
+      .fontSize(9)
+      .fillColor('#999999')
+      .text(i.toString(), 0, doc.page.height - 36, {
+        width: doc.page.width - 60,
+        align: 'right',
+        lineBreak: false
+      });
+
+    doc.page.margins.bottom = savedBottom;
+  }
+
   // Finalizar documento
   doc.end();
   
