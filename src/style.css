@@ -8,25 +8,25 @@ html {
 }
 
 :root {
-  --accent-color: #35a7bb;
-  --accent-hover: rgba(53, 167, 187, 0.6);
-  --color-bg: #000;
-  --color-surface: #1a1a1a;
-  --color-text: #fff;
-  --color-overlay-subtle: rgba(255, 255, 255, 0.04);
-  --color-border: rgba(255, 255, 255, 0.08);
+  --accent-color: #00B5B2;
+  --accent-hover: rgba(0, 181, 178, 0.6);
+  --color-bg: #090D0D;
+  --color-surface: #0D1515;
+  --color-text: #E8F0F0;
+  --color-text-mid: #8AADAD;
+  --color-overlay-subtle: rgba(0, 181, 178, 0.04);
+  --color-border: rgba(0, 181, 178, 0.10);
   --color-overlay-dark: rgba(0, 0, 0, 0.7);
 }
 
 body {
-  font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
+  font-family: 'Inconsolata', monospace;
   font-style: normal;
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.65;
   background-color: var(--color-bg);
   color: var(--color-text);
   }
@@ -45,10 +45,11 @@ body {
   }
   
   h2 {
+    font-family: 'Syne', sans-serif;
     margin: 0;
     text-align: left;
-    font-weight: 300;
-    letter-spacing: 0.1em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
   
 .projects, .colaborations {
@@ -143,9 +144,9 @@ body {
     background: transparent;
     border: 1px solid var(--color-text);
     color: var(--color-text);
-    font-family: "Exo 2", sans-serif;
+    font-family: 'Inconsolata', monospace;
     font-size: 13px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.10em;
     padding: 3px 10px;
     cursor: pointer;
     transition: border-color 0.3s ease, color 0.3s ease;
@@ -189,36 +190,30 @@ body {
   }
   
   h1 {
+    font-family: 'Syne', sans-serif;
     display: inline-block;
     margin-top: 24px;
     margin-left: 45px;
     padding-bottom: 6px;
     font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 0.28em;
+    font-weight: 800;
+    letter-spacing: 0.10em;
     text-align: left;
     border-bottom: 1px solid var(--accent-color);
     transition: border-color 0.4s ease;
   }
 
   h3 {
+    font-family: 'Syne', sans-serif;
     display: inline-block;
     color: var(--color-text);
     margin-top: 20px;
     text-align: left;
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 0.08em;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
  
-  @font-face {
-    font-family: 'Inter';
-    src: url('../static/font/Inter-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
   .contact-icon {
     font-size: 24px;
     margin-right: 10px;
@@ -312,7 +307,7 @@ h1:hover {
 }
 
 #backButton {
-  font-family: "Exo 2", sans-serif;
+  font-family: 'Inconsolata', monospace;
   background: transparent;
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
