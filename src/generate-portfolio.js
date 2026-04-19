@@ -102,48 +102,46 @@ function createCoverPage(doc, language = 'es') {
     });
 }
 
-// Función mejorada para parsear HTML y manejar enlaces
-function parseSimpleHTML(text) {
-  if (!text) return { text: '', links: [] };
-  
-  // Primero, extraer todos los enlaces para manejarlos por separado
-  const linkRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*>(.*?)<\/a>/g;
-  const links = [];
-  let match;
-  let processedText = text;
-  
-  // Encontrar y reemplazar enlaces
-  while ((match = linkRegex.exec(text)) !== null) {
-    links.push({
-      original: match[0],
-      url: match[2],
-      text: match[3]
-    });
-  }
-  
-  // Reemplazar etiquetas HTML básicas
-  processedText = processedText
-    .replace(/<p>/g, '\n')
-    .replace(/<\/p>/g, '\n')
-    .replace(/<br\/?>/g, '\n')
-    .replace(/<emph>/g, '')
-    .replace(/<\/emph>/g, '')
-    .replace(/<h3>/g, '\n\n')
-    .replace(/<\/h3>/g, '\n')
-    .replace(/<li>/g, '• ')
-    .replace(/<\/li>/g, '\n')
-    .trim();
-  
-  // Reemplazar enlaces con marcadores
-  links.forEach((link, i) => {
-    const marker = `[LINK${i}]`;
-    processedText = processedText.replace(link.original, `${link.text} ${marker}`);
-  });
-  
-  return {
-    text: processedText,
-    links: links
+// Parsea HTML a una lista de párrafos. Cada párrafo es un array de "runs"
+// (fragmentos de texto, con link opcional) que se renderizan inline.
+function parseToParagraphs(html) {
+  if (!html) return [];
+
+  // Normalizar separadores de bloque a un marcador único (¶).
+  // Dejamos <a> intacto para extraer enlaces después.
+  const normalized = html
+    .replace(/<br\s*\/?>/g, '¶')
+    .replace(/<\/?(p|h3|div)>/g, '¶')
+    .replace(/<\/?ul>/g, '¶')
+    .replace(/<\/?ol>/g, '¶')
+    .replace(/<li>/g, '¶• ')
+    .replace(/<\/li>/g, '')
+    .replace(/<\/?(em|emph|code|strong|b|i)>/g, '');
+
+  const paragraphTexts = normalized
+    .split(/¶+/)
+    .map(p => p.replace(/\s+/g, ' ').trim())
+    .filter(p => p.length > 0);
+
+  const extractRuns = (pText) => {
+    const linkRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*>(.*?)<\/a>/g;
+    const runs = [];
+    let lastIndex = 0;
+    let match;
+    while ((match = linkRegex.exec(pText)) !== null) {
+      if (match.index > lastIndex) {
+        runs.push({ text: pText.slice(lastIndex, match.index) });
+      }
+      runs.push({ text: match[3], link: match[2] });
+      lastIndex = match.index + match[0].length;
+    }
+    if (lastIndex < pText.length) {
+      runs.push({ text: pText.slice(lastIndex) });
+    }
+    return runs.filter(r => r.text.length > 0);
   };
+
+  return paragraphTexts.map(extractRuns).filter(p => p.length > 0);
 }
 
 // Función para obtener símbolos basados en el tipo de contenido
@@ -215,15 +213,19 @@ function estimateProjectHeight(doc, project, contentWidth) {
     fontSize: 11
   }) + 20;
   
-  // Altura de la descripción completa
+  // Altura de la descripción completa (enlaces van inline, párrafos separados)
   if (project.details && project.details.fullDescription) {
-    const parsedResult = parseSimpleHTML(project.details.fullDescription);
-    const textHeight = doc.heightOfString(parsedResult.text, {
-      width: contentWidth,
-      fontSize: 10,
-      lineGap: 3
+    const paragraphs = parseToParagraphs(project.details.fullDescription);
+    paragraphs.forEach((runs, pIdx) => {
+      const pText = runs.map(r => r.text).join('');
+      height += doc.heightOfString(pText, {
+        width: contentWidth,
+        fontSize: 11,
+        lineGap: 4
+      });
+      if (pIdx < paragraphs.length - 1) height += 8;
     });
-    height += textHeight + 20;
+    height += 20;
   } else {
     height += 10;
   }
@@ -315,28 +317,45 @@ function renderAttachments(doc, project, startX, startY, contentWidth, language 
   return currentY;
 }
 
-// Versión simplificada: renderizar texto sin manejar enlaces complejos inline
-function renderSimpleText(doc, text, x, y, width) {
-  if (!text) return y;
+// Renderiza párrafos con enlaces inline. Usa continued:true entre los runs
+// de un mismo párrafo y cierra cada párrafo con un run no-continued.
+function renderRichText(doc, paragraphs, x, y, width) {
+  if (!paragraphs || paragraphs.length === 0) return y;
 
-  const cleanText = text.replace(/\[LINK\d+\]/g, '');
+  doc.font(FONTS.body).fontSize(11);
+  doc.x = x;
+  doc.y = y;
 
-  doc
-    .font(FONTS.body)
-    .fontSize(11)
-    .fillColor(COLORS.primary)
-    .text(cleanText, x, y, {
-      width: width,
-      lineGap: 4
+  paragraphs.forEach((runs, pIdx) => {
+    doc.x = x;
+
+    runs.forEach((run, i) => {
+      const isLastRun = i === runs.length - 1;
+      const options = {
+        width,
+        lineGap: 4,
+        continued: !isLastRun
+      };
+
+      if (run.link) {
+        options.link = getFullUrl(run.link);
+        options.underline = true;
+        doc.fillColor(COLORS.link);
+      } else {
+        options.link = null;
+        options.underline = false;
+        doc.fillColor(COLORS.primary);
+      }
+
+      doc.text(run.text, options);
     });
 
-  const textHeight = doc.heightOfString(cleanText, {
-    width: width,
-    fontSize: 11,
-    lineGap: 4
+    if (pIdx < paragraphs.length - 1) {
+      doc.moveDown(0.5);
+    }
   });
 
-  return y + textHeight;
+  return doc.y;
 }
 
 // Función para renderizar un proyecto
@@ -412,29 +431,10 @@ function renderProject(doc, project, startY, isFirst = false, language = 'es') {
 
   currentY += doc.heightOfString(project.description, { width: contentWidth, fontSize: 11, lineGap: 3 }) + 10;
 
-  // Descripción completa
+  // Descripción completa con enlaces inline
   if (project.details && project.details.fullDescription) {
-    const parsedResult = parseSimpleHTML(project.details.fullDescription);
-    currentY = renderSimpleText(doc, parsedResult.text, margin, currentY, contentWidth);
-
-    if (parsedResult.links && parsedResult.links.length > 0) {
-      currentY += 8;
-      parsedResult.links.forEach((link, index) => {
-        const fullUrl = getFullUrl(link.url);
-        const linkText = `${link.text}: ${fullUrl}`;
-        doc
-          .font(FONTS.body)
-          .fontSize(9)
-          .fillColor(COLORS.secondary)
-          .text(linkText, margin, currentY, {
-            width: contentWidth,
-            link: fullUrl,
-            underline: true
-          });
-        currentY += 14;
-      });
-    }
-
+    const paragraphs = parseToParagraphs(project.details.fullDescription);
+    currentY = renderRichText(doc, paragraphs, margin, currentY, contentWidth);
     currentY += 10;
   } else {
     currentY += 8;
@@ -682,11 +682,18 @@ async function generatePortfolio(language = 'en') {
 
 // Si se ejecuta directamente con parámetro de idioma
 if (import.meta.url === `file://${process.argv[1]}`) {
-  // Verificar si se especificó un idioma como argumento
   const languageArg = process.argv.find(arg => arg === '--en' || arg === '--es');
-  const language = languageArg === '--es' ? 'es' : 'en';
-  
-  generatePortfolio(language).catch(console.error);
+
+  if (languageArg) {
+    const language = languageArg === '--es' ? 'es' : 'en';
+    generatePortfolio(language).catch(console.error);
+  } else {
+    // Sin argumento: generar ambos idiomas
+    (async () => {
+      await generatePortfolio('es');
+      await generatePortfolio('en');
+    })().catch(console.error);
+  }
 }
 
 // Exportar por defecto la función con soporte para idioma

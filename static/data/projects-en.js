@@ -1,6 +1,22 @@
 export const projects_en = [
 
     {
+        "href": "tea.html",
+        "imgSrc": "./img/tres2-r.jpg",
+        "imgAlt": "TRES ESTUDIOS ABIERTOS",
+        "title": "Tres Estudios Abiertos",
+        "year": "2026",
+        "description": "Code writing as a form of artistic research",
+        "details": {
+          "fullDescription": "<p>What can code writing contribute to new modes of audiovisual performance and to the writing of a reflective document that integrates sound, graphics, and text in the context of artistic research? That is the central question of this doctoral thesis, developed within the Doctoral Program in Music at UNAM.</p><p>It is an academic investigation and an artistic piece that runs in the browser: the same thing seen from two sides. The architecture of the system did not precede the studies; it emerged as they were built.</p><p>The thesis is organized in three parts. Part I is the main archive: the academic thesis in the conventional sense, with introduction, operative concepts, system architecture, experimental iterations, and conclusions. Part II is the transversal archive: thematic nodes (Interface, Temporality, Error, Data Center, Virtual Machine, Claude, From Scratch) that cut across the thesis underneath its structure. Part III is the compressed archives: generative versions of the thesis, in development.</p><p><code>tres-app</code> is the technical platform. It reads the SQLite database from Trilium Notes, where the thesis is written, and produces two outputs: a PDF (Part I) and a navigable 3D visualization (Part II). It runs on a home server with Express, pm2, and Docker; the database is synced with a bash script and cron.</p><p>The 3D visualization is a force-directed graph built with Three.js and d3-force-3d. Each note is a sphere with an emissive halo; each parent-child link, a line with a color gradient. The palette is bipolar: Part I in cyan, Part II in magenta, references in white-blue. The parts are distributed hemispherically with a bias on the X axis. Labels use CSS2DRenderer with camera-distance opacity, and the whole scene passes through an UnrealBloomPass for the glow.</p><p>The case studies are also the pieces: <a href='https://anti.ocelotl.cc'>anti</a> (audiovisual obfuscation, JavaScript + SuperCollider), <a href='https://github.com/EmilioOcelotl/THREE.studies-II'>THREE.studies-II</a> (sound and graphics in the browser, Three.js + SuperCollider), and <a href='https://risosc.ocelotl.cc'>risosc</a> (risograph prints with NFC and granular synthesis). All three share <a href='https://github.com/EmilioOcelotl/treslib'>treslib</a>, a library written in parallel with the thesis.</p><p>The thesis can be consulted at: <a href='https://tres.ocelotl.cc'>tres.ocelotl.cc</a>. Code: <a href='https://github.com/EmilioOcelotl/tres-app'>github.com/EmilioOcelotl/tres-app</a></p>",
+          "images": [
+            "./img/tres-r.jpg",
+            "./img/tres2-r.jpg"
+          ]
+        }
+      },
+
+    {
         "href": "risosc.html",
         "imgSrc": "./img/risosc4.jpg",
         "imgAlt": "risosc",
@@ -8,7 +24,7 @@ export const projects_en = [
         "year": "2025",
         "description": "Risograph prints with NFC tags and 3D sculptures",
         "details": {
-          "fullDescription": "<p>RisOSC: writings on the multiplied scarce and the uniquely ephemeral.</p><p>The project combines risograph prints with NFC tags and 3D sculptures, structured in five parts:</p><p>Web: pages that open on mobile or desktop devices when an NFC tag is read.</p><p>Server: manages readings and sends messages via sockets to the main page and specific pages.</p><p>Firmware: custom device that reads NFC tags without requiring a phone.</p><p>Export: renders can be exported as OBJ files for use in other contexts.</p><p>Scripts: the main page can run automatically on a computer for exhibition purposes.</p></p><p>The project repository is available at: <a href='https://github.com/EmilioOcelotl/risosc'>RisOSC</a></p><p>Presented as part of the Algorítmica Íntima exhibition at the Centro de Cultura Digital, Mexico City, 2025.</p>",
+          "fullDescription": "<p>Writings on the multiplied scarce and the uniquely ephemeral.</p><p>When a visitor brings a risograph print close to an NFC reader, a unique visualization is generated with Three.js and Hydra, and a compressed snapshot is written to a database. The installation has six parts: the web visualizations, a WebSocket server, the ESP32 firmware handling the reader, a 3D mesh exporter, the scripts that keep the projection running on site, and a dashboard for reviewing what happened during the show.</p><p>Presented at <em>Algorítmica Íntima</em>, Centro de Cultura Digital, Mexico City, 2025.</p><p>After the exhibition, the material captured during the show became its own object: <a href='https://risosc.ocelotl.cc'>risosc.ocelotl.cc</a> lays out the snapshots in a dense mosaic where each cell drives a granular synthesis engine in real time. Brightness, contrast, and complexity of the snapshot modulate the granular parameters.</p><p>Code: <a href='https://github.com/EmilioOcelotl/risosc'>github.com/EmilioOcelotl/risosc</a></p>",
           "images": [
             "./img/risosc16nov.jpg",
             "./img/risoscccd.jpeg",
@@ -56,21 +72,6 @@ export const projects_en = [
           ],
           "localVideo": "./videos/ccrma-web.mp4", 
           "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/fjBn5qU85QI?si=QpEU2ODarxtDuPZE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
-        }
-      },
-      {
-        "href": "tea.html",
-        "imgSrc": "./img/tres2-r.jpg",
-        "imgAlt": "TRES ESTUDIOS ABIERTOS",
-        "title": "Tres Estudios Abiertos",
-        "year": "2020-2025",
-        "description": "Writing, JavaScript, and artistic research (ongoing)",
-        "details": {
-          "fullDescription": "<p>Tres Estudios Abiertos takes place at the intersection of knowledge and the sensible, and it is connected to the <emph>generation of new modes of musical performance and the opening of innovative channels for the presentation and dissemination of artistic research in music</emph> (de Assis, 2018).</p><p>Within this framework arises the central question of this research: What contributions can code writing make to new modes of audiovisual performance and to the creation of a reflective document that integrates sound, graphics, and text in the context of artistic research?</p><p>The answer lies in the JavaScript programming language. The result, published as a web page, can be explored at: <a href='https://tres.ocelotl.cc/'>tres.ocelotl.cc</a>. This project is complemented by a repository that manages the background and generates a structured PDF file with the results of the research.</p><p>Project code available at: <a href='https://github.com/EmilioOcelotl/tres-front'>https://github.com/EmilioOcelotl/tres-front</a> and <a href='https://github.com/EmilioOcelotl/tres-back'>https://github.com/EmilioOcelotl/tres-back</a></p><h3>References</h3><p>De Assis, P. (2018). Logic of Experimentation. Leuven University Press. <a href='https://doi.org/10.2307/j.ctv6zdcpg'>https://doi.org/10.2307/j.ctv6zdcpg</a></p>",
-          "images": [
-            "./img/tres-r.jpg",
-            "./img/tres2-r.jpg"
-          ]
         }
       },
       {

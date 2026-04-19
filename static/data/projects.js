@@ -1,6 +1,22 @@
 export const projects = [
 
   {
+    "href": "tea.html",
+    "imgSrc": "./img/tres2-r.jpg",
+    "imgAlt": "TRES ESTUDIOS ABIERTOS",
+    "title": "Tres Estudios Abiertos",
+    "year": "2026",
+    "description": "Escritura de código como forma de investigación artística",
+    "details": {
+      "fullDescription": "<p>¿Qué aportes puede realizar la escritura de código a los nuevos modos del performance audiovisual y a la escritura de un documento reflexivo que integra sonido, gráficos y texto en el contexto de la investigación artística? Esa es la pregunta central de esta tesis doctoral, inscrita en el Programa de Maestría y Doctorado en Música de la UNAM.</p><p>Es una investigación académica y una pieza artística que corre en el navegador: la misma cosa vista desde dos lados. La arquitectura del sistema no preexistía a los estudios; emergió al implementarlos.</p><p>La tesis se organiza en tres partes. La Parte I es el archivo principal: la tesis académica en sentido convencional, con introducción, conceptos operativos, arquitectura del sistema, iteraciones experimentales y conclusiones. La Parte II es el archivo transversal: nodos temáticos (Interfaz, Temporalidad, Error, Data Center, Máquina virtual, Claude, From scratch) que atraviesan la tesis por debajo de su estructura. La Parte III son los archivos comprimidos: versiones generativas de la tesis, en desarrollo.</p><p><code>tres-app</code> es la plataforma técnica. Lee la base de datos SQLite de Trilium Notes, donde se escribe la tesis, y produce dos salidas: un PDF (Parte I) y una visualización 3D navegable (Parte II). Corre en un servidor casero con Express, pm2 y Docker; la base se sincroniza con un script bash y cron.</p><p>La visualización 3D es un grafo force-directed construido con Three.js y d3-force-3d. Cada nota es una esfera con halo emisivo; cada enlace padre-hijo, una línea con degradado. La paleta es bipolar: Parte I en cian, Parte II en magenta, referencias en blanco-azul. Las partes se distribuyen hemisféricamente con sesgo en el eje X. Las etiquetas usan CSS2DRenderer con opacidad por distancia de cámara, y el conjunto pasa por un UnrealBloomPass para el brillo.</p><p>Los casos de estudio son también las piezas: <a href='https://anti.ocelotl.cc'>anti</a> (ofuscación audiovisual, JavaScript + SuperCollider), <a href='https://github.com/EmilioOcelotl/THREE.studies-II'>THREE.studies-II</a> (sonido y gráficos en el navegador, Three.js + SuperCollider) y <a href='https://risosc.ocelotl.cc'>risosc</a> (impresiones risográficas con NFC y síntesis granular). Comparten <a href='https://github.com/EmilioOcelotl/treslib'>treslib</a>, librería escrita en paralelo a la tesis.</p><p>La tesis puede consultarse en: <a href='https://tres.ocelotl.cc'>tres.ocelotl.cc</a> </p><p>Repositorio de código: <a href='https://github.com/EmilioOcelotl/tres-app'>github.com/EmilioOcelotl/tres-app</a></p>",
+      "images": [
+        "./img/tres-r.jpg",
+        "./img/tres2-r.jpg"
+      ]
+    }
+  },
+
+  {
     "href": "risosc.html",
     "imgSrc": "./img/risosc4.jpg",
     "imgAlt": "risosc",
@@ -8,7 +24,7 @@ export const projects = [
     "year": "2025",
     "description": "Impresiones risográficas con identificadores NFC y esculturas 3D",
     "details": {
-      "fullDescription": "<p>RisOSC: escrituras sobre lo escaso multiplicado y lo efímero único.</p><p>El proyecto combina impresiones risográficas con identificadores NFC y esculturas 3D, y se estructura en cinco partes:</p><p>Web: páginas que se abren en dispositivos móviles o de escritorio al leer una etiqueta NFC.</p><p>Server: gestión de lecturas y envío de mensajes vía sockets a la página general y a las páginas específicas.</p><p>Firmware: dispositivo personalizado que lee etiquetas NFC, sin necesidad de un teléfono.</p><p>Export: los renders pueden exportarse como archivos OBJ para su uso en otros contextos.<p>Scripts: la página principal puede ejecutarse de manera automática en una computadora para la exhibición.<p>El repositorio del proyecto se encuentra en: <a href='https://github.com/EmilioOcelotl/risosc'>RisOSC</a></p><p>Presentada en el marco de la muestra Algorítmica Íntima en el Centro de Cultura Digital, Ciudad de México, 2025.</p>",
+      "fullDescription": "<p>Escrituras sobre lo escaso multiplicado y lo efímero único.</p><p>Cuando un visitante acerca una impresión risográfica a un lector NFC, se genera una visualización única con Three.js e Hydra y se captura un snapshot comprimido en base de datos. La instalación tiene seis partes: las visualizaciones web, un servidor con WebSockets, el firmware ESP32 que maneja el lector, un exportador de mallas 3D, los scripts que dejan corriendo la proyección en sala y un dashboard para revisar lo que pasó durante la muestra.</p><p>Presentada en <em>Algorítmica Íntima</em>, Centro de Cultura Digital, Ciudad de México, 2025.</p><p>Después de la exhibición, el material capturado se volvió su propio objeto: <a href='https://risosc.ocelotl.cc'>risosc.ocelotl.cc</a> organiza los snapshots en un mosaico denso donde cada celda controla un motor de síntesis granular en tiempo real. Brillo, contraste y complejidad del snapshot modulan los parámetros del granulador.</p><p>Código: <a href='https://github.com/EmilioOcelotl/risosc'>github.com/EmilioOcelotl/risosc</a></p>",
       "images": [
         "./img/risosc16nov.jpg",
         "./img/risoscccd.jpeg",
@@ -56,21 +72,6 @@ export const projects = [
       ],
       "localVideo": "./videos/ccrma-web.mp4", 
       "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/fjBn5qU85QI?si=QpEU2ODarxtDuPZE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
-    }
-  },
-  {
-    "href": "tea.html",
-    "imgSrc": "./img/tres2-r.jpg",
-    "imgAlt": "TRES ESTUDIOS ABIERTOS",
-    "title": "Tres Estudios Abiertos",
-    "year": "2020-2025",
-    "description": "Escritura, JavaScript e investigación artística (en curso)",
-    "details": {
-      "fullDescription": "<p>Tres Estudios Abiertos se sitúa en la frontera donde el conocimiento y lo sensible se encuentran, y se adscribe a la <emph>generación de nuevos modos de performance musical y a la apertura de canales innovadores para la presentación y difusión de la investigación artística en música</emph> (de Assis, 2018).</p><p>En este marco surge la pregunta central de esta investigación: ¿Qué aportes puede realizar la escritura de código a los nuevos modos del performance audiovisual y a la escritura de un documento reflexivo que integra sonido, gráficos y texto en el contexto de la investigación artística?</p><p>La respuesta se encuentra en el lenguaje de programación JavaScript. El resultado, publicado como página web, se puede consultar en: <a href='https://tres.ocelotl.cc/'>tres.ocelotl.cc</a>. Este proyecto se complementa con un repositorio que gestiona el trasfondo y genera un archivo PDF jerarquizado con los resultados de la investigación.</p><p>Código del proyecto disponible en: <a href='https://github.com/EmilioOcelotl/tres-front'>https://github.com/EmilioOcelotl/tres-front</a> y en <a href='https://github.com/EmilioOcelotl/tres-back'>https://github.com/EmilioOcelotl/tres-back</a></p><h3>Referencias</h3><p>De Assis, P. (2018). Logic of Experimentation. Leuven University Press. <a href='https://doi.org/10.2307/j.ctv6zdcpg'>https://doi.org/10.2307/j.ctv6zdcpg</a></p>",
-      "images": [
-        "./img/tres-r.jpg",
-        "./img/tres2-r.jpg"
-      ]
     }
   },
   {
