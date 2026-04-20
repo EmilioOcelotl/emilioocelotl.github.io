@@ -125,9 +125,7 @@ function loadBioPage() {
               <section>
                   <h3></h3>
                   <div>
-                      <p>${content.bioText1}</p>
-                      <p>${content.bioText2}</p>
-                      <p>${content.bioText3}</p>
+                      <p>${content.bioText}</p>
                   </div>
               </section>
 

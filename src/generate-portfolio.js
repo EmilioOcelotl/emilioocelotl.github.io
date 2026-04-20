@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const FONTS_DIR = path.resolve(__dirname, '../../memoria-transvolcánica/render/fonts');
+const FONTS_DIR = path.resolve(__dirname, '../static/font');
 
 // Configuración de estilos
 const COLORS = {
@@ -21,32 +21,22 @@ const FONTS = {
   italic: 'Inconsolata-Regular'
 };
 
-const SYMBOLS = {
-  video: '',
-  audio: '',
-  web: '',
-  '3d': '',
-  link: ''
-};
-
 // URL base para enlaces
 const BASE_URL = 'https://ocelotl.cc';
 
 // Textos traducibles
 const TEXTS = {
   es: {
-    portfolio: 'PORTFOLIO',
+    portfolio: 'PORTAFOLIO',
     generatedOn: 'Portafolio generado el',
-    seeCompleteProject: 'Ver proyecto completo:',
     attachments: 'Archivos adjuntos:',
-    continues: '(continúa)'
+    statementBody: 'Entiendo la escritura de código como una práctica artística. Las preguntas que orientan mi trabajo no se formulan antes de las piezas, se formulan dentro de ellas, en el ejercicio de construirlas. El navegador se ha quedado como el espacio donde ese trabajo sucede, un lugar hecho de lectura y ejecución. Lo que me interesa no es ilustrar una idea con tecnología, sino que la tecnología misma sea el modo en que la pregunta se sostiene.'
   },
   en: {
     portfolio: 'PORTFOLIO',
     generatedOn: 'Portfolio generated on',
-    seeCompleteProject: 'See complete project:',
     attachments: 'Attached files:',
-    continues: '(continues)'
+    statementBody: 'I understand code writing as an artistic practice. The questions that guide my work are not formulated before the pieces, they are formulated within them, in the act of building them. The browser has remained as the space where that work happens, a place made of reading and execution. What interests me is not illustrating an idea with technology, but having the technology itself be the form in which the question holds.'
   }
 };
 
@@ -102,6 +92,27 @@ function createCoverPage(doc, language = 'es') {
     });
 }
 
+// Función para crear la página de statement
+function createStatementPage(doc, language = 'es') {
+  const pageWidth = doc.page.width;
+  const pageHeight = doc.page.height;
+  const margin = 80;
+  const textWidth = pageWidth - margin * 2;
+
+  doc.rect(0, 0, pageWidth, pageHeight).fill('#ffffff');
+
+  const bodyY = pageHeight * 0.20;
+  doc
+    .font(FONTS.body)
+    .fontSize(13)
+    .fillColor(COLORS.primary)
+    .text(TEXTS[language].statementBody, margin, bodyY, {
+      width: textWidth,
+      lineGap: 8,
+      align: 'left'
+    });
+}
+
 // Parsea HTML a una lista de párrafos. Cada párrafo es un array de "runs"
 // (fragmentos de texto, con link opcional) que se renderizan inline.
 function parseToParagraphs(html) {
@@ -144,21 +155,25 @@ function parseToParagraphs(html) {
   return paragraphTexts.map(extractRuns).filter(p => p.length > 0);
 }
 
-// Función para obtener símbolos basados en el tipo de contenido
-function getContentSymbols(project) {
-  const symbols = [];
-  const details = project.details || {};
-  
-  if (details.videoEmbed || details.localVideo) symbols.push(SYMBOLS.video);
-  if (details.audioSrc && details.audioSrc.length > 0) symbols.push(SYMBOLS.audio);
-  if (details.embed3d) symbols.push(SYMBOLS['3d']);
-  if (project.description.toLowerCase().includes('web') || 
-      project.description.toLowerCase().includes('navegador')) symbols.push(SYMBOLS.web);
-  
-  // Siempre agregar símbolo de enlace si tiene href
-  if (project.href) symbols.push(SYMBOLS.link);
-  
-  return symbols.length > 0 ? ` ${symbols.join(' ')}` : '';
+// Devuelve hasta 2 rutas de imagen absolutas para renderizar en el PDF
+function getImagesToRender(project) {
+  const images = [];
+  const staticDir = path.join(process.cwd(), 'static');
+
+  if (project.details && project.details.images && project.details.images.length > 0) {
+    for (const src of project.details.images) {
+      if (images.length >= 2) break;
+      const p = path.join(staticDir, src.replace('./', ''));
+      if (imageExists(p)) images.push(p);
+    }
+  }
+
+  if (images.length === 0 && project.imgSrc) {
+    const p = path.join(staticDir, project.imgSrc.replace('./', ''));
+    if (imageExists(p)) images.push(p);
+  }
+
+  return images;
 }
 
 // Función para verificar si existe una imagen
@@ -239,12 +254,10 @@ function estimateProjectHeight(doc, project, contentWidth) {
     height += 20;
   }
   
-  // Altura de la imagen (si existe) - AUMENTADA
-  if (project.imgSrc) {
-    const imagePath = path.join(process.cwd(), 'static', project.imgSrc.replace('./', ''));
-    if (imageExists(imagePath)) {
-      height += 250 + 30;
-    }
+  // Altura de imágenes (hasta 2, side by side)
+  const imgs = getImagesToRender(project);
+  if (imgs.length > 0) {
+    height += 200 + 30;
   }
   
   // Espacio para enlace al proyecto
@@ -445,36 +458,59 @@ function renderProject(doc, project, startY, isFirst = false, language = 'es') {
     currentY = renderAttachments(doc, project, margin, currentY, contentWidth, language);
   }
 
-  // Imagen principal
-  if (project.imgSrc) {
-    const imagePath = path.join(process.cwd(), 'static', project.imgSrc.replace('./', ''));
-    if (imageExists(imagePath)) {
-      try {
-        const maxWidth = contentWidth;
-        const maxHeight = 220;
-        const imageBuffer = fs.readFileSync(imagePath);
-        const imageSize = doc.openImage(imageBuffer);
+  // Imágenes: hasta 2 en paralelo si están disponibles
+  const imagesToRender = getImagesToRender(project);
+  if (imagesToRender.length > 0) {
+    const maxHeight = 180;
+    const gap = 10;
+    const slotWidth = imagesToRender.length === 2
+      ? (contentWidth - gap) / 2
+      : contentWidth;
 
-        let finalWidth = maxWidth;
-        let finalHeight = (imageSize.height / imageSize.width) * maxWidth;
-        if (finalHeight > maxHeight) {
-          finalHeight = maxHeight;
-          finalWidth = (imageSize.width / imageSize.height) * maxHeight;
-        }
+    // Calcular altura real del slot con la primera imagen para salto de página
+    try {
+      const firstBuf = fs.readFileSync(imagesToRender[0]);
+      const firstSize = doc.openImage(firstBuf);
+      const ratio = firstSize.height / firstSize.width;
+      const slotHeight = Math.min(maxHeight, ratio * slotWidth);
 
-        // Si la imagen no cabe en el espacio restante, nueva página
-        if (currentY + finalHeight > doc.page.height - margin - 40) {
-          doc.addPage();
-          currentY = 60;
-        }
-
-        currentY += 14;
-        const imageX = margin + (contentWidth - finalWidth) / 2;
-        doc.image(imageBuffer, imageX, currentY, { width: finalWidth, height: finalHeight });
-        currentY += finalHeight + 16;
-      } catch (error) {
-        console.warn(`No se pudo cargar la imagen: ${imagePath}`, error.message);
+      if (currentY + slotHeight + 14 > doc.page.height - margin - 40) {
+        doc.addPage();
+        currentY = 60;
       }
+    } catch (_) { /* si falla la lectura, no saltamos de página preventivamente */ }
+
+    currentY += 14;
+
+    for (let idx = 0; idx < imagesToRender.length; idx++) {
+      try {
+        const imgBuf = fs.readFileSync(imagesToRender[idx]);
+        const imgSize = doc.openImage(imgBuf);
+
+        let w = slotWidth;
+        let h = (imgSize.height / imgSize.width) * w;
+        if (h > maxHeight) {
+          h = maxHeight;
+          w = (imgSize.width / imgSize.height) * h;
+        }
+
+        const slotX = margin + idx * (slotWidth + gap);
+        const imgX = slotX + (slotWidth - w) / 2;
+        doc.image(imgBuf, imgX, currentY, { width: w, height: h });
+      } catch (error) {
+        console.warn(`No se pudo cargar imagen: ${imagesToRender[idx]}`, error.message);
+      }
+    }
+
+    // Avanzar Y con la altura del slot (estimada con slotWidth y maxHeight)
+    try {
+      const firstBuf = fs.readFileSync(imagesToRender[0]);
+      const firstSize = doc.openImage(firstBuf);
+      const ratio = firstSize.height / firstSize.width;
+      const slotHeight = Math.min(maxHeight, ratio * slotWidth);
+      currentY += slotHeight + 16;
+    } catch (_) {
+      currentY += maxHeight + 16;
     }
   }
 
@@ -578,8 +614,13 @@ async function generatePortfolio(language = 'en') {
   // 1. CREAR PORTADA
   console.log('📄 Creando portada...');
   createCoverPage(doc, language);
-  
-  // 2. AGREGAR NUEVA PÁGINA PARA LOS PROYECTOS
+
+  // 2. STATEMENT
+  doc.addPage();
+  console.log('📄 Página de statement...');
+  createStatementPage(doc, language);
+
+  // 3. PÁGINA DE PROYECTOS
   doc.addPage();
   console.log('📄 Página de proyectos...');
   
