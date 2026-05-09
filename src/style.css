@@ -10,11 +10,11 @@ html {
 :root {
   --accent-color: #00B5B2;
   --accent-hover: rgba(0, 181, 178, 0.6);
-  --color-bg: #090D0D;
-  --color-surface: #0D1515;
+  --color-bg: #0D0D0D;
+  --color-surface: #131313;
   --color-text: #E8F0F0;
   --color-text-mid: #8AADAD;
-  --color-overlay-subtle: rgba(0, 181, 178, 0.04);
+  --color-overlay-subtle: rgba(255, 255, 255, 0.03);
   --color-border: rgba(0, 181, 178, 0.10);
   --color-overlay-dark: rgba(0, 0, 0, 0.7);
 }
@@ -124,7 +124,7 @@ body {
   
   .project:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 15px var(--accent-color);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
   }
   
   nav ul {
