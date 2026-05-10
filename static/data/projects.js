@@ -17,6 +17,21 @@ export const projects = [
   },
 
   {
+    "href": "piranhalab.html",
+    "imgSrc": "./img/tecnologias-cotidianas.jpeg",
+    "imgAlt": "PiranhaLab",
+    "title": "PiranhaLab",
+    "year": "2019–2026",
+    "description": "Laboratorio de arte, tecnología y cultura libre",
+    "details": {
+      "fullDescription": "<p>Laboratorio de experimentación entre arte, tecnología y educación, activo en Ciudad de México desde 2019. Co-fundado con Marianne Teixido; colabora actualmente también Dorian Sotomayor.</p><p>Produce infraestructura cultural experimental: instalaciones sonoras, herramientas de código abierto, talleres de soberanía tecnológica y archivo distribuido. Los talleres cubren live coding, síntesis sonora y documentación del territorio.</p><p>Proyecto beneficiario del Programa de Apoyo a la Docencia, Investigación y Difusión de las Artes.</p><p>Sitio: <a href='https://piranhalab.cc'>piranhalab.cc</a></p>",
+      "images": [
+        "./img/tecnologias-cotidianas.jpeg"
+      ]
+    }
+  },
+
+  {
     "href": "risosc.html",
     "imgSrc": "./img/risosc4.jpg",
     "imgAlt": "risosc",

@@ -16,6 +16,21 @@ export const projects_en = [
         }
       },
 
+      {
+        "href": "piranhalab.html",
+        "imgSrc": "./img/tecnologias-cotidianas.jpeg",
+        "imgAlt": "PiranhaLab",
+        "title": "PiranhaLab",
+        "year": "2019–2026",
+        "description": "Art, technology and free culture lab",
+        "details": {
+          "fullDescription": "<p>Experimental laboratory at the intersection of art, technology, and education, active in Mexico City since 2019. Co-founded with Marianne Teixido; Dorian Sotomayor is currently a collaborator as well.</p><p>Produces experimental cultural infrastructure: sound installations, open-source tools, technological sovereignty workshops, and distributed archives. Workshops cover live coding, sound synthesis, and territory documentation.</p><p>Beneficiary of the Program for Support of Teaching, Research and Dissemination of the Arts.</p><p>Site: <a href='https://piranhalab.cc'>piranhalab.cc</a></p>",
+          "images": [
+            "./img/tecnologias-cotidianas.jpeg"
+          ]
+        }
+      },
+
     {
         "href": "risosc.html",
         "imgSrc": "./img/risosc4.jpg",
