@@ -93,7 +93,7 @@ export const projects = [
     "year": "2026",
     "description": "Videomapping generativo en tiempo real con Hydra y p5.js",
     "details": {
-      "fullDescription": "<p>MiniMapper es una herramienta de videomapping generativo en tiempo real. Cada superficie es un parche Bezier deformable que recibe como textura el output de Hydra, un video, una imagen o la cámara. Un gesto lento sobre los puntos de control curva los bordes; los vértices esquina anclan la superficie al espacio.</p><p>Sin servidor ni build. Se abre <code>index.html</code> directamente en el navegador.</p><p>Repositorio: <a href='https://github.com/EmilioOcelotl/minimapper'>github.com/EmilioOcelotl/minimapper</a></p>",
+      "fullDescription": "<p>MiniMapper es una herramienta de videomapping generativo en tiempo real. Cada superficie es un parche Bezier deformable que recibe como textura el output de Hydra, un video, una imagen o la cámara. Un gesto lento sobre los puntos de control curva los bordes; los vértices esquina anclan la superficie al espacio.</p><p>Repositorio: <a href='https://github.com/EmilioOcelotl/minimapper'>github.com/EmilioOcelotl/minimapper</a></p>",
       "images": [
         "./img/minimapper-r.jpg"
       ]
