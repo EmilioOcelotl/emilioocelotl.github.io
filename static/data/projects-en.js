@@ -31,6 +31,21 @@ export const projects_en = [
         }
       },
 
+      {
+        "href": "ciudad-monstruo.html",
+        "imgSrc": "./img/ciudad-monstruo-r.jpg",
+        "imgAlt": "Ciudad Monstruo",
+        "title": "Ciudad Monstruo",
+        "year": "2026",
+        "description": "Interactive graphic score and multicanal audio render engine",
+        "details": {
+          "fullDescription": "<p>Ciudad Monstruo is a spatial sound composition tool. Strokes drawn over a circular field are playback instructions; they define when, where, and with what sample something sounds in space.</p><p>The stroke records the intention of the body that makes it. A slow gesture produces a wide stroke; a fast one, a thin line. Width is not decorative. It increases the source's gain and spreads its position across the loudspeakers; a thin stroke concentrates the sound at a precise point in the field.</p><p>Mexico City appears in the field as a spectral presence. Roads, boroughs, interior perimeters filtered through procedural variation. Each time the system loads it generates a slightly different variant. The city mutates.</p><p>Repository: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
+          "images": [
+            "./img/ciudad-monstruo-r.jpg"
+          ]
+        }
+      },
+
     {
         "href": "risosc.html",
         "imgSrc": "./img/risosc4.jpg",

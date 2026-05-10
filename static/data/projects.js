@@ -32,6 +32,21 @@ export const projects = [
   },
 
   {
+    "href": "ciudad-monstruo.html",
+    "imgSrc": "./img/ciudad-monstruo-r.jpg",
+    "imgAlt": "Ciudad Monstruo",
+    "title": "Ciudad Monstruo",
+    "year": "2026",
+    "description": "Partitura gráfica interactiva y motor de audio multicanal",
+    "details": {
+      "fullDescription": "<p>Ciudad Monstruo es una herramienta de composición sonora espacial. Los trazos dibujados sobre un campo circular son instrucciones de reproducción; definen cuándo, dónde y con qué muestra suena algo en el espacio.</p><p>El trazo registra la intención del cuerpo que lo hace. Un gesto lento produce un trazo ancho; uno rápido, una línea fina. El ancho no es decorativo. Aumenta la ganancia de la fuente y dispersa su posición entre los altavoces; el trazo delgado concentra el sonido en un punto preciso del campo.</p><p>La ciudad de México aparece en el campo como una presencia espectral. Vialidades, alcaldías, perímetros interiores filtrados a través de una variación procedural. Cada vez que el sistema carga genera una variante ligeramente distinta. La ciudad muta.</p><p>Repositorio: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
+      "images": [
+        "./img/ciudad-monstruo-r.jpg"
+      ]
+    }
+  },
+
+  {
     "href": "risosc.html",
     "imgSrc": "./img/risosc4.jpg",
     "imgAlt": "risosc",
