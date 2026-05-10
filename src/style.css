@@ -10,8 +10,8 @@ html {
 :root {
   --accent-color: #00B5B2;
   --accent-hover: rgba(0, 181, 178, 0.6);
-  --color-bg: #0D0D0D;
-  --color-surface: #131313;
+  --color-bg: #000000;
+  --color-surface: #0D0D0D;
   --color-text: #E8F0F0;
   --color-text-mid: #8AADAD;
   --color-overlay-subtle: rgba(255, 255, 255, 0.03);
@@ -67,7 +67,7 @@ body {
     color: inherit;
     display: block;
     background-color: var(--color-bg);
-    padding: 0px;
+    padding: 12px;
   }
   
   .project img {
@@ -89,11 +89,11 @@ body {
   }
   
   .project h3 {
-    margin-top: 10px; 
+    margin-top: 10px;
   }
-  
+
   .project p {
-    margin-top: 5px; 
+    margin-top: 5px;
   }
   
   footer {
@@ -114,17 +114,14 @@ body {
   }
 
   .project {
-    background: var(--color-overlay-subtle);
+    background: transparent;
     border: 1px solid var(--color-border);
-    backdrop-filter: blur(4px);
-    border-radius: 12px;
-    padding: 10px;
+    padding: 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .project:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
   }
   
   nav ul {

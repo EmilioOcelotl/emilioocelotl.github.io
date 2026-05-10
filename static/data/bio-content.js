@@ -2,7 +2,7 @@
 export const bioContent = {
     es: {
       bioTitle: "Emilio Ocelotl",
-      bioText: "Entiendo la escritura de código como una práctica artística. Las preguntas que orientan mi trabajo no se formulan antes de las piezas, se formulan dentro de ellas, en el ejercicio de construirlas. El navegador se ha quedado como el espacio donde ese trabajo sucede, un lugar hecho de lectura y ejecución. Lo que me interesa no es ilustrar una idea con tecnología, sino que la tecnología misma sea el modo en que la pregunta se sostiene.",
+      bioText: "Entiendo la escritura de código como una práctica artística. Las preguntas que orientan mi trabajo no se formulan antes de las piezas, se formulan dentro de ellas, en el ejercicio de construirlas. El navegador y el campo de altavoces son los espacios donde ese trabajo sucede, lugares hechos de instrucciones que se ejecutan. Lo que me interesa no es ilustrar una idea con tecnología, sino que la tecnología misma sea el modo en que la pregunta se sostiene.",
       trajectory: "Trayectoria",
       awards: "Premios, Distinciones y Residencias",
       awardsList: [
@@ -14,6 +14,8 @@ export const bioContent = {
       ],
       works: "Obra y presentaciones seleccionadas",
       worksList: [
+        "Ciudad Monstruo. Herramienta de composición sonora espacial. Notación gráfica y render de audio multicanal. CDMX. 2026.",
+        "MiniMapper. Herramienta de videomapping generativo en tiempo real. 2026.",
         "Audio-Visual Sessions. Presentación de piezas fijas creadas durante la residencia de RGGTRN (Marianne Teixido y Emilio Ocelotl). Con obras de: Celeste Betancur, Brian Brown, Tatiana Catanzaro, Anna Golubkova, Lemon Guo, Nick Shaheed. 19 de enero de 2024 en CCRMA Stage, CCRMA, Stanford.",
         "Deep Structures. Concierto audiovisual en colaboración con Marianne Teixido. Presentación en NIME CDMX en Centro de Cultura Digital. Ciudad de México. 2023. Presentación en Sala Blas Galindo del Centro Nacional de las Artes en Ciudad de México. 2023.",
         "Presentación en el festival .collect() realizado por TOPLAP Barcelona y Hangar. Barcelona, España. 7 a 9 de julio de 2022.",
@@ -54,7 +56,7 @@ export const bioContent = {
     },
     en: {
       bioTitle: "Emilio Ocelotl",
-      bioText: "I understand code writing as an artistic practice. The questions that guide my work are not formulated before the pieces, they are formulated within them, in the act of building them. The browser has remained as the space where that work happens, a place made of reading and execution. What interests me is not illustrating an idea with technology, but having the technology itself be the form in which the question holds.",
+      bioText: "I understand code writing as an artistic practice. The questions that guide my work are not formulated before the pieces, they are formulated within them, in the act of building them. The browser and the loudspeaker field are the spaces where that work happens, places made of instructions that run. What interests me is not illustrating an idea with technology, but having the technology itself be the form in which the question holds.",
       trajectory: "Trajectory",
       awards: "Awards, Distinctions and Residencies",
       awardsList: [
@@ -66,6 +68,8 @@ export const bioContent = {
       ],
       works: "Selected Works and Presentations",
       worksList: [
+        "Ciudad Monstruo. Spatial audio composition tool. Graphic notation and multichannel audio render. Mexico City. 2026.",
+        "MiniMapper. Real-time generative videomapping tool. 2026.",
         "Audio-Visual Sessions. Presentation of fixed pieces created during the RGGTRN residency (Marianne Teixido and Emilio Ocelotl). With works by: Celeste Betancur, Brian Brown, Tatiana Catanzaro, Anna Golubkova, Lemon Guo, Nick Shaheed. January 19, 2024 at CCRMA Stage, CCRMA, Stanford.",
         "Deep Structures. Audiovisual concert in collaboration with Marianne Teixido. Presentation at NIME CDMX at Centro de Cultura Digital. Mexico City. 2023. Presentation at Sala Blas Galindo of the National Center for the Arts in Mexico City. 2023.",
         "Presentation at the .collect() festival organized by TOPLAP Barcelona and Hangar. Barcelona, Spain. July 7-9, 2022.",
