@@ -67,6 +67,39 @@ export const projects_en = [
         }
       },
       {
+        "href": "av-ccrma.html",
+        "imgSrc": "./img/residencia-r.jpg",
+        "imgAlt": "stanford2024",
+        "title": "Audio-Visual Sessions",
+        "year": "2024",
+        "description": "Stanford Graduate Composers with M. Teixido and E. Ocelotl",
+        "details": {
+          "fullDescription": "<p>Artistic residency at the Center for Computer Research in Music and Acoustics (CCRMA), Stanford, together with Marianne Teixido, from January 8 to 17, 2024.</p><p>During our stay, we worked with six composition students and presented two concerts: one at the CCRMA Stage and another at the Elliott Program Center.</p><p>The students we collaborated with were: Celeste Betancur, Brian Brown, Tatiana Catanzaro, Anna Golubkova, Lemon Guo, and Nick Shaheed.</p>",
+          "images": [
+            "./img/residencia-r.jpg",
+            "./img/ccrma2024-1-r.jpg",
+            "./img/ccrmaCel-r.jpg",
+            "./img/sd-r.jpeg"
+          ],
+          "localVideo": "./videos/ccrma-web.mp4",
+          "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/fjBn5qU85QI?si=QpEU2ODarxtDuPZE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+        }
+      },
+      {
+        "href": "minimapper.html",
+        "imgSrc": "./img/minimapper-r.jpg",
+        "imgAlt": "MiniMapper",
+        "title": "MiniMapper",
+        "year": "2026",
+        "description": "Real-time generative videomapping with Hydra and p5.js",
+        "details": {
+          "fullDescription": "<p>MiniMapper is a real-time generative videomapping tool. Each surface is a deformable Bezier patch that takes as texture the output of Hydra, a video, an image, or the camera. Moving the control points slowly curves the edges; corner vertices anchor the surface in space.</p><p>No server, no build. Opens <code>index.html</code> directly in the browser.</p><p>Repository: <a href='https://github.com/EmilioOcelotl/minimapper'>github.com/EmilioOcelotl/minimapper</a></p>",
+          "images": [
+            "./img/minimapper-r.jpg"
+          ]
+        }
+      },
+      {
         "href": "synthaxis.html",
         "imgSrc": "./img/synth2.jpeg",
         "imgAlt": "synthaxis",
@@ -83,25 +116,6 @@ export const projects_en = [
           "audioSrc": [
             "./snd/insonora.mp3"
           ]
-        }
-      },
-      {
-        "href": "av-ccrma.html",
-        "imgSrc": "./img/residencia-r.jpg",
-        "imgAlt": "stanford2024",
-        "title": "Audio-Visual Sessions",
-        "year": "2024",
-        "description": "Stanford Graduate Composers with M. Teixido and E. Ocelotl",
-        "details": {
-          "fullDescription": "<p>Artistic residency at the Center for Computer Research in Music and Acoustics (CCRMA), Stanford, together with Marianne Teixido, from January 8 to 17, 2024.</p><p>During our stay, we worked with six composition students and presented two concerts: one at the CCRMA Stage and another at the Elliott Program Center.</p><p>The students we collaborated with were: Celeste Betancur, Brian Brown, Tatiana Catanzaro, Anna Golubkova, Lemon Guo, and Nick Shaheed.</p>",
-          "images": [
-            "./img/residencia-r.jpg",
-            "./img/ccrma2024-1-r.jpg",
-            "./img/ccrmaCel-r.jpg",
-            "./img/sd-r.jpeg"
-          ],
-          "localVideo": "./videos/ccrma-web.mp4", 
-          "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/fjBn5qU85QI?si=QpEU2ODarxtDuPZE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
         }
       },
       {
