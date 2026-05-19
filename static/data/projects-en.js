@@ -168,39 +168,42 @@ export const projects_en = [
           ]
         }
       },
-      {
+      /* {
         "href": "presentaciones.html",
         "imgSrc": "./img/valle01.jpg",
         "imgAlt": "valle",
         "title": "A/V Presentations",
-        "year": "2011-2024",
+        "year": "2019-2024",
         "description": "Live audio and visuals",
         "details": {
-          "fullDescription": "<ul><li>Emilio Ocelotl, Aaron Escobar, and Dorian Sotomayor @ Concierto Post Transferencias Aurales, Mexico City, 2024</li><li>Emilio Ocelotl @ Valle de Bravo, 2019</li><li>RGGTRN @ ICLC. Nave de Terneras, Madrid, Spain, 2019</li><li>RGGTRN @ Algorave-Algorumba. Casa Rodante, Manizales, Colombia, 2017</li><li>Emilio Ocelotl and Luis Navarro @ Festival /*vivo*/ Auditorio del MUAC, UNAM, Mexico City, 2012</li></ul>",
+          "fullDescription": "<ul><li>Emilio Ocelotl, Aaron Escobar, and Dorian Sotomayor @ Concierto Post Transferencias Aurales, Mexico City, 2024</li><li>Emilio Ocelotl @ Valle de Bravo, 2019</li></ul>",
           "images": [
             "./img/valle2.jpeg",
             "./img/valle01-r.jpg",
+            "./img/postrans.jpg"
+          ]
+        }
+      }, */
+      {
+        "href": "rggtrn.html",
+        "imgSrc": "./img/lac-r.jpg",
+        "imgAlt": "RGGTRN",
+        "title": "RGGTRN",
+        "year": "2012-2019",
+        "description": "Collective of algorithmic music and audiovisual improvisation",
+        "details": {
+          "fullDescription": "<p>RGGTRN (pronounced reɣɣaeˈtɾon) started in 2012 in Mexico City as ~ON, an electroacoustic and mixed music duo with Luis Navarro. Early performances included guest musicians. In 2014 we performed at Festival Databit.me in Arles, France, with Henri Marquet on guitarrón and Emmanuelle Aymès on voice. During that tour, in Bilbao, we adopted the name RGGTRN.</p><p>The work shifted toward algorithmic music for dancing and audiovisual improvisation, rooted in the Latinx context of its members. Performances at Algorave CCD (Mexico City, 2018), Algorave-Algorumba (Manizales, Colombia, 2017), International Conference on Live Coding (Madrid, 2019), and Linux Audio Conference (2019). The Bellacode tour (2017) was one of the most emblematic activities of the collective.</p>",
+          "images": [
+            "./img/lac-r.jpg",
             "./img/algoraveccd.jpg",
             "./img/algoraveccd2-r.jpg",
             "./img/algoraveMadrid2019.jpeg",
             "./img/algoraveMadrid2019-2.jpeg",
-            "./img/postrans.jpg"
-          ]
-        }
-      },
-      {
-        "href": "algorave2023.html",
-        "imgSrc": "./img/algorave2-r.jpg",
-        "imgAlt": "algorave",
-        "title": "Algorave CDMX",
-        "year": "2023",
-        "description": "Collaboration with Dorian Sotomayor",
-        "details": {
-          "fullDescription": "<p>Audio-visual performance with Dorian Sotomayor at Algorave CDMX 2023.</p>",
-          "images": [
-            "./img/algorave2-r.jpg"
+            "./img/peru-r.jpg",
+            "./img/rggtrnbanner-r.png",
+            "./img/rggtrnFull-r.jpg"
           ],
-          "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/-2E_Hc4lCBw?si=Z6cXaSI4IdL5RZwv' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+          "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/owJwB3BsclI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
         }
       },
       {
@@ -223,6 +226,21 @@ export const projects_en = [
             "./snd/audio2.mp3",
             "./snd/audio3.mp3"
           ]
+        }
+      },
+      {
+        "href": "algorave2023.html",
+        "imgSrc": "./img/algorave2-r.jpg",
+        "imgAlt": "algorave",
+        "title": "Algorave CDMX",
+        "year": "2023",
+        "description": "Collaboration with Dorian Sotomayor",
+        "details": {
+          "fullDescription": "<p>Audio-visual performance with Dorian Sotomayor at Algorave CDMX 2023.</p>",
+          "images": [
+            "./img/algorave2-r.jpg"
+          ],
+          "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/-2E_Hc4lCBw?si=Z6cXaSI4IdL5RZwv' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
         }
       },
       {
@@ -272,25 +290,9 @@ export const projects_en = [
             "./img/noche2019-2.jpg", 
             "./img/data.jpg", 
             "./img/noche2019-3.jpg", 
-            "./img/noche02-r.png" 
+            "./img/noche02-r.png"
           ]
         }
-      },
-      {
-        "href": "linux.html",
-        "imgSrc": "./img/lac-r.jpg",
-        "imgAlt": "lac",
-        "title": "Linux Audio Conference",
-        "year": "2019",
-        "description": "RGGTRN performance at the Linux Audio Conference"
-      },
-      {
-        "href": "algoraveccd.html",
-        "imgSrc": "./img/algoraveccd2-r.jpg",
-        "imgAlt": "ccdAlgorave",
-        "title": "Centro de Cultura Digital",
-        "year": "2018",
-        "description": "RGGTRN (M. Teixido + E. Ocelotl) at Algorave CCD"
       },
       {
         "href": "ofhawc.html",
@@ -323,15 +325,7 @@ export const projects_en = [
         "title": "Altamisa",
         "year": "2016-2018",
         "description": "Cello, electronics, and visuals"
-      },
-      {
-        "href": "rggtrn-bellacode.html",
-        "imgSrc": "./img/peru-r.jpg",
-        "imgAlt": "rggtrn-bellacode",
-        "title": "RGGTRN-Bellacode Tour",
-        "year": "2017",
-        "description": "RGGTRN tour in collaboration with Bellacode"
-      }                  
-                                   
-                  
+      }
+
+
 ];
