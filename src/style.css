@@ -13,7 +13,7 @@ html {
   --color-bg: #000000;
   --color-surface: #0D0D0D;
   --color-text: #E8F0F0;
-  --color-text-mid: #8AADAD;
+  --color-text-mid: rgba(255, 255, 255, 0.45);
   --color-overlay-subtle: rgba(255, 255, 255, 0.03);
   --color-border: rgba(0, 181, 178, 0.10);
   --color-overlay-dark: rgba(0, 0, 0, 0.7);
@@ -125,6 +125,7 @@ nav .nav-icon {
 
   .project p {
     margin-top: 5px;
+    color: var(--color-text-mid);
   }
   
   footer {
