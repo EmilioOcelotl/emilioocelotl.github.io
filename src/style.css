@@ -239,11 +239,38 @@ nav .nav-icon {
     letter-spacing: -0.01em;
   }
  
-  .contact-icon {
-    font-size: 24px;
-    margin-right: 10px;
+  .contact-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.20);
     margin-top: 40px;
-}
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+  }
+
+  .contact-label {
+    font-family: 'Inconsolata', monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--color-text-mid);
+    min-width: 100px;
+  }
+
+  #contact a {
+    font-family: 'Inconsolata', monospace;
+    font-size: 15px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  #contact a:hover {
+    color: #fff;
+  }
 
 a {
   color: var(--color-text);

@@ -72,28 +72,32 @@ function loadContactPage() {
     const contactTitle = currentLanguage === 'es' ? 'Contacto' : 'Contact';
     const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
 
+    const emailLabel = currentLanguage === 'es' ? 'CORREO' : 'EMAIL';
+
     mainContent.innerHTML = `
-      <div class="project-details"> <!-- Wrap in project-details for centering -->
+      <div class="project-details">
           <section id="contact">
               <h2>${contactTitle}</h2>
-              <div>
-                  <i class="contact-icon fas fa-envelope"></i>
-                  <a href="mailto:emilio.ocelotl@gmail.com">emilio.ocelotl@gmail.com</a>
+              <div class="contact-list">
+                  <div class="contact-row">
+                      <span class="contact-label">${emailLabel}</span>
+                      <a href="mailto:emilio.ocelotl@gmail.com">emilio.ocelotl@gmail.com</a>
+                  </div>
+                  <div class="contact-row">
+                      <span class="contact-label">GITHUB</span>
+                      <a href="https://github.com/EmilioOcelotl">EmilioOcelotl</a>
+                  </div>
+                  <div class="contact-row">
+                      <span class="contact-label">INSTAGRAM</span>
+                      <a href="https://www.instagram.com/emilio.ocelotl/">@emilio.ocelotl</a>
+                  </div>
+                  <div class="contact-row">
+                      <span class="contact-label">LINKEDIN</span>
+                      <a href="https://www.linkedin.com/in/emilio-ocelotl-reyes-777061ab">EmilioOcelotl</a>
+                  </div>
               </div>
-              <div>
-                  <i class="contact-icon fab fa-github"></i>
-                  <a href="https://github.com/EmilioOcelotl">EmilioOcelotl</a>
-              </div>
-              <div>
-                  <i class="contact-icon fab fa-instagram"></i>
-                  <a href="https://www.instagram.com/emilio.ocelotl/">EmilioOcelotl</a>
-              </div> 
-              <div>
-                  <i class="contact-icon fab fa-linkedin"></i>
-                  <a href="https://www.linkedin.com/in/emilio-ocelotl-reyes-777061ab">EmilioOcelotl</a>
-              </div> 
           </section>
-          <div class="button-wrapper"> <!-- Wrapper for button styling -->
+          <div class="button-wrapper">
               <button id="backButton" class="back-button">${backButtonText}</button>
           </div>
       </div>
