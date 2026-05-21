@@ -269,7 +269,10 @@ function loadHomePage() {
         projectElement.innerHTML = `
             <a href="${project.href}" data-href="${project.href}" class="project-link">
                 <img src="${project.imgSrc}" ${buildSrcset(project.imgSrc)} sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw" alt="${project.imgAlt}">
-                <h3>${project.title}<br>${project.year}</h3>
+                <div class="project-title-row">
+                  <h3>${project.title}</h3>
+                  <span class="project-card-year">${project.year}</span>
+                </div>
                 <p>${project.description}</p>
             </a>
         `;
