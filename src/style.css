@@ -147,11 +147,11 @@ nav .nav-icon {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.20);
     padding: 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease;
   }
-  
+
   .project:hover {
-    transform: scale(1.03);
+    border-color: rgba(255, 255, 255, 0.55);
   }
   
   nav ul {
