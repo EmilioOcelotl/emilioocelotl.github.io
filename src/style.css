@@ -162,8 +162,8 @@ nav .nav-icon {
   }
 
   .language-toggle:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
+    border-color: #fff;
+    color: #fff;
   }
   
   nav ul li a {
@@ -176,7 +176,7 @@ nav .nav-icon {
 
   nav ul li a:hover,
   nav ul li a[aria-current="page"] {
-    color: var(--accent-color);
+    color: #fff;
   }
   
   #bio {
@@ -263,7 +263,7 @@ a {
 
 .project-header {
   display: grid;
-  grid-template-columns: 58% 1fr;
+  grid-template-columns: 1fr 58%;
   gap: 48px;
   align-items: start;
   margin-bottom: 48px;
@@ -376,9 +376,9 @@ a {
 }
 
 @keyframes glow {
-  0% { text-shadow: 0 0 5px var(--accent-color); }
-  50% { text-shadow: 0 0 20px var(--accent-color); }
-  100% { text-shadow: 0 0 5px var(--accent-color); }
+  0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.4); }
+  50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+  100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.4); }
 }
 
 h1:hover {

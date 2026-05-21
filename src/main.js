@@ -121,7 +121,6 @@ function loadBioPage() {
     mainContent.innerHTML = `
       <div class="project-details"> <!-- Wrap all content for centering -->
           <section id="bio">
-              <h2>${content.bioTitle}</h2>
               <section>
                   <h3></h3>
                   <div>
@@ -303,17 +302,17 @@ function loadProjectDetails(project) {
     mainContent.innerHTML = `
       <div class="project-details">
         <div class="project-header">
+          <div class="project-meta-col">
+            <h3>${project.title}</h3>
+            ${project.year ? `<span class="project-year">${project.year}</span>` : ''}
+            ${project.description ? `<p class="project-description-short">${project.description}</p>` : ''}
+          </div>
           <div class="project-carousel-col">
             <div class="carousel">
               ${project.details.images.map(img => `
                 <img src="${img}" ${buildSrcset(img)} sizes="(max-width: 768px) 100vw, 55vw" loading="lazy" alt="${project.title}">
               `).join('')}
             </div>
-          </div>
-          <div class="project-meta-col">
-            <h3>${project.title}</h3>
-            ${project.year ? `<span class="project-year">${project.year}</span>` : ''}
-            ${project.description ? `<p class="project-description-short">${project.description}</p>` : ''}
           </div>
         </div>
         <div class="project-body">
