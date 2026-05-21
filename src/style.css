@@ -168,7 +168,7 @@ nav .nav-icon {
   
   nav ul li a {
     text-decoration: none;
-    color: var(--color-text);
+    color: #999;
     letter-spacing: 0.12em;
     font-size: 14px;
     transition: color 0.3s ease;
