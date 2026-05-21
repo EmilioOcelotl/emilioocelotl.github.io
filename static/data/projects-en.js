@@ -201,7 +201,9 @@ export const projects_en = [
             "./img/algoraveMadrid2019-2.jpeg",
             "./img/peru-r.jpg",
             "./img/rggtrnbanner-r.png",
-            "./img/rggtrnFull-r.jpg"
+            "./img/rggtrnFull-r.jpg",
+            "./img/on-muac1.jpeg",
+            "./img/on-muac2.jpeg"
           ],
           "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/owJwB3BsclI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
         }
