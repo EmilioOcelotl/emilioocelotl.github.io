@@ -12,26 +12,28 @@
     <script type="module" src="main.js"></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <!--<li><a href="radio.html"><i class="fa-sharp fa-solid fa-radio"></i></a></li>-->
-            <li><a href="bio.html" id="bioLink">BIO</a></li>
-            <li><a href="contacto.html" id="contactLink">CONTACTO</a></li>
-            <!--<li><a href="blog.html" id="blogLink">BLOG</a></li>-->
-            <li>
-                <button id="languageToggle" class="language-toggle" aria-label="Cambiar a inglés">
-                    <span class="lang-text">ES</span>
-                </button>
-            </li>
-        </ul>
-    </nav>
-    <header>
-        <div class="header-content">
-            <a href="index.html">
-                <h1>EMILIO OCELOTL</h1>
-            </a>
-        </div>
-    </header>
+    <div class="top-bar">
+        <header>
+            <div class="header-content">
+                <a href="index.html">
+                    <h1>EMILIO OCELOTL</h1>
+                </a>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <!--<li><a href="radio.html"><i class="fa-sharp fa-solid fa-radio"></i></a></li>-->
+                <li><a href="bio.html" id="bioLink">BIO</a></li>
+                <li><a href="contacto.html" id="contactLink"><span class="nav-label">CONTACTO</span><i class="fa-regular fa-envelope nav-icon"></i></a></li>
+                <!--<li><a href="blog.html" id="blogLink">BLOG</a></li>-->
+                <li>
+                    <button id="languageToggle" class="language-toggle" aria-label="Cambiar a inglés">
+                        <span class="lang-text">ES</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <main>
         <section id="proyectos">
             <div class="projects"></div>

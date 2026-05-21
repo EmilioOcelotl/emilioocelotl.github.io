@@ -29,7 +29,21 @@ body {
   line-height: 1.65;
   background-color: var(--color-bg);
   color: var(--color-text);
-  }
+}
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+}
+
+nav .nav-icon {
+  display: none;
+}
   
   a h1 {
     color: var(--color-text);
@@ -105,12 +119,10 @@ body {
   }
   
   nav {
-    float: right;
     position: relative;
     z-index: 1;
-    margin-top: 20px;
     margin-right: 45px;
-    margin-left: 20px;
+    margin-left: auto;
   }
 
   .project {
@@ -178,7 +190,7 @@ body {
   header {
     position: relative;
     color: var(--color-text);
-    text-align: left; 
+    text-align: left;
   }
   
   .header-content {
@@ -189,15 +201,13 @@ body {
   h1 {
     font-family: 'Syne', sans-serif;
     display: inline-block;
-    margin-top: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 45px;
-    padding-bottom: 6px;
     font-size: 22px;
     font-weight: 800;
     letter-spacing: 0.10em;
     text-align: left;
-    border-bottom: 1px solid var(--accent-color);
-    transition: border-color 0.4s ease;
   }
 
   h3 {
@@ -242,25 +252,97 @@ a {
 
 .project-details {
   text-align: left;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 8%;
+  margin-right: 8%;
   margin-top: 5%;
-
 }
 
 .project-details p {
-  margin: 20px 0; 
+  margin: 20px 0;
+}
+
+.project-header {
+  display: grid;
+  grid-template-columns: 58% 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+.project-carousel-col .carousel {
+  max-width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.project-meta-col h3 {
+  display: block;
+  margin-top: 0;
+}
+
+.project-year {
+  display: block;
+  font-family: 'Inconsolata', monospace;
+  font-size: 13px;
+  color: var(--color-text-mid);
+  letter-spacing: 0.10em;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.project-description-short {
+  font-family: 'Inconsolata', monospace;
+  font-size: 15px;
+  color: var(--color-text-mid);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.project-body {
+  border-top: 1px solid var(--color-border);
+  padding-top: 40px;
+  margin-top: 8px;
 }
 
 @media screen and (max-width: 768px) {
   .project-details {
     margin-left: 1%;
-    margin-right: 1%; 
+    margin-right: 1%;
+  }
+  .project-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .project-carousel-col .carousel {
+    height: 200px;
+  }
+  header {
+    flex: 1;
   }
   h1 {
-    font-size: 18px;
-    margin-left: 20px;
-    letter-spacing: 0.2em;
+    font-size: 14px;
+    margin-left: 12px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+  nav {
+    flex-shrink: 0;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+  nav ul {
+    gap: 8px;
+  }
+  .language-toggle {
+    padding: 3px 6px;
+  }
+  .nav-label {
+    display: none;
+  }
+  nav .nav-icon {
+    display: inline;
+    font-size: 14px;
   }
 }
 
@@ -306,24 +388,23 @@ h1:hover {
 #backButton {
   font-family: 'Inconsolata', monospace;
   background: transparent;
-  border: 1px solid var(--accent-color);
-  color: var(--accent-color);
-  padding: 10px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.45);
+  padding: 8px 24px;
   text-decoration: none;
-  display: block;
-  font-size: 14px;
+  display: inline-block;
+  font-size: 13px;
   letter-spacing: 0.15em;
   cursor: pointer;
   border-radius: 2px;
-  transition: background 0.3s ease, color 0.3s ease;
-  margin: 60px auto 4px;
-  text-align: center;
-  width: 100%;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  margin: 48px 0 40px 0;
+  width: auto;
 }
 
 #backButton:hover {
-  background: var(--accent-color);
-  color: var(--color-bg);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* Media query for mobile devices */

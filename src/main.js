@@ -301,41 +301,51 @@ function loadProjectDetails(project) {
     const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
 
     mainContent.innerHTML = `
-      <div class="project-details"> <!-- Wrapper for centering -->
-          <h3>${project.title}</h3>
-          <p>${project.details.fullDescription}</p>
+      <div class="project-details">
+        <div class="project-header">
+          <div class="project-carousel-col">
+            <div class="carousel">
+              ${project.details.images.map(img => `
+                <img src="${img}" ${buildSrcset(img)} sizes="(max-width: 768px) 100vw, 55vw" loading="lazy" alt="${project.title}">
+              `).join('')}
+            </div>
+          </div>
+          <div class="project-meta-col">
+            <h3>${project.title}</h3>
+            ${project.year ? `<span class="project-year">${project.year}</span>` : ''}
+            ${project.description ? `<p class="project-description-short">${project.description}</p>` : ''}
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-full-description">${project.details.fullDescription}</div>
           ${project.details.localVideo ? `
-              <div class="local-video-container">
-                  <video controls poster="${project.details.videoPoster || ''}">
-                      <source src="${project.details.localVideo}" type="video/mp4">
-                      ${currentLanguage === 'es' ? 'Tu navegador no soporta videos HTML5.' : 'Your browser does not support HTML5 video.'}
-                  </video>
-              </div>
+            <div class="local-video-container">
+              <video controls poster="${project.details.videoPoster || ''}">
+                <source src="${project.details.localVideo}" type="video/mp4">
+                ${currentLanguage === 'es' ? 'Tu navegador no soporta videos HTML5.' : 'Your browser does not support HTML5 video.'}
+              </video>
+            </div>
           ` : ''}
           ${project.details.videoEmbed ? `
-              <div class="video-container">${project.details.videoEmbed}</div>
+            <div class="video-container">${project.details.videoEmbed}</div>
           ` : ''}
           ${project.details.audioSrc ? `
-              <div class="audio-container">
-                  ${project.details.audioSrc.map(audio => `
-                      <audio controls>
-                          <source src="${audio}" type="audio/mpeg">
-                          ${currentLanguage === 'es' ? 'Tu navegador no soporta el elemento de audio.' : 'Your browser does not support the audio element.'}
-                      </audio>
-                  `).join('')}
-              </div>
-          ` : ''}
-          <div class="carousel">
-              ${project.details.images.map(img => `
-                  <img src="${img}" ${buildSrcset(img)} sizes="(max-width: 768px) 100vw, 60vw" loading="lazy" alt="${project.title}">
+            <div class="audio-container">
+              ${project.details.audioSrc.map(audio => `
+                <audio controls>
+                  <source src="${audio}" type="audio/mpeg">
+                  ${currentLanguage === 'es' ? 'Tu navegador no soporta el elemento de audio.' : 'Your browser does not support the audio element.'}
+                </audio>
               `).join('')}
-          </div>
-          ${project.details.embed3d ? `
-              <div class="embed-3d-container">${project.details.embed3d}</div>
+            </div>
           ` : ''}
-          <div class="button-wrapper"> <!-- Wrapper for button styling -->
-              <button id="backButton" class="back-button">${backButtonText}</button>
-          </div>
+          ${project.details.embed3d ? `
+            <div class="embed-3d-container">${project.details.embed3d}</div>
+          ` : ''}
+        </div>
+        <div class="button-wrapper">
+          <button id="backButton" class="back-button">${backButtonText}</button>
+        </div>
       </div>
   `;
 
@@ -482,12 +492,15 @@ function updateNavigationText() {
     const path = window.location.pathname.split('/').pop();
 
     if (bioLink && contactLink) {
+        const contactLabel = contactLink.querySelector('.nav-label');
         if (currentLanguage === 'es') {
             bioLink.textContent = 'BIO';
-            contactLink.textContent = 'CONTACTO';
+            if (contactLabel) contactLabel.textContent = 'CONTACTO';
+            else contactLink.textContent = 'CONTACTO';
         } else {
             bioLink.textContent = 'BIO';
-            contactLink.textContent = 'CONTACT';
+            if (contactLabel) contactLabel.textContent = 'CONTACT';
+            else contactLink.textContent = 'CONTACT';
         }
 
         // aria-current: marca el link activo para lectores de pantalla
