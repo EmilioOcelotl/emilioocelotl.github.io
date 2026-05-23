@@ -434,6 +434,32 @@ function initializeCarousel() {
         currentIndex = i;
         showImage(currentIndex);
     }));
+
+    // Mostrar controles solo con movimiento real (umbral 4px), ocultar tras 2.5s
+    let idleTimer = null;
+    let lastX = null, lastY = null;
+
+    function showControls() {
+        carousel.classList.add('controls-visible');
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => carousel.classList.remove('controls-visible'), 1200);
+    }
+
+    carousel.addEventListener('mousemove', (e) => {
+        const dx = lastX === null ? Infinity : Math.abs(e.clientX - lastX);
+        const dy = lastY === null ? Infinity : Math.abs(e.clientY - lastY);
+        lastX = e.clientX;
+        lastY = e.clientY;
+        if (dx < 4 && dy < 4) return;
+        showControls();
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        clearTimeout(idleTimer);
+        lastX = null;
+        lastY = null;
+        carousel.classList.remove('controls-visible');
+    });
 }
 
 // Helper to update button text consistently
