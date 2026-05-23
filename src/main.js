@@ -11,7 +11,6 @@ import imagesLoaded from 'imagesloaded';
 let currentLanguage = 'en'; // Default to English if no preference saved
 let currentProjects = projects_en; // Default to English projects
 
-let carouselInterval = null;
 let masonryInstance = null;
 
 function initMasonry() {
@@ -328,10 +327,20 @@ function loadProjectDetails(project) {
           </div>
           <div class="project-carousel-col">
             <div class="carousel">
-              ${project.details.images.map(img => `
-                <img src="${img}" ${buildSrcset(img)} sizes="(max-width: 768px) 100vw, 55vw" loading="lazy" alt="${project.title}">
-              `).join('')}
+              ${project.details.images.map(item => {
+                const src = typeof item === 'object' ? item.src : item;
+                const cap = typeof item === 'object' && item.caption ? item.caption : '';
+                return `<img src="${src}" ${buildSrcset(src)} sizes="(max-width: 768px) 100vw, 55vw" loading="lazy" alt="${project.title}" data-caption="${cap}">`;
+              }).join('')}
+              ${project.details.images.length > 1 ? `
+                <button class="carousel-prev" aria-label="${currentLanguage === 'es' ? 'Anterior' : 'Previous'}">&#8592;</button>
+                <button class="carousel-next" aria-label="${currentLanguage === 'es' ? 'Siguiente' : 'Next'}">&#8594;</button>
+                <div class="carousel-dots">
+                  ${project.details.images.map((_, i) => `<button class="carousel-dot${i === 0 ? ' active' : ''}" aria-label="Imagen ${i + 1}"></button>`).join('')}
+                </div>
+              ` : ''}
             </div>
+            <p class="carousel-caption"></p>
           </div>
         </div>
         <div class="project-body">
@@ -381,38 +390,50 @@ function loadProjectDetails(project) {
 }
 
 function handleBackButton() {
-    if (carouselInterval !== null) {
-        clearInterval(carouselInterval);
-        carouselInterval = null;
-    }
     window.history.pushState({}, '', '/');
     loadHomePage();
 }
 
 function initializeCarousel() {
-    if (carouselInterval !== null) {
-        clearInterval(carouselInterval);
-        carouselInterval = null;
-    }
-
     const carousel = document.querySelector('.carousel');
     if (!carousel) return;
 
     const images = carousel.querySelectorAll('img');
+    if (images.length === 0) return;
+
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const captionEl = carousel.closest('.project-carousel-col')?.querySelector('.carousel-caption');
+
     let currentIndex = 0;
 
     function showImage(index) {
-        images.forEach((img, i) => {
-            img.classList.toggle('active', i === index);
-        });
+        images.forEach((img, i) => img.classList.toggle('active', i === index));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        if (captionEl) {
+            const cap = images[index].dataset.caption;
+            captionEl.textContent = cap || '';
+            captionEl.style.display = cap ? 'block' : 'none';
+        }
     }
 
-    showImage(currentIndex);
+    showImage(0);
 
-    carouselInterval = setInterval(() => {
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    });
+
+    if (nextBtn) nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
-    }, 3000);
+    });
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => {
+        currentIndex = i;
+        showImage(currentIndex);
+    }));
 }
 
 // Helper to update button text consistently

@@ -402,12 +402,85 @@ a {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 800px; 
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 60px auto 8px;
   overflow: hidden;
-  height: 400px; 
-  margin-top: 60px;
-  margin-bottom: 60px; 
+  height: 400px;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 18%;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.carousel-prev {
+  left: 0;
+  justify-content: flex-start;
+}
+
+.carousel-next {
+  right: 0;
+  justify-content: flex-end;
+}
+
+.carousel-prev:hover {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.30), transparent);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.carousel-next:hover {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.30), transparent);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+
+.carousel-dot.active {
+  background: rgba(255, 255, 255, 0.80);
+}
+
+.carousel-caption {
+  font-family: 'Inconsolata', monospace;
+  font-size: 12px;
+  color: var(--color-text-mid);
+  margin: 8px auto 0;
+  max-width: 800px;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  display: none;
 }
 
 .carousel img {
