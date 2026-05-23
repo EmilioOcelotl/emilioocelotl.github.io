@@ -115,6 +115,21 @@ function loadContactPage() {
     window.scrollTo(0, 0);
 }
 
+function renderNarrativeList(items, threshold = 55) {
+    return items.map(item => {
+        if (typeof item === 'object' && item.name) {
+            return `<li><span class="entry-name">${item.name}</span><span class="entry-body">${item.body}</span></li>`;
+        }
+        const dotPos = item.indexOf('. ');
+        if (dotPos > 0 && dotPos < threshold) {
+            const name = item.substring(0, dotPos);
+            const body = item.substring(dotPos + 2);
+            return `<li><span class="entry-name">${name}</span><span class="entry-body">${body}</span></li>`;
+        }
+        return `<li><span class="entry-body">${item}</span></li>`;
+    }).join('');
+}
+
 // Función para cargar la página BIO
 function loadBioPage() {
     const mainContent = document.querySelector('main');
@@ -126,44 +141,41 @@ function loadBioPage() {
       <div class="project-details"> <!-- Wrap all content for centering -->
           <section id="bio">
               <section>
-                  <h3></h3>
-                  <div>
-                      <p>${content.bioText}</p>
-                  </div>
+                  <p class="bio-statement">${content.bioText}</p>
               </section>
 
               <section>
                   <h3>${content.awards}</h3>
-                  <div class="container2">
-                      <ul>${content.awardsList.map(item => `<li>${item}</li>`).join('')}</ul>
+                  <div class="container2 container2--narrative">
+                      <ul>${renderNarrativeList(content.awardsList, 80)}</ul>
                   </div>
               </section>
-              
+
               <section>
                   <h3>${content.works}</h3>
-                  <div class="container2">
-                      <ul>${content.worksList.map(item => `<li>${item}</li>`).join('')}</ul>
+                  <div class="container2 container2--narrative">
+                      <ul>${renderNarrativeList(content.worksList)}</ul>
                   </div>
               </section>
-              
+
               <section>
                   <h3>${content.teaching}</h3>
-                  <div class="container2">
-                      <ul>${content.teachingList.map(item => `<li>${item}</li>`).join('')}</ul>
+                  <div class="container2 container2--narrative">
+                      <ul>${renderNarrativeList(content.teachingList, 80)}</ul>
                   </div>
               </section>
-              
+
               <section>
                   <h3>${content.collaboration}</h3>
-                  <div class="container2">
-                      <ul>${content.collaborationList.map(item => `<li>${item}</li>`).join('')}</ul>
+                  <div class="container2 container2--narrative">
+                      <ul>${renderNarrativeList(content.collaborationList)}</ul>
                   </div>
               </section>
-              
+
               <section>
                   <h3>${content.publications}</h3>
-                  <div class="container2">
-                      <ul>${content.publicationsList.map(item => `<li>${item}</li>`).join('')}</ul>
+                  <div class="container2 container2--narrative">
+                      <ul>${content.publicationsList.map(item => `<li><span class="entry-body">${item}</span></li>`).join('')}</ul>
                   </div>
               </section>
           </section>
