@@ -42,7 +42,8 @@ export const projects = [
     "details": {
       "fullDescription": "<p>Ciudad Monstruo es una herramienta de composición sonora espacial. Los trazos dibujados sobre un campo circular son instrucciones de reproducción; definen cuándo, dónde y con qué muestra suena algo en el espacio.</p><p>El trazo registra la intención del cuerpo que lo hace. Un gesto lento produce un trazo ancho; uno rápido, una línea fina. El ancho no es decorativo. Aumenta la ganancia de la fuente y dispersa su posición entre los altavoces; el trazo delgado concentra el sonido en un punto preciso del campo.</p><p>La ciudad de México aparece en el campo como una presencia espectral. Vialidades, alcaldías, perímetros interiores filtrados a través de una variación procedural. Cada vez que el sistema carga genera una variante ligeramente distinta. La ciudad muta.</p><p>Repositorio: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
       "images": [
-        "./img/ciudad-monstruo-r.jpg"
+        "./img/ciudad-monstruo-r.jpg",
+        "./img/cdm-foto.jpeg"
       ]
     }
   },
@@ -67,6 +68,7 @@ export const projects = [
       "embed3d": "<div class=\"sketchfab-embed-wrapper\"><iframe title=\"risosc-01\" frameborder=\"0\" allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allow=\"autoplay; fullscreen; xr-spatial-tracking\" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src=\"https://sketchfab.com/models/9d273c827c854b1485c24fa8a1543669/embed?ui_theme=dark\"></iframe><p style=\"font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A44;\"><a href=\"https://sketchfab.com/3d-models/risosc-01-9d273c827c854b1485c24fa8a1543669?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669\" target=\"_blank\" rel=\"nofollow\" style=\"font-weight: bold; color: #1CAAD9;\">risosc-01</a> by <a href=\"https://sketchfab.com/emilioocelotl?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669\" target=\"_blank\" rel=\"nofollow\" style=\"font-weight: bold; color: #1CAAD9;\">emilioocelotl</a> on <a href=\"https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669\" target=\"_blank\" rel=\"nofollow\" style=\"font-weight: bold; color: #1CAAD9;\">Sketchfab</a></p></div>"
     }
   },
+
   {
     "href": "av-ccrma.html",
     "imgSrc": "./img/residencia-r.jpg",
@@ -86,6 +88,7 @@ export const projects = [
       "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/fjBn5qU85QI?si=QpEU2ODarxtDuPZE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
     }
   },
+
   {
     "href": "minimapper.html",
     "imgSrc": "./img/minimapper-r.jpg",
@@ -100,6 +103,7 @@ export const projects = [
       ]
     }
   },
+
   {
     "href": "synthaxis.html",
     "imgSrc": "./img/synth2.jpeg",
@@ -119,6 +123,7 @@ export const projects = [
       ]
     }
   },
+
   {
     "href": "threeStudies.html",
     "imgSrc": "./img/three2024-2.jpg",
@@ -136,6 +141,7 @@ export const projects = [
       ]
     }
   },
+
   {
     "href": "anti.html",
     "imgSrc": "./img/antiHydra2-r.jpg",
@@ -152,6 +158,7 @@ export const projects = [
       ]
     }
   },
+
   {
     "href": "nime2023.html",
     "imgSrc": "./img/nime1-r.jpg",
@@ -168,22 +175,7 @@ export const projects = [
       ]
     }
   },
-  /* {
-    "href": "presentaciones.html",
-    "imgSrc": "./img/valle01-r.jpg",
-    "imgAlt": "valle",
-    "title": "Presentaciones Audiovisuales",
-    "year": "2019-2024",
-    "description": "Audio e imagen en vivo",
-    "details": {
-      "fullDescription": "<li>Emilio Ocelotl, Aaron Escobar y Dorian Sotomayor @ Concierto Post Transferencias Aurales, Ciudad de México, 2024</li><li>Emilio Ocelotl @ Valle de Bravo, 2019</li>",
-      "images": [
-        "./img/valle2.jpeg",
-        "./img/valle01-r.jpg",
-        "./img/postrans.jpg"
-      ]
-    }
-  }, */
+
   {
     "href": "rggtrn.html",
     "imgSrc": "./img/lac-r.jpg",
@@ -208,8 +200,9 @@ export const projects = [
       "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/owJwB3BsclI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
     }
   },
+
   {
-    "href": "xicalcoMusica.html",
+    "href": "xicalco.html",
     "imgSrc": "./img/xicalco-r.jpeg",
     "imgAlt": "xicalco2022",
     "title": "Xicalcoliuhqui",
@@ -230,6 +223,7 @@ export const projects = [
       ]
     }
   },
+
   {
     "href": "algorave2023.html",
     "imgSrc": "./img/algorave2-r.jpg",
@@ -245,6 +239,7 @@ export const projects = [
       "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/-2E_Hc4lCBw?si=Z6cXaSI4IdL5RZwv' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
     }
   },
+
   {
     "href": "cusco.html",
     "imgSrc": "./img/cusco-r.jpg",
@@ -260,6 +255,7 @@ export const projects = [
       "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/XbRZuhifAJE?si=ygXWNT5CQiHuLbM5' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
     }
   },
+
   {
     "href": "panorama-edges.html",
     "imgSrc": "./img/edges-r.png",
@@ -268,6 +264,7 @@ export const projects = [
     "year": "2020",
     "description": "Exploración de espacios virtuales compartidos"
   },
+
   {
     "href": "feedback.html",
     "imgSrc": "./img/of13-r.jpg",
@@ -276,6 +273,7 @@ export const projects = [
     "year": "2020",
     "description": "Exploraciones entre código, sonido e imagen"
   },
+
   {
     "href": "noche2.html",
     "imgSrc": "./img/disco3-r.jpg",
@@ -286,16 +284,17 @@ export const projects = [
     "details": {
       "fullDescription": "<p>Intervención audiovisual basada en datos astronómicos. Este proyecto se realizó en colaboración con ACT UNAM y el Instituto de Astronomía. En esta ocasión sonificamos y visualizamos datos de jets astronómicos.</p><p>Repositorio: <a href='https://github.com/EmilioOcelotl/nocheDeLasEstrellas2019'>nocheDeLasEstrellas2019</a></p>",
       "images": [
-        "./img/disco3.jpg", 
-        "./img/noche2019-1.jpg", 
-        "./img/noche01-r.png", 
-        "./img/noche2019-2.jpg", 
-        "./img/data.jpg", 
-        "./img/noche2019-3.jpg", 
+        "./img/disco3.jpg",
+        "./img/noche2019-1.jpg",
+        "./img/noche01-r.png",
+        "./img/noche2019-2.jpg",
+        "./img/data.jpg",
+        "./img/noche2019-3.jpg",
         "./img/noche02-r.png"
       ]
     }
   },
+
   {
     "href": "ofhawc.html",
     "imgSrc": "./img/ofhawc-r.jpg",
@@ -304,6 +303,7 @@ export const projects = [
     "year": "2018",
     "description": "Visualización de datos astronómicos en la Noche de las Estrellas"
   },
+
   {
     "href": "lcne.html",
     "imgSrc": "./img/lcne-r.jpg",
@@ -312,6 +312,7 @@ export const projects = [
     "year": "2017",
     "description": "Presentación de LCNE en la International Conference on Live Coding 2017"
   },
+
   {
     "href": "leviathan.html",
     "imgSrc": "./img/levAle2-r.jpg",
@@ -320,6 +321,7 @@ export const projects = [
     "year": "2017",
     "description": "Presentación de Leviathan en ISEA 2017, Manizales, Colombia"
   },
+
   {
     "href": "altamisa.html",
     "imgSrc": "./img/altamisa2-r.jpg",
