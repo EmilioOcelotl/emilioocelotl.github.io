@@ -95,9 +95,9 @@ export const projects = [
     "imgAlt": "MiniMapper",
     "title": "MiniMapper",
     "year": "2026",
-    "description": "Videomapping generativo en tiempo real con Hydra y p5.js",
+    "description": "Videomapping generativo en el navegador: pequeña y personalizable frente a la caja negra",
     "details": {
-      "fullDescription": "<p>MiniMapper es una herramienta de videomapping generativo en tiempo real. Cada superficie es un parche Bezier deformable que recibe como textura el output de Hydra, un video, una imagen o la cámara. Un gesto lento sobre los puntos de control curva los bordes; los vértices esquina anclan la superficie al espacio.</p><p>Sitio: <a href='https://emilioocelotl.github.io/minimapper/'>emilioocelotl.github.io/minimapper</a></p><p>Repositorio: <a href='https://github.com/EmilioOcelotl/minimapper'>github.com/EmilioOcelotl/minimapper</a></p>",
+      "fullDescription": "<p>MiniMapper es una herramienta de videomapping generativo en tiempo real. Cada superficie es un parche Bezier deformable que puede recibir como textura gráficos de Hydra, videos, imágenes o cámaras. Funciona en el navegador: no hace falta servir ni instalar nada. Las sesiones pueden guardarse en cualquier momento.</p><p>Este proyecto surge de la fricción que implica instalar y usar software de mapping comercial, que además exige una instalación local. MiniMapper se fue construyendo en dos escalas: decisiones que marcaron el rumbo general de la herramienta, y rumbos específicos que se probaron y retroalimentaron en sesiones de un laboratorio de creatividad y tecnología —como la audiorreactividad y la detección de picos de amplitud en la señal del micrófono.</p><p>El objetivo fue acortar la distancia entre el software que opera como caja negra y los programas pequeños y personalizables: los que disminuyen las complicaciones técnicas y las curvas de aprendizaje, y dejan el foco en las decisiones creativas.</p><p>Sitio: <a href='https://emilioocelotl.github.io/minimapper/'>emilioocelotl.github.io/minimapper</a></p><p>Repositorio: <a href='https://github.com/EmilioOcelotl/minimapper'>github.com/EmilioOcelotl/minimapper</a></p>",
       "images": [
         "./img/minimapper-r.jpg"
       ]

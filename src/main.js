@@ -359,10 +359,19 @@ function loadProjectDetails(project) {
           ${project.details.audioSrc ? `
             <div class="audio-container">
               ${project.details.audioSrc.map(audio => `
-                <audio controls>
-                  <source src="${audio}" type="audio/mpeg">
-                  ${currentLanguage === 'es' ? 'Tu navegador no soporta el elemento de audio.' : 'Your browser does not support the audio element.'}
-                </audio>
+                <div class="audio-player">
+                  <button class="audio-play" aria-label="${currentLanguage === 'es' ? 'Reproducir' : 'Play'}">
+                    <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+                  </button>
+                  <div class="audio-seek" role="slider" aria-label="${currentLanguage === 'es' ? 'Avance' : 'Seek'}">
+                    <div class="audio-seek-track"><div class="audio-seek-fill"><span class="audio-seek-thumb"></span></div></div>
+                  </div>
+                  <span class="audio-time">0:00 / 0:00</span>
+                  <audio preload="metadata">
+                    <source src="${audio}" type="audio/mpeg">
+                  </audio>
+                </div>
               `).join('')}
             </div>
           ` : ''}
@@ -387,6 +396,71 @@ function loadProjectDetails(project) {
     }, 0);
 
     initializeCarousel();
+    initializeAudioPlayers();
+}
+
+// Reproductor de audio mínimo y propio (play/pausa + barra de avance + tiempo).
+// Reemplaza los controles nativos genéricos por algo alineado al estilo del sitio.
+function initializeAudioPlayers() {
+    const players = document.querySelectorAll('.audio-player');
+    if (players.length === 0) return;
+
+    const fmt = (s) => {
+        if (!isFinite(s)) return '0:00';
+        const m = Math.floor(s / 60);
+        const sec = Math.floor(s % 60);
+        return `${m}:${sec.toString().padStart(2, '0')}`;
+    };
+
+    const allAudios = [...players].map(p => p.querySelector('audio'));
+
+    players.forEach((player) => {
+        const audio = player.querySelector('audio');
+        const playBtn = player.querySelector('.audio-play');
+        const seek = player.querySelector('.audio-seek');
+        const fill = player.querySelector('.audio-seek-fill');
+        const time = player.querySelector('.audio-time');
+
+        const setProgress = () => {
+            const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+            fill.style.width = `${pct}%`;
+            time.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
+        };
+
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                // Solo un audio sonando a la vez
+                allAudios.forEach(a => { if (a !== audio) a.pause(); });
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+
+        audio.addEventListener('play', () => player.classList.add('playing'));
+        audio.addEventListener('pause', () => player.classList.remove('playing'));
+        audio.addEventListener('ended', () => player.classList.remove('playing'));
+        audio.addEventListener('timeupdate', setProgress);
+        audio.addEventListener('loadedmetadata', setProgress);
+
+        // Buscar posición: click y arrastre sobre la barra
+        const seekTo = (clientX) => {
+            const rect = seek.getBoundingClientRect();
+            const ratio = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+            if (audio.duration) audio.currentTime = ratio * audio.duration;
+        };
+        let dragging = false;
+        seek.addEventListener('pointerdown', (e) => {
+            dragging = true;
+            seek.setPointerCapture(e.pointerId);
+            seekTo(e.clientX);
+        });
+        seek.addEventListener('pointermove', (e) => { if (dragging) seekTo(e.clientX); });
+        seek.addEventListener('pointerup', (e) => {
+            dragging = false;
+            seek.releasePointerCapture(e.pointerId);
+        });
+    });
 }
 
 function handleBackButton() {

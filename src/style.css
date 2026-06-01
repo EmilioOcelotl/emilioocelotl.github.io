@@ -607,19 +607,119 @@ h1:hover {
   margin-bottom: 40px;
 }
 
-.video-container iframe, .audio-container audio {
+.video-container iframe {
   max-width: 100%;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
-/* Estilo para el contenedor de audio */
-.audio-player {
-  max-width: 100%;
+/* Reproductor de audio propio: play + barra de avance + tiempo.
+   Minimalista, en la paleta del sitio (teal sobre fondo oscuro). */
+.audio-container {
+  gap: 18px;
+}
 
+.audio-player {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  gap: 14px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.audio-player audio {
+  display: none;
+}
+
+.audio-play {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-text-mid);
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.1s ease;
+}
+
+.audio-play:hover {
+  color: var(--color-text);
+}
+
+.audio-play:active {
+  transform: scale(0.9);
+}
+
+.audio-play svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.audio-play .icon-pause {
+  display: none;
+}
+
+.audio-player.playing .audio-play .icon-play {
+  display: none;
+}
+
+.audio-player.playing .audio-play .icon-pause {
+  display: block;
+}
+
+.audio-seek {
+  flex: 1 1 auto;
+  padding: 9px 0; /* área clickable más alta que la barra visible */
+  cursor: pointer;
+  touch-action: none;
+}
+
+.audio-seek-track {
+  position: relative;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.audio-seek-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--color-text);
+  border-radius: 2px;
+}
+
+.audio-seek-thumb {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-text);
+  transform: translateY(-50%) scale(0.6);
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.audio-player:hover .audio-seek-thumb,
+.audio-player.playing .audio-seek-thumb {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.audio-time {
+  flex: 0 0 auto;
+  font-size: 12px;
+  color: var(--color-text-mid);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 /* Estilo para el elemento audio con Plyr */
