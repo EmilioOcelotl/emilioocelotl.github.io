@@ -72,6 +72,7 @@ function loadContactPage() {
     const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
 
     const emailLabel = currentLanguage === 'es' ? 'CORREO' : 'EMAIL';
+    const uxLabel = currentLanguage === 'es' ? 'PORTAFOLIO UX' : 'UX PORTFOLIO';
 
     mainContent.innerHTML = `
       <div class="project-details">
@@ -93,6 +94,10 @@ function loadContactPage() {
                   <div class="contact-row">
                       <span class="contact-label">LINKEDIN</span>
                       <a href="https://www.linkedin.com/in/emilio-ocelotl-reyes-777061ab">EmilioOcelotl</a>
+                  </div>
+                  <div class="contact-row">
+                      <span class="contact-label">${uxLabel}</span>
+                      <a href="https://emilio.ocelotl.cc/" target="_blank" rel="noopener">emilio.ocelotl.cc</a>
                   </div>
               </div>
           </section>
