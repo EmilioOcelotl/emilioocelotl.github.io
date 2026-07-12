@@ -60,17 +60,47 @@ export const projects = [
     "imgSrc": "./img/risosc4.jpg",
     "imgAlt": "risosc",
     "title": "RisOSC",
-    "year": "2025",
+    "year": "2025-2026",
     "description": "Impresiones risográficas con identificadores NFC y esculturas 3D",
     "details": {
-      "fullDescription": "<p>Escrituras sobre lo escaso multiplicado y lo efímero único.</p><p>Cuando un visitante acerca una impresión risográfica a un lector NFC, se genera una visualización única con Three.js e Hydra y se captura un snapshot comprimido en base de datos. La instalación tiene seis partes: las visualizaciones web, un servidor con WebSockets, el firmware ESP32 que maneja el lector, un exportador de mallas 3D, los scripts que dejan corriendo la proyección en sala y un dashboard para revisar lo que pasó durante la muestra.</p><p>Presentada en <em>Algorítmica Íntima</em>, Centro de Cultura Digital, Ciudad de México, 2025.</p><p>Después de la exhibición, el material capturado se volvió su propio objeto: <a href='https://risosc.ocelotl.cc'>risosc.ocelotl.cc</a> organiza los snapshots en un mosaico denso donde cada celda controla un motor de síntesis granular en tiempo real. Brillo, contraste y complejidad del snapshot modulan los parámetros del granulador.</p><p>Código: <a href='https://github.com/EmilioOcelotl/risosc'>github.com/EmilioOcelotl/risosc</a></p>",
+      "fullDescription": "<p>Escrituras sobre lo escaso multiplicado y lo efímero único.</p><p>Cuando un visitante acerca una impresión risográfica a un lector NFC, se genera una visualización única con Three.js e Hydra y se captura un snapshot comprimido en base de datos. La instalación tiene seis partes: las visualizaciones web, un servidor con WebSockets, el firmware ESP32 que maneja el lector, un exportador de mallas 3D, los scripts que dejan corriendo la proyección en sala y un dashboard para revisar lo que pasó durante la muestra.</p><p>Presentada en <em>Algorítmica Íntima</em>, Centro de Cultura Digital, Ciudad de México, 2025-2026.</p><p>Después de la exhibición, el material capturado se volvió su propio objeto: <a href='https://risosc.ocelotl.cc'>risosc.ocelotl.cc</a> organiza los 618 snapshots en un mosaico denso donde cada celda controla un motor de síntesis granular en tiempo real. Brillo, contraste y complejidad del snapshot modulan los parámetros del granulador.</p><p>Código: <a href='https://github.com/EmilioOcelotl/risosc'>github.com/EmilioOcelotl/risosc</a></p>",
       "images": [
-        "./img/risosc16nov.jpg",
-        "./img/risoscccd.jpeg",
-        "./img/risosc4.jpg",
-        "./img/risosc2.jpeg",
-        "./img/risosc3.jpeg",
-        "./img/risosc5.jpeg"
+        {
+          "src": "./img/risoscccd.jpeg",
+          "caption": "La instalación en Algorítmica Íntima: pantalla, impresiones y lector NFC. Centro de Cultura Digital, 2025."
+        },
+        {
+          "src": "./img/risosc2.jpeg",
+          "caption": "Impresión risográfica con las cuatro texturas. 2025."
+        },
+        {
+          "src": "./img/risosc3.jpeg",
+          "caption": "Las cuatro impresiones enmarcadas sobre la proyección. Centro de Cultura Digital, 2025."
+        },
+        {
+          "src": "./img/risosc5.jpeg",
+          "caption": "El lector: ESP32 y módulo PN532 en caja de acrílico. 2025."
+        },
+        {
+          "src": "./img/risosc4.jpg",
+          "caption": "Visualización activa: malla deformada por una textura de Hydra. 2025."
+        },
+        {
+          "src": "./img/risosc-mosaico-r.png",
+          "caption": "Mosaico con los 618 registros capturados durante la muestra. risosc.ocelotl.cc, 2026."
+        },
+        {
+          "src": "./img/risosc-granulador-r.png",
+          "caption": "Una celda activa controla el granulador: brillo, contraste y complejidad en tiempo real. 2026."
+        },
+        {
+          "src": "./img/risosc-snapshot-r.png",
+          "caption": "Un registro de 80×80 pixeles en cuatro tonos de gris, ampliado. 2026."
+        },
+        {
+          "src": "./img/risosc-mosaico-nfc2-r.png",
+          "caption": "El mosaico filtrado por una etiqueta NFC. 2026."
+        }
       ],
       "embed3d": "<div class=\"sketchfab-embed-wrapper\"><iframe title=\"risosc-01\" frameborder=\"0\" allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allow=\"autoplay; fullscreen; xr-spatial-tracking\" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src=\"https://sketchfab.com/models/9d273c827c854b1485c24fa8a1543669/embed?ui_theme=dark\"></iframe><p style=\"font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A44;\"><a href=\"https://sketchfab.com/3d-models/risosc-01-9d273c827c854b1485c24fa8a1543669?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669\" target=\"_blank\" rel=\"nofollow\" style=\"font-weight: bold; color: #1CAAD9;\">risosc-01</a> by <a href=\"https://sketchfab.com/emilioocelotl?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669\" target=\"_blank\" rel=\"nofollow\" style=\"font-weight: bold; color: #1CAAD9;\">emilioocelotl</a> on <a href=\"https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669\" target=\"_blank\" rel=\"nofollow\" style=\"font-weight: bold; color: #1CAAD9;\">Sketchfab</a></p></div>"
     }

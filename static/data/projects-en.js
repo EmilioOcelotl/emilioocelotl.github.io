@@ -60,17 +60,47 @@ export const projects_en = [
     "imgSrc": "./img/risosc4.jpg",
     "imgAlt": "risosc",
     "title": "RisOSC",
-    "year": "2025",
+    "year": "2025-2026",
     "description": "Risograph prints with NFC tags and 3D sculptures",
     "details": {
-      "fullDescription": "<p>Writings on the multiplied scarce and the uniquely ephemeral.</p><p>When a visitor brings a risograph print close to an NFC reader, a unique visualization is generated with Three.js and Hydra, and a compressed snapshot is written to a database. The installation has six parts: the web visualizations, a WebSocket server, the ESP32 firmware handling the reader, a 3D mesh exporter, the scripts that keep the projection running on site, and a dashboard for reviewing what happened during the show.</p><p>Presented at <em>Algorítmica Íntima</em>, Centro de Cultura Digital, Mexico City, 2025.</p><p>After the exhibition, the material captured during the show became its own object: <a href='https://risosc.ocelotl.cc'>risosc.ocelotl.cc</a> lays out the snapshots in a dense mosaic where each cell drives a granular synthesis engine in real time. Brightness, contrast, and complexity of the snapshot modulate the granular parameters.</p><p>Code: <a href='https://github.com/EmilioOcelotl/risosc'>github.com/EmilioOcelotl/risosc</a></p>",
+      "fullDescription": "<p>Writings on the multiplied scarce and the uniquely ephemeral.</p><p>When a visitor brings a risograph print close to an NFC reader, a unique visualization is generated with Three.js and Hydra, and a compressed snapshot is written to a database. The installation has six parts: the web visualizations, a WebSocket server, the ESP32 firmware handling the reader, a 3D mesh exporter, the scripts that keep the projection running on site, and a dashboard for reviewing what happened during the show.</p><p>Presented at <em>Algorítmica Íntima</em>, Centro de Cultura Digital, Mexico City, 2025-2026.</p><p>After the exhibition, the material captured during the show became its own object: <a href='https://risosc.ocelotl.cc'>risosc.ocelotl.cc</a> lays out the 618 snapshots in a dense mosaic where each cell drives a granular synthesis engine in real time. Brightness, contrast, and complexity of the snapshot modulate the granular parameters.</p><p>Code: <a href='https://github.com/EmilioOcelotl/risosc'>github.com/EmilioOcelotl/risosc</a></p>",
       "images": [
-        "./img/risosc16nov.jpg",
-        "./img/risoscccd.jpeg",
-        "./img/risosc4.jpg",
-        "./img/risosc2.jpeg",
-        "./img/risosc3.jpeg",
-        "./img/risosc5.jpeg"
+        {
+          "src": "./img/risoscccd.jpeg",
+          "caption": "The installation at Algorítmica Íntima: screen, prints and NFC reader. Centro de Cultura Digital, Mexico City, 2025."
+        },
+        {
+          "src": "./img/risosc2.jpeg",
+          "caption": "Risograph print with the four textures. 2025."
+        },
+        {
+          "src": "./img/risosc3.jpeg",
+          "caption": "The four framed prints over the projection. Centro de Cultura Digital, 2025."
+        },
+        {
+          "src": "./img/risosc5.jpeg",
+          "caption": "The reader: ESP32 and PN532 module in an acrylic case. 2025."
+        },
+        {
+          "src": "./img/risosc4.jpg",
+          "caption": "Active visualization: mesh deformed by a Hydra texture. 2025."
+        },
+        {
+          "src": "./img/risosc-mosaico-r.png",
+          "caption": "Mosaic with the 618 snapshots captured during the show. risosc.ocelotl.cc, 2026."
+        },
+        {
+          "src": "./img/risosc-granulador-r.png",
+          "caption": "An active cell drives the granulator: brightness, contrast and complexity in real time. 2026."
+        },
+        {
+          "src": "./img/risosc-snapshot-r.png",
+          "caption": "An 80×80 pixel snapshot in four shades of gray, enlarged. 2026."
+        },
+        {
+          "src": "./img/risosc-mosaico-nfc2-r.png",
+          "caption": "The mosaic filtered by one NFC tag. 2026."
+        }
       ],
       "embed3d": "<div class=\"sketchfab-embed-wrapper\"><iframe title=\"risosc-01\" frameborder=\"0\" allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allow=\"autoplay; fullscreen; xr-spatial-tracking\" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src=\"https://sketchfab.com/models/9d273c827c854b1485c24fa8a1543669/embed?ui_theme=dark\"></iframe><p style=\"font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A44;\"><a href=\"https://sketchfab.com/3d-models/risosc-01-9d273c827c854b1485c24fa8a1543669?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669\" target=\"_blank\" rel=\"nofollow\" style=\"font-weight: bold; color: #1CAAD9;\">risosc-01</a> by <a href=\"https://sketchfab.com/emilioocelotl?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669\" target=\"_blank\" rel=\"nofollow\" style=\"font-weight: bold; color: #1CAAD9;\">emilioocelotl</a> on <a href=\"https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=9d273c827c854b1485c24fa8a1543669\" target=\"_blank\" rel=\"nofollow\" style=\"font-weight: bold; color: #1CAAD9;\">Sketchfab</a></p></div>"
     }
