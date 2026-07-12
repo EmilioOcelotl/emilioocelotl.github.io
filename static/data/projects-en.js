@@ -34,15 +34,22 @@ export const projects_en = [
 
   {
     "href": "ciudad-monstruo.html",
-    "imgSrc": "./img/ciudad-monstruo-r.jpg",
+    "imgSrc": "./img/ciudad-monstruo-campo-r.jpg",
     "imgAlt": "Ciudad Monstruo",
     "title": "Ciudad Monstruo",
     "year": "2026",
     "description": "Interactive graphic score and multicanal audio render engine",
     "details": {
-      "fullDescription": "<p>Ciudad Monstruo is a spatial sound composition tool. Strokes drawn over a circular field are playback instructions; they define when, where, and with what sample something sounds in space.</p><p>The stroke records the intention of the body that makes it. A slow gesture produces a wide stroke; a fast one, a thin line. Width is not decorative. It increases the source's gain and spreads its position across the loudspeakers; a thin stroke concentrates the sound at a precise point in the field.</p><p>Mexico City appears in the field as a spectral presence. Roads, boroughs, interior perimeters filtered through procedural variation. Each time the system loads it generates a slightly different variant. The city mutates.</p><p>Repository: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
+      "fullDescription": "<p>Ciudad Monstruo is a spatial sound composition tool. Strokes drawn over a circular field are playback instructions; they define when, where, and with what sample something sounds in space.</p><p>The stroke records the intention of the body that makes it. A slow gesture produces a wide stroke; a fast one, a thin line. Width is not decorative. It increases the source's gain and spreads its position across the loudspeakers; a thin stroke concentrates the sound at a precise point in the field.</p><p>Beneath the graphic surface there is a spatial render engine. Rendering traverses the strokes and produces a multichannel file, of two, four, or eight channels depending on the loudspeaker layout, played back on external hardware; the browser only monitors in stereo. Spatialization uses DBAP, and the samples do not loop but sound through granular synthesis: the pointer advances through the file while the stroke's width modulates grain density, producing a continuous electroacoustic texture.</p><p>Mexico City appears in the field as a spectral presence. Roads, boroughs, interior perimeters filtered through procedural variation. Each time the system loads it generates a slightly different variant. The city mutates.</p><p>A second interface, radionauta, opens the piece to real-time intervention: up to four people modify the sound from their own devices, each over a borough of the map, while the composition unfolds.</p><p>A third interface, deriva, is the public, playable version. With no score or synchronization, anyone can wander the city's sound field from the browser: pick a category with the colors and touch the boroughs of the map, each holding samples that sound as you slide your finger. Available at <a href='https://cdm.ocelotl.cc/'>cdm.ocelotl.cc</a>.</p><p>These interfaces are the basis of Radionautas de la Ciudad Monstruo, a piece created together with La Sonora que Sueña, selected for Mecánicas Inmersivas (CENART, Fonoteca Nacional, INBAL, ESM) and awaiting its premiere.</p><p>Repository: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
       "images": [
-        "./img/ciudad-monstruo-r.jpg",
+        {
+          "src": "./img/ciudad-monstruo-campo.jpg",
+          "caption": "Composition field. Octophonic layout over the outline of Mexico City."
+        },
+        {
+          "src": "./img/ciudad-monstruo-mapeo.jpg",
+          "caption": "Graphic-to-audio mapping: gesture speed to width and gain, trajectory to spatial movement, color to sample."
+        },
         "./img/cdm-foto.jpeg"
       ]
     }

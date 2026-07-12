@@ -34,15 +34,22 @@ export const projects = [
 
   {
     "href": "ciudad-monstruo.html",
-    "imgSrc": "./img/ciudad-monstruo-r.jpg",
+    "imgSrc": "./img/ciudad-monstruo-campo-r.jpg",
     "imgAlt": "Ciudad Monstruo",
     "title": "Ciudad Monstruo",
     "year": "2026",
     "description": "Partitura gráfica interactiva y motor de audio multicanal",
     "details": {
-      "fullDescription": "<p>Ciudad Monstruo es una herramienta de composición sonora espacial. Los trazos dibujados sobre un campo circular son instrucciones de reproducción; definen cuándo, dónde y con qué muestra suena algo en el espacio.</p><p>El trazo registra la intención del cuerpo que lo hace. Un gesto lento produce un trazo ancho; uno rápido, una línea fina. El ancho no es decorativo. Aumenta la ganancia de la fuente y dispersa su posición entre los altavoces; el trazo delgado concentra el sonido en un punto preciso del campo.</p><p>La ciudad de México aparece en el campo como una presencia espectral. Vialidades, alcaldías, perímetros interiores filtrados a través de una variación procedural. Cada vez que el sistema carga genera una variante ligeramente distinta. La ciudad muta.</p><p>Repositorio: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
+      "fullDescription": "<p>Ciudad Monstruo es una herramienta de composición sonora espacial. Los trazos dibujados sobre un campo circular son instrucciones de reproducción; definen cuándo, dónde y con qué muestra suena algo en el espacio.</p><p>El trazo registra la intención del cuerpo que lo hace. Un gesto lento produce un trazo ancho; uno rápido, una línea fina. El ancho no es decorativo. Aumenta la ganancia de la fuente y dispersa su posición entre los altavoces; el trazo delgado concentra el sonido en un punto preciso del campo.</p><p>Bajo la superficie gráfica hay un motor de render espacial. Renderizar recorre los trazos y produce un archivo multicanal, de dos, cuatro u ocho canales según el layout de altavoces, que se reproduce en hardware externo; el navegador solo monitorea en estéreo. La espacialización usa DBAP y las muestras no suenan en bucle sino por síntesis granular: el puntero avanza por el archivo mientras el ancho del trazo modula la densidad de los granos, produciendo una textura electroacústica continua.</p><p>La ciudad de México aparece en el campo como una presencia espectral. Vialidades, alcaldías, perímetros interiores filtrados a través de una variación procedural. Cada vez que el sistema carga genera una variante ligeramente distinta. La ciudad muta.</p><p>Una segunda interfaz, radionauta, abre la pieza a la intervención en tiempo real: hasta cuatro personas modifican el sonido desde sus dispositivos, cada una sobre una alcaldía del mapa, mientras la composición avanza.</p><p>Una tercera interfaz, deriva, es la versión pública y jugable. Sin partitura ni sincronía, cualquiera recorre el campo sonoro de la ciudad desde el navegador: elige una categoría con los colores y toca las alcaldías del mapa, donde cada una guarda muestras que suenan al deslizar el dedo. Disponible en <a href='https://cdm.ocelotl.cc/'>cdm.ocelotl.cc</a>.</p><p>Estas interfaces son la base de Radionautas de la Ciudad Monstruo, pieza generada en conjunto con La Sonora que Sueña, seleccionada para Mecánicas Inmersivas (CENART, Fonoteca Nacional, INBAL, ESM) y pendiente de estreno.</p><p>Repositorio: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
       "images": [
-        "./img/ciudad-monstruo-r.jpg",
+        {
+          "src": "./img/ciudad-monstruo-campo.jpg",
+          "caption": "Campo de composición. Layout octofónico sobre el trazo de la Ciudad de México."
+        },
+        {
+          "src": "./img/ciudad-monstruo-mapeo.jpg",
+          "caption": "Mapeo gráfico a audio: velocidad del gesto al ancho y la ganancia, trayectoria al movimiento espacial, color a la muestra."
+        },
         "./img/cdm-foto.jpeg"
       ]
     }
