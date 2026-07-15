@@ -244,30 +244,26 @@ nav .nav-icon {
     letter-spacing: -0.01em;
   }
  
-  .contact-list {
-    border-top: 1px solid rgba(255, 255, 255, 0.20);
+  .contact-links {
+    list-style: none;
     margin-top: 40px;
+    padding: 0;
   }
 
-  .contact-row {
-    display: flex;
-    align-items: baseline;
-    gap: 32px;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+  .contact-links li {
+    padding: 10px 0;
   }
 
-  .contact-label {
+  .contact-note {
     font-family: 'Inconsolata', monospace;
     font-size: 13px;
-    letter-spacing: 0.12em;
     color: var(--color-text-mid);
-    min-width: 100px;
+    margin-left: 14px;
   }
 
   #contact a {
     font-family: 'Inconsolata', monospace;
-    font-size: 15px;
+    font-size: 17px;
     color: var(--color-text);
     text-decoration: none;
     transition: color 0.3s ease;

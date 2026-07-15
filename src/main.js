@@ -71,35 +71,19 @@ function loadContactPage() {
     const contactTitle = currentLanguage === 'es' ? 'Contacto' : 'Contact';
     const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
 
-    const emailLabel = currentLanguage === 'es' ? 'CORREO' : 'EMAIL';
-    const uxLabel = currentLanguage === 'es' ? 'PORTAFOLIO UX' : 'UX PORTFOLIO';
+    const uxNote = currentLanguage === 'es' ? 'portafolio UX' : 'UX portfolio';
 
     mainContent.innerHTML = `
       <div class="project-details">
           <section id="contact">
               <h2>${contactTitle}</h2>
-              <div class="contact-list">
-                  <div class="contact-row">
-                      <span class="contact-label">${emailLabel}</span>
-                      <a href="mailto:emilio.ocelotl@gmail.com">emilio.ocelotl@gmail.com</a>
-                  </div>
-                  <div class="contact-row">
-                      <span class="contact-label">GITHUB</span>
-                      <a href="https://github.com/EmilioOcelotl">EmilioOcelotl</a>
-                  </div>
-                  <div class="contact-row">
-                      <span class="contact-label">INSTAGRAM</span>
-                      <a href="https://www.instagram.com/emilio.ocelotl/">@emilio.ocelotl</a>
-                  </div>
-                  <div class="contact-row">
-                      <span class="contact-label">LINKEDIN</span>
-                      <a href="https://www.linkedin.com/in/emilio-ocelotl-reyes-777061ab">EmilioOcelotl</a>
-                  </div>
-                  <div class="contact-row">
-                      <span class="contact-label">${uxLabel}</span>
-                      <a href="https://emilio.ocelotl.cc/" target="_blank" rel="noopener">emilio.ocelotl.cc</a>
-                  </div>
-              </div>
+              <ul class="contact-links">
+                  <li><a href="mailto:emilio.ocelotl@gmail.com">emilio.ocelotl@gmail.com</a></li>
+                  <li><a href="https://github.com/EmilioOcelotl">github.com/EmilioOcelotl</a></li>
+                  <li><a href="https://www.instagram.com/emilio.ocelotl/">instagram.com/emilio.ocelotl</a></li>
+                  <li><a href="https://www.linkedin.com/in/emilio-ocelotl-reyes-777061ab">linkedin.com/in/emilio-ocelotl-reyes</a></li>
+                  <li><a href="https://emilio.ocelotl.cc/" target="_blank" rel="noopener">emilio.ocelotl.cc</a><span class="contact-note">${uxNote}</span></li>
+              </ul>
           </section>
           <div class="button-wrapper">
               <button id="backButton" class="back-button">${backButtonText}</button>
