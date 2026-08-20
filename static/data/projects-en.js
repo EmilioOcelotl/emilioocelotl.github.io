@@ -1,6 +1,34 @@
 export const projects_en = [
 
   {
+    "href": "decoding-gesture.html",
+    "imgSrc": "./img/decoding-gesture-r.jpg",
+    "imgAlt": "Decoding Gesture",
+    "title": "Decoding Gesture",
+    "year": "2026",
+    "description": "Octophonic audiovisual performance with live coding, with Marianne Teixido",
+    "details": {
+      "fullDescription": "<p>Decoding Gesture is an octophonic audiovisual performance with live coding, made with Marianne Teixido. It lasts eight minutes. The performer's body, tracked with a depth camera, drives the neural synthesis of an asemic voice that is granulated and spread across eight loudspeakers. Marianne composes the sound; visual composition is by both of us, and I built the capture, the projected interface, and the bridge into SuperCollider.</p><p>The audience does not see the performer but her body captured in depth, as a chrome mesh, inside a drawn ring. The ring is the room's: the eight loudspeakers the audience is sitting among, seen from above. A ribbon of varying thickness around the body shows how much each one is sounding, violet for the left hand and red for the right, and where both land on the same speaker the colors add up to magenta.</p><p>The rule that organizes everything is the pinch. A source's position only updates while thumb and index finger touch; on release, the sound stays anchored where it was and keeps sounding without the hand. The performer decides when the system responds, and a hand the sensor loses does not drag anything with it. In the photograph taken from the back of the auditorium, the left hand reads PERDIDA, lost, and its source keeps sounding where it was left.</p><p>The chain starts with an iPhone streaming a split frame over WiFi, depth encoded in hue on one side and RGB on the other, with about three meters of usable range. The browser unprojects that field into meters using the camera's intrinsic matrix, tracks the hands over the RGB half, draws the interface, and sends the features over WebSocket to a Python bridge that forwards them to SuperCollider over OSC at a fixed sixty frames per second. The voice is a RAVE model running inside SuperCollider. Gesture is mapped into its latent space.</p><p>The ring at CMMAS is not numbered in order. The eight speakers run in left and right pairs from front to back, so the physical clockwise path is 1, 2, 4, 6, 8, 7, 5, 3. Without correcting for it, a source turning smoothly comes out jumping from one side of the room to the other. The permutation lives in the patch and in the drawing too, which is why the peaks of the ribbon fall on the speakers that are actually sounding.</p><p>The control interface is projected onto the stage screen, so it has two readers with opposing needs. The performer glances at it from three meters while playing. The room watches from twelve, where the text no longer reads and all that arrives are areas and thicknesses. That is why line weights are computed as a fraction of the drawing's radius rather than in pixels.</p><p>Premiered on 14 August 2026 at the CMMAS auditorium in Morelia, Mexico.</p><p>Repository: <a href='https://github.com/MarianneTeixido/decoding-gesture'>github.com/MarianneTeixido/decoding-gesture</a></p>",
+      "images": [
+        {
+          "src": "./img/decoding-gesture.jpg",
+          "caption": "The projection up close: the ring with its eight numbered speakers, the gain ribbon, the body inside, and the traces of both hands at either side. Both read AGARRADA, gripped. CMMAS, Morelia, 2026."
+        },
+        {
+          "src": "./img/decoding-gesture-sala.jpg",
+          "caption": "From the back of the room. At this distance the ring reads in full and the text no longer does. The left hand reads PERDIDA, lost, and its source keeps sounding, anchored where it was left. CMMAS, Morelia, 2026."
+        },
+        {
+          "src": "./img/decoding-gesture-media.jpg",
+          "caption": "The screen as the back of the stage. Marianne Teixido at the right. CMMAS, Morelia, 2026."
+        }
+      ],
+      "localVideo": "./videos/decoding-gesture.mp4",
+      "videoPoster": "./img/decoding-gesture-poster.jpg"
+    }
+  },
+
+  {
     "href": "tea.html",
     "imgSrc": "./img/tres-grafo2-r.jpg",
     "imgAlt": "TRES ESTUDIOS ABIERTOS",
