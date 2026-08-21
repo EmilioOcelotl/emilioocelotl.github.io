@@ -2,8 +2,8 @@
 href: cusco.html
 imgSrc: "cusco-r.jpg"
 year: "2021"
-title.es: "Concierto A/V"
-title.en: "Concierto A/V"
+title.es: "Concierto audiovisual"
+title.en: "Audiovisual Concert"
 imgAlt.es: "cusco2022"
 imgAlt.en: "cusco2022"
 description.es: "PUMPUMYACHKAN Festival Asimtria"

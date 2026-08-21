@@ -6,8 +6,8 @@ title.es: "THREE.studies"
 title.en: "THREE.studies"
 imgAlt.es: "three2022"
 imgAlt.en: "three2022"
-description.es: "Estudios A/V para el navegador"
-description.en: "A/V studies for the browser"
+description.es: "Estudios audiovisuales para el navegador"
+description.en: "Audiovisual studies for the browser"
 ---
 
 ::: es

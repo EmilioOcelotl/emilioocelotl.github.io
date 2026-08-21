@@ -68,7 +68,7 @@ export const projects_en = [
     "imgAlt": "Ciudad Monstruo",
     "title": "Ciudad Monstruo",
     "year": "2026",
-    "description": "Interactive graphic score and multicanal audio render engine",
+    "description": "Interactive graphic score and multichannel audio render engine",
     "details": {
       "fullDescription": "<p>Ciudad Monstruo is a spatial sound composition tool. Strokes drawn over a circular field are playback instructions; they define when, where, and with what sample something sounds in space.</p><p>The stroke records the intention of the body that makes it. A slow gesture produces a wide stroke; a fast one, a thin line. Width is not decorative. It increases the source's gain and spreads its position across the loudspeakers; a thin stroke concentrates the sound at a precise point in the field.</p><p>Beneath the graphic surface there is a spatial render engine. Rendering traverses the strokes and produces a multichannel file, of two, four, or eight channels depending on the loudspeaker layout, played back on external hardware; the browser only monitors in stereo. Spatialization uses DBAP, and the samples do not loop but sound through granular synthesis: the pointer advances through the file while the stroke's width modulates grain density, producing a continuous electroacoustic texture.</p><p>Mexico City appears in the field as a spectral presence. Roads, boroughs, interior perimeters filtered through procedural variation. Each time the system loads it generates a slightly different variant. The city mutates.</p><p>A second interface, radionauta, opens the piece to real-time intervention: up to four people modify the sound from their own devices, each over a borough of the map, while the composition unfolds.</p><p>A third interface, deriva, is the public, playable version. With no score or synchronization, anyone can wander the city's sound field from the browser: pick a category with the colors and touch the boroughs of the map, each holding samples that sound as you slide your finger. Available at <a href='https://cdm.ocelotl.cc/'>cdm.ocelotl.cc</a>.</p><p>These interfaces are the basis of Radionautas de la Ciudad Monstruo, a piece created together with La Sonora que Sueña, selected for Mecánicas Inmersivas (CENART, Fonoteca Nacional, INBAL, ESM) and awaiting its premiere.</p><p>Repository: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
       "images": [
@@ -162,7 +162,7 @@ export const projects_en = [
     "imgAlt": "MiniMapper",
     "title": "MiniMapper",
     "year": "2026",
-    "description": "Generative videomapping in the browser: small and customizable, against the black box",
+    "description": "Generative videomapping in the browser, nothing to install",
     "details": {
       "fullDescription": "<p>MiniMapper is a tool for real-time generative videomapping. Each surface is a deformable Bezier patch that can take its texture from Hydra graphics, videos, images, or cameras. It runs in the browser: there is no need to serve or install anything. Sessions can be saved at any time.</p><p>This project grew out of the friction of installing and using commercial mapping software, which also requires a local installation. MiniMapper was built on two scales: decisions that set the overall direction of the tool, and specific directions that were tested and refined in the sessions of a creativity and technology lab —such as audio reactivity and the detection of amplitude peaks in the microphone signal.</p><p>The aim was to close the distance between software that operates as a black box and small, customizable programs: the ones that cut down on technical complications and learning curves, and keep the focus on creative decisions.</p><p>Site: <a href='https://emilioocelotl.github.io/minimapper/'>emilioocelotl.github.io/minimapper</a></p><p>Repository: <a href='https://github.com/EmilioOcelotl/minimapper'>github.com/EmilioOcelotl/minimapper</a></p>",
       "images": [
@@ -197,7 +197,7 @@ export const projects_en = [
     "imgAlt": "three2022",
     "title": "THREE.studies",
     "year": "2022-2024",
-    "description": "A/V studies for the browser",
+    "description": "Audiovisual studies for the browser",
     "details": {
       "fullDescription": "<p>Audiovisual studies for the browser. This project was developed in collaboration with Iracema de Andrade.</p><p>The repository with the initial versions is available at: <a href='https://github.com/EmilioOcelotl/THREE.studies'>THREE.studies</a>.</p><p>The latest version is archived at: <a href='https://github.com/EmilioOcelotl/THREE.studies-II'>THREE.studies-II</a>. For this version, I deployed a <a href='https://github.com/EmilioOcelotl/osc-web-server'>custom web OSC server</a> and the <a href='https://github.com/EmilioOcelotl/treslib'>treslib</a> library, both developed by me. It also includes a <a href='https://github.com/EmilioOcelotl/MMLL'>variation</a> of the MMLL.js library, created in collaboration with Marianne Teixido, based on the <a href='https://github.com/sicklincoln/MMLL'>original project</a> by Nick Collins.</p>",
       "images": [
@@ -232,7 +232,7 @@ export const projects_en = [
     "imgAlt": "nime2023",
     "title": "NIME",
     "year": "2023",
-    "description": "A/V presentation at NIME with Marianne Teixido",
+    "description": "Audiovisual presentation at NIME with Marianne Teixido",
     "details": {
       "fullDescription": "<p>Audiovisual presentation at New Interfaces for Musical Expression 2023.</p><p>The session took place at the Centro de Cultura Digital esplanade and was part of a program featuring multiple musical and audiovisual proposals.</p><p>The NIME organizers awarded us the prize for Best Music. The decision can be found at: <a href='https://www.nime2023.org/awards-photos'>https://www.nime2023.org/awards-photos</a>.</p>",
       "images": [
@@ -299,7 +299,7 @@ export const projects_en = [
     "year": "2023",
     "description": "Collaboration with Dorian Sotomayor",
     "details": {
-      "fullDescription": "<p>Audio-visual performance with Dorian Sotomayor at Algorave CDMX 2023.</p>",
+      "fullDescription": "<p>Audiovisual performance with Dorian Sotomayor at Algorave CDMX 2023.</p>",
       "images": [
         "./img/algorave2-r.jpg"
       ],
@@ -311,7 +311,7 @@ export const projects_en = [
     "href": "cusco.html",
     "imgSrc": "./img/cusco-r.jpg",
     "imgAlt": "cusco2022",
-    "title": "Concierto A/V",
+    "title": "Audiovisual Concert",
     "year": "2021",
     "description": "PUMPUMYACHKAN Festival Asimtria",
     "details": {
@@ -347,9 +347,9 @@ export const projects_en = [
     "imgAlt": "nocheDeLasEstrellas II",
     "title": "Noche de las Estrellas II",
     "year": "2019",
-    "description": "Audio-visual intervention based on astronomical data",
+    "description": "Audiovisual intervention based on astronomical data",
     "details": {
-      "fullDescription": "<p>Audio-visual intervention based on astronomical data. This project was carried out in collaboration with ACT UNAM and the Instituto de Astronomía. In this instance, we sonified and visualized data from astronomical jets.</p><p>Repository: <a href='https://github.com/EmilioOcelotl/nocheDeLasEstrellas2019'>nocheDeLasEstrellas2019</a></p>",
+      "fullDescription": "<p>Audiovisual intervention based on astronomical data. This project was carried out in collaboration with ACT UNAM and the Instituto de Astronomía. In this instance, we sonified and visualized data from astronomical jets.</p><p>Repository: <a href='https://github.com/EmilioOcelotl/nocheDeLasEstrellas2019'>nocheDeLasEstrellas2019</a></p>",
       "images": [
         "./img/disco3.jpg",
         "./img/noche2019-1.jpg",

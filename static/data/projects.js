@@ -162,7 +162,7 @@ export const projects = [
     "imgAlt": "MiniMapper",
     "title": "MiniMapper",
     "year": "2026",
-    "description": "Videomapping generativo en el navegador: pequeña y personalizable frente a la caja negra",
+    "description": "Videomapping generativo en el navegador, sin instalar nada",
     "details": {
       "fullDescription": "<p>MiniMapper es una herramienta de videomapping generativo en tiempo real. Cada superficie es un parche Bezier deformable que puede recibir como textura gráficos de Hydra, videos, imágenes o cámaras. Funciona en el navegador: no hace falta servir ni instalar nada. Las sesiones pueden guardarse en cualquier momento.</p><p>Este proyecto surge de la fricción que implica instalar y usar software de mapping comercial, que además exige una instalación local. MiniMapper se fue construyendo en dos escalas: decisiones que marcaron el rumbo general de la herramienta, y rumbos específicos que se probaron y retroalimentaron en sesiones de un laboratorio de creatividad y tecnología —como la audiorreactividad y la detección de picos de amplitud en la señal del micrófono.</p><p>El objetivo fue acortar la distancia entre el software que opera como caja negra y los programas pequeños y personalizables: los que disminuyen las complicaciones técnicas y las curvas de aprendizaje, y dejan el foco en las decisiones creativas.</p><p>Sitio: <a href='https://emilioocelotl.github.io/minimapper/'>emilioocelotl.github.io/minimapper</a></p><p>Repositorio: <a href='https://github.com/EmilioOcelotl/minimapper'>github.com/EmilioOcelotl/minimapper</a></p>",
       "images": [
@@ -197,7 +197,7 @@ export const projects = [
     "imgAlt": "three2022",
     "title": "THREE.studies",
     "year": "2022-2024",
-    "description": "Estudios A/V para el navegador",
+    "description": "Estudios audiovisuales para el navegador",
     "details": {
       "fullDescription": "<p>Estudios audiovisuales para el navegador. Este proyecto se realizó en colaboración con Iracema de Andrade.</p><p>El repositorio con las primeras versiones se encuentra en: <a href='https://github.com/EmilioOcelotl/THREE.studies'>THREE.studies</a>.</p><p>La última versión está respaldada en: <a href='https://github.com/EmilioOcelotl/THREE.studies-II'>THREE.studies-II</a>. Para esta versión, despliego la instancia de un <a href='https://github.com/EmilioOcelotl/osc-web-server'>servidor OSC web personalizado</a> y la biblioteca <a href='https://github.com/EmilioOcelotl/treslib'>treslib</a>, ambas desarrolladas por mí. También implementa una <a href='https://github.com/EmilioOcelotl/MMLL'>variación</a> de la biblioteca MMLL.js, trabajada en conjunto con Marianne Teixido, basada en el <a href='https://github.com/sicklincoln/MMLL'>proyecto original</a> de Nick Collins.</p>",
       "images": [
@@ -232,7 +232,7 @@ export const projects = [
     "imgAlt": "nime2023",
     "title": "NIME",
     "year": "2023",
-    "description": "Presentación A/V en NIME junto con Marianne Teixido",
+    "description": "Presentación audiovisual en NIME junto con Marianne Teixido",
     "details": {
       "fullDescription": "<p>Presentación audiovisual en New Interfaces for Musical Expression 2023.</p><p>La sesión se realizó en la explanada del Centro de Cultura Digital y formó parte de un programa con varias propuestas musicales y audiovisuales.</p><p>La organización de NIME nos otorgó el premio a la mejor música. La decisión se puede consultar en: <a href='https://www.nime2023.org/awards-photos'>https://www.nime2023.org/awards-photos</a>.</p>",
       "images": [
@@ -311,7 +311,7 @@ export const projects = [
     "href": "cusco.html",
     "imgSrc": "./img/cusco-r.jpg",
     "imgAlt": "cusco2022",
-    "title": "Concierto A/V",
+    "title": "Concierto audiovisual",
     "year": "2021",
     "description": "PUMPUMYACHKAN Festival Asimtria",
     "details": {

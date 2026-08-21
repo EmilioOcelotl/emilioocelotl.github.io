@@ -14,7 +14,7 @@ description.en: "Collaboration with Dorian Sotomayor"
 Presentación audiovisual junto con Dorian Sotomayor en Algorave CDMX 2023.
 
 ::: en
-Audio-visual performance with Dorian Sotomayor at Algorave CDMX 2023.
+Audiovisual performance with Dorian Sotomayor at Algorave CDMX 2023.
 
 ::: images
 algorave2-r.jpg

@@ -7,7 +7,7 @@ title.en: "Noche de las Estrellas II"
 imgAlt.es: "nocheDeLasEstrellas II"
 imgAlt.en: "nocheDeLasEstrellas II"
 description.es: "Intervención audiovisual basada en datos astronómicos"
-description.en: "Audio-visual intervention based on astronomical data"
+description.en: "Audiovisual intervention based on astronomical data"
 ---
 
 ::: es
@@ -16,7 +16,7 @@ Intervención audiovisual basada en datos astronómicos. Este proyecto se realiz
 Repositorio: [nocheDeLasEstrellas2019](https://github.com/EmilioOcelotl/nocheDeLasEstrellas2019)
 
 ::: en
-Audio-visual intervention based on astronomical data. This project was carried out in collaboration with ACT UNAM and the Instituto de Astronomía. In this instance, we sonified and visualized data from astronomical jets.
+Audiovisual intervention based on astronomical data. This project was carried out in collaboration with ACT UNAM and the Instituto de Astronomía. In this instance, we sonified and visualized data from astronomical jets.
 
 Repository: [nocheDeLasEstrellas2019](https://github.com/EmilioOcelotl/nocheDeLasEstrellas2019)
 

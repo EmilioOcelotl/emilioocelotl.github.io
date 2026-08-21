@@ -7,7 +7,7 @@ title.en: "Ciudad Monstruo"
 imgAlt.es: "Ciudad Monstruo"
 imgAlt.en: "Ciudad Monstruo"
 description.es: "Partitura gráfica interactiva y motor de audio multicanal"
-description.en: "Interactive graphic score and multicanal audio render engine"
+description.en: "Interactive graphic score and multichannel audio render engine"
 ---
 
 ::: es

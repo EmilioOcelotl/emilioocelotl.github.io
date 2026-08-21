@@ -6,8 +6,8 @@ title.es: "MiniMapper"
 title.en: "MiniMapper"
 imgAlt.es: "MiniMapper"
 imgAlt.en: "MiniMapper"
-description.es: "Videomapping generativo en el navegador: pequeña y personalizable frente a la caja negra"
-description.en: "Generative videomapping in the browser: small and customizable, against the black box"
+description.es: "Videomapping generativo en el navegador, sin instalar nada"
+description.en: "Generative videomapping in the browser, nothing to install"
 ---
 
 ::: es
