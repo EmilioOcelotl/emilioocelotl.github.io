@@ -41,7 +41,7 @@ export const bioContent = {
       collaboration: "Colaboración",
       collaborationList: [
         "PiranhaLab. CDMX. Representante del proyecto en colaboración con Marianne Teixido. Plataforma de talleres sobre interfaces basadas en código para el performance audiovisual, infraestructura autónoma y tecnología comunitaria. Proyecto beneficiario del Programa de Apoyo a la Docencia, Investigación y Difusión de las Artes.",
-        "RGGTRN. CDMX. Representante del proyecto. Presentación Audiovisual en la Conferencia Internacional de Live Coding (ICLC) con el Sistema personalizado Orbit, apoyado por el Programa de Apoyos Especiales del Fondo Nacional para la Cultura y las Artes. Madrid (ES). Bellacode Tour apoyado por Ayudas a la Movilidad de Músicos del Programa de Fomento de las Músicas Iberoamericanas (IBERMUSICAS) emisión 2017. Ciudad de México (MX), Bogotá, Manizales y Medellín (CO), Lima (PE) y Quito (EC)."
+        "RGGTRN. CDMX. Representante del proyecto. Presentación audiovisual en la Conferencia Internacional de Live Coding (ICLC) con el Sistema personalizado Orbit, apoyado por el Programa de Apoyos Especiales del Fondo Nacional para la Cultura y las Artes. Madrid (ES). Bellacode Tour apoyado por Ayudas a la Movilidad de Músicos del Programa de Fomento de las Músicas Iberoamericanas (IBERMUSICAS) emisión 2017. Ciudad de México (MX), Bogotá, Manizales y Medellín (CO), Lima (PE) y Quito (EC)."
       ],
       publications: "Publicaciones",
       publicationsList: [
@@ -94,7 +94,7 @@ export const bioContent = {
       collaboration: "Collaboration",
       collaborationList: [
         "PiranhaLab. CDMX. Project representative, in collaboration with Marianne Teixido. Platform of workshops on code-based interfaces for audiovisual performance, autonomous infrastructure, and community technology. Beneficiary of the Program for Support of Teaching, Research and Dissemination of the Arts.",
-        "RGGTRN. CDMX. Project representative. Audiovisual Presentation at the International Live Coding Conference (ICLC) with the customized Orbit System, supported by the Special Support Program of the National Fund for Culture and the Arts. Madrid (ES). Bellacode Tour supported by the Mobility Grants for Musicians of the IBERMUSICAS Program, 2017 edition. Mexico City (MX), Bogotá, Manizales and Medellín (CO), Lima (PE) and Quito (EC)."
+        "RGGTRN. CDMX. Project representative. Audiovisual presentation at the International Live Coding Conference (ICLC) with the customized Orbit System, supported by the Special Support Program of the National Fund for Culture and the Arts. Madrid (ES). Bellacode Tour supported by the Mobility Grants for Musicians of the IBERMUSICAS Program, 2017 edition. Mexico City (MX), Bogotá, Manizales and Medellín (CO), Lima (PE) and Quito (EC)."
       ],
       publications: "Publications",
       publicationsList: [
