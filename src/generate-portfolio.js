@@ -161,8 +161,10 @@ function getImagesToRender(project) {
   const staticDir = path.join(process.cwd(), 'static');
 
   if (project.details && project.details.images && project.details.images.length > 0) {
-    for (const src of project.details.images) {
+    for (const item of project.details.images) {
       if (images.length >= 2) break;
+      // Cada entrada puede ser un string o un objeto { src, caption }
+      const src = typeof item === 'object' ? item.src : item;
       const p = path.join(staticDir, src.replace('./', ''));
       if (imageExists(p)) images.push(p);
     }
