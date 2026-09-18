@@ -1,6 +1,6 @@
 ---
 href: ciudad-monstruo.html
-imgSrc: "ciudad-monstruo-campo-r.jpg"
+imgSrc: "ciudad-monstruo-mapa-r.png"
 year: "2026"
 title.es: "Ciudad Monstruo"
 title.en: "Ciudad Monstruo"
@@ -45,6 +45,7 @@ These interfaces are the basis of Radionautas de la Ciudad Monstruo, a piece cre
 Repository: [0xacab.org/ocelotl/ciudad-monstruo](https://0xacab.org/ocelotl/ciudad-monstruo)
 
 ::: images
+ciudad-monstruo-mapa-r.png | es: El mapa solo, sin partitura ni layout de bocinas encima. Una de las variantes que el sistema genera en cada carga. | en: The map on its own, with no score or speaker layout over it. One of the variants the system generates on each load.
 ciudad-monstruo-campo.jpg | es: Campo de composición. Layout octofónico sobre el trazo de la Ciudad de México. | en: Composition field. Octophonic layout over the outline of Mexico City.
 ciudad-monstruo-mapeo.jpg | es: Mapeo gráfico a audio: velocidad del gesto al ancho y la ganancia, trayectoria al movimiento espacial, color a la muestra. | en: Graphic-to-audio mapping: gesture speed to width and gain, trajectory to spatial movement, color to sample.
 cdm-foto.jpeg
