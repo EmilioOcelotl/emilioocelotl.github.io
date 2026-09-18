@@ -6,3 +6,12 @@ portfolio-en.pdf
 CLAUDE.md
 PROJECTS.md
 .claude
+
+# Docker: borrador, todavía sin implementar
+Dockerfile
+.dockerignore
+nginx.conf
+
+# Respaldos de Emacs
+*~
+\#*\#
