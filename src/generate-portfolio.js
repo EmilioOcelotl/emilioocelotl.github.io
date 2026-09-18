@@ -309,9 +309,12 @@ function renderAttachments(doc, project, startX, startY, contentWidth, language 
       .text(TEXTS[language].attachments, startX, currentY, {
         width: contentWidth
       });
-    
-    currentY += 15;
-    
+
+    // doc.y en vez de sumar: si PDFKit saltó de página solo, el contador
+    // aritmético se queda en la página anterior y todo lo que sigue se
+    // posiciona mal (ver el bloque de imágenes, que decide su propio salto)
+    currentY = doc.y + 4;
+
     attachments.forEach(attachment => {
       const text = ` ${attachment.name}`;
       
@@ -324,8 +327,8 @@ function renderAttachments(doc, project, startX, startY, contentWidth, language 
           link: attachment.url,
           underline: true
         });
-      
-      currentY += 12;
+
+      currentY = doc.y + 2;
     });
   }
   
@@ -639,7 +642,11 @@ async function generatePortfolio(language = 'en') {
 
     const estimatedHeight = estimateProjectHeight(doc, project, contentWidth);
 
-    if (currentY + estimatedHeight > doc.page.height - 60) {
+    // currentY > 60 = no estamos ya arriba de una página recién abierta.
+    // Sin esa guarda el primer proyecto salta de la página que acaba de
+    // abrirse para él y la deja en blanco, y lo mismo pasa cada vez que un
+    // proyecto termina justo al pie.
+    if (currentY > 60 && currentY + estimatedHeight > doc.page.height - 60) {
       console.log(`→ Nueva página para: ${project.title}`);
       doc.addPage();
       currentPage++;
@@ -647,12 +654,6 @@ async function generatePortfolio(language = 'en') {
     }
 
     currentY = renderProject(doc, project, currentY, i === 0, language);
-
-    if (currentY > doc.page.height - 80) {
-      doc.addPage();
-      currentPage++;
-      currentY = 60;
-    }
   }
   
   // Pie de página final
@@ -704,13 +705,17 @@ async function generatePortfolio(language = 'en') {
     doc.page.margins.bottom = savedBottom;
   }
 
+  // El conteo real, antes de end(): currentPage sólo cuenta los saltos que
+  // decide este bucle, no los que PDFKit hace solo al desbordarse el texto
+  const totalPages = doc.bufferedPageRange().count;
+
   // Finalizar documento
   doc.end();
-  
+
   return new Promise((resolve, reject) => {
     stream.on('finish', () => {
       console.log(`✅ PDF generado exitosamente: ${outputPath}`);
-      console.log(`📄 ${currentPage} páginas totales (incluye portada)`);
+      console.log(`📄 ${totalPages} páginas totales (incluye portada)`);
       console.log(`🔗 Enlaces interactivos habilitados`);
       console.log(`🌐 Idioma: ${language === 'en' ? 'Inglés' : 'Español'}`);
       resolve(outputPath);
