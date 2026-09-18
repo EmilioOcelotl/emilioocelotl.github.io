@@ -12,7 +12,7 @@ export const projects = [
       "images": [
         {
           "src": "./img/decoding-gesture-interfaz-r.png",
-          "caption": "La interfaz entera: el anillo con las ocho bocinas numeradas, la cinta de ganancia, el cuerpo en la malla de cromo y las trazas de las dos manos a los lados. Las dos dicen AGARRADA. Captura del sistema corriendo, septiembre de 2026."
+          "caption": "Las dos manos dicen AGARRADA y las dos fuentes se mueven con ellas. A los lados, las trazas de x, y y dispersión de cada mano. Captura del sistema corriendo, septiembre de 2026."
         },
         {
           "src": "./img/decoding-gesture-sala.jpg",
@@ -20,15 +20,11 @@ export const projects = [
         },
         {
           "src": "./img/decoding-gesture-perdida-r.png",
-          "caption": "Las dos manos en PERDIDA, en ceniza, y el anillo encendido entero: las fuentes quedaron ancladas donde se soltaron y siguen sonando sin nadie. Captura del sistema corriendo, septiembre de 2026."
+          "caption": "Las dos manos dicen PERDIDA y quedan en ceniza. El anillo sigue encendido entero porque las fuentes se quedaron ancladas donde se soltaron. Captura del sistema corriendo, septiembre de 2026."
         },
         {
           "src": "./img/decoding-gesture-media.jpg",
           "caption": "La pantalla como fondo de escena. Marianne Teixido a la derecha. CMMAS, Morelia, 2026."
-        },
-        {
-          "src": "./img/decoding-gesture.jpg",
-          "caption": "La misma interfaz fotografiada sobre la pantalla, con el grano del proyector encima. CMMAS, Morelia, 2026."
         }
       ],
       "localVideo": "./videos/decoding-gesture.mp4",

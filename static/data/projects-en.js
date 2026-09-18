@@ -12,7 +12,7 @@ export const projects_en = [
       "images": [
         {
           "src": "./img/decoding-gesture-interfaz-r.png",
-          "caption": "The whole interface: the ring with its eight numbered speakers, the gain ribbon, the body as a chrome mesh, and the traces of both hands at either side. Both read AGARRADA, gripped. Captured from the running system, September 2026."
+          "caption": "Both hands read AGARRADA, gripped, and both sources move with them. At either side, the x, y and dispersion traces for each hand. Captured from the running system, September 2026."
         },
         {
           "src": "./img/decoding-gesture-sala.jpg",
@@ -20,15 +20,11 @@ export const projects_en = [
         },
         {
           "src": "./img/decoding-gesture-perdida-r.png",
-          "caption": "Both hands read PERDIDA, lost, in ash gray, and the whole ring stays lit: the sources were left anchored where they were released and keep sounding with no one. Captured from the running system, September 2026."
+          "caption": "Both hands read PERDIDA, lost, and go ash gray. The ring stays lit all the way round because the sources were left anchored where they were released. Captured from the running system, September 2026."
         },
         {
           "src": "./img/decoding-gesture-media.jpg",
           "caption": "The screen as the back of the stage. Marianne Teixido at the right. CMMAS, Morelia, 2026."
-        },
-        {
-          "src": "./img/decoding-gesture.jpg",
-          "caption": "The same interface photographed off the screen, with the projector's grain over it. CMMAS, Morelia, 2026."
         }
       ],
       "localVideo": "./videos/decoding-gesture.mp4",
