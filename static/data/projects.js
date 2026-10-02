@@ -79,20 +79,7 @@ export const projects = [
         {
           "src": "./img/ciudad-monstruo-sticker-r.png",
           "caption": "El sticker: el mapa con los cuatro gestos anclados en alcaldías. Mercurio en Miguel Hidalgo, letrero en Iztapalapa, sodio de Gustavo A. Madero a Milpa Alta y jardinera de Cuajimalpa a Tláhuac."
-        },
-        {
-          "src": "./img/ciudad-monstruo-mapa-r.png",
-          "caption": "El mapa solo, sin partitura ni layout de bocinas encima."
-        },
-        {
-          "src": "./img/ciudad-monstruo-campo.jpg",
-          "caption": "Primera versión. Campo de composición, con el layout octofónico sobre el trazo de la Ciudad de México."
-        },
-        {
-          "src": "./img/ciudad-monstruo-mapeo.jpg",
-          "caption": "Primera versión. Mapeo gráfico a audio: velocidad del gesto al ancho y la ganancia, trayectoria al movimiento espacial, color a la muestra."
-        },
-        "./img/cdm-foto.jpeg"
+        }
       ]
     }
   },

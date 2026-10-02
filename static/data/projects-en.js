@@ -79,20 +79,7 @@ export const projects_en = [
         {
           "src": "./img/ciudad-monstruo-sticker-r.png",
           "caption": "The sticker: the map with the four gestures anchored to boroughs. Mercurio in Miguel Hidalgo, letrero in Iztapalapa, sodio from Gustavo A. Madero to Milpa Alta and jardinera from Cuajimalpa to Tláhuac."
-        },
-        {
-          "src": "./img/ciudad-monstruo-mapa-r.png",
-          "caption": "The map on its own, with no score or speaker layout over it."
-        },
-        {
-          "src": "./img/ciudad-monstruo-campo.jpg",
-          "caption": "First version. Composition field, with the octophonic layout over the outline of Mexico City."
-        },
-        {
-          "src": "./img/ciudad-monstruo-mapeo.jpg",
-          "caption": "First version. Graphic-to-audio mapping: gesture speed to width and gain, trajectory to spatial movement, color to sample."
-        },
-        "./img/cdm-foto.jpeg"
+        }
       ]
     }
   },

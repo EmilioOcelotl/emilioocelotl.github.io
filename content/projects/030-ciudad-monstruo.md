@@ -50,7 +50,3 @@ Repository: [codeberg.org/sonirica/ciudad-monstruo](https://codeberg.org/soniric
 
 ::: images
 ciudad-monstruo-sticker-r.png | es: El sticker: el mapa con los cuatro gestos anclados en alcaldías. Mercurio en Miguel Hidalgo, letrero en Iztapalapa, sodio de Gustavo A. Madero a Milpa Alta y jardinera de Cuajimalpa a Tláhuac. | en: The sticker: the map with the four gestures anchored to boroughs. Mercurio in Miguel Hidalgo, letrero in Iztapalapa, sodio from Gustavo A. Madero to Milpa Alta and jardinera from Cuajimalpa to Tláhuac.
-ciudad-monstruo-mapa-r.png | es: El mapa solo, sin partitura ni layout de bocinas encima. | en: The map on its own, with no score or speaker layout over it.
-ciudad-monstruo-campo.jpg | es: Primera versión. Campo de composición, con el layout octofónico sobre el trazo de la Ciudad de México. | en: First version. Composition field, with the octophonic layout over the outline of Mexico City.
-ciudad-monstruo-mapeo.jpg | es: Primera versión. Mapeo gráfico a audio: velocidad del gesto al ancho y la ganancia, trayectoria al movimiento espacial, color a la muestra. | en: First version. Graphic-to-audio mapping: gesture speed to width and gain, trajectory to spatial movement, color to sample.
-cdm-foto.jpeg
