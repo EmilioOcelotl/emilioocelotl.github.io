@@ -68,25 +68,29 @@ export const projects_en = [
 
   {
     "href": "ciudad-monstruo.html",
-    "imgSrc": "./img/ciudad-monstruo-mapa-r.png",
-    "imgAlt": "Ciudad Monstruo",
+    "imgSrc": "./img/ciudad-monstruo-sticker-r.png",
+    "imgAlt": "The map of Mexico City with the four colored gestures of Ciudad Monstruo",
     "title": "Ciudad Monstruo",
     "year": "2026",
-    "description": "Interactive graphic score and multichannel audio render engine",
+    "description": "A piece for four people playing over the map of the city",
     "details": {
-      "fullDescription": "<p>Ciudad Monstruo is a spatial sound composition tool. Strokes drawn over a circular field are playback instructions; they define when, where, and with what sample something sounds in space.</p><p>The stroke records the intention of the body that makes it. A slow gesture produces a wide stroke; a fast one, a thin line. Width is not decorative. It increases the source's gain and spreads its position across the loudspeakers; a thin stroke concentrates the sound at a precise point in the field.</p><p>Beneath the graphic surface there is a spatial render engine. Rendering traverses the strokes and produces a multichannel file, of two, four, or eight channels depending on the loudspeaker layout, played back on external hardware; the browser only monitors in stereo. Spatialization uses DBAP, and the samples do not loop but sound through granular synthesis: the pointer advances through the file while the stroke's width modulates grain density, producing a continuous electroacoustic texture.</p><p>Mexico City appears in the field as a spectral presence. Roads, boroughs, interior perimeters filtered through procedural variation. Each time the system loads it generates a slightly different variant. The city mutates.</p><p>A second interface, radionauta, opens the piece to real-time intervention: up to four people modify the sound from their own devices, each over a borough of the map, while the composition unfolds.</p><p>A third interface, deriva, is the public, playable version. With no score or synchronization, anyone can wander the city's sound field from the browser: pick a category with the colors and touch the boroughs of the map, each holding samples that sound as you slide your finger. Available at <a href='https://cdm.ocelotl.cc/'>cdm.ocelotl.cc</a>.</p><p>These interfaces are the basis of Radionautas de la Ciudad Monstruo, a piece created together with La Sonora que Sueña, selected for Mecánicas Inmersivas (CENART, Fonoteca Nacional, INBAL, ESM) and awaiting its premiere.</p><p>Repository: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
+      "fullDescription": "<p>Ciudad Monstruo is a piece for four people playing at the same time over the map of Mexico City, each one from their own laptop. It lasts between eight and twelve minutes.</p><p>There are four colors and each one is an instrument. Letrero is single words: you hold and the voice follows your hand. Sodio is phrases, passed through a radio filter. Mercurio is a click on a borough, which leaves a recording made there pulsing; how long you hold the click is the period of the pulse. Jardinera is a drag that granulates a file along the stroke, and slowly the stroke comes out wider.</p><p>Nobody keeps a color. The machine gives each person a turn of 5 to 45 seconds, out of phase with the others. When it ends, what you played is erased and you get the next color; if someone else has it, you wait. The silences of the piece come from that rule. In the simulation, with four people and nine minutes, each one spent 12% of the time silent.</p><p>The material is 435 files: 73 from the catalog of the first version, 319 voice fragments and 43 that were never catalogued. In the voice files the file name is the transcription, and the cut between letrero and sodio comes from there: up to two words is letrero, three or more is sodio.</p><p>To rehearse at home there is the solo mode, where you play against three simulated people who follow the same rules, with stereo sound in the browser. In concert the laptops only send gestures over the local network, no internet. One audio machine keeps track of the turns, sounds, and sends back to each person what happened. If someone drops, a simulated person plays their seat until they come back with the same name.</p><p>This version was built the other way around from the first one. Before writing the engine there were three mockups that sound, each one to decide something that on paper cannot be heard: where a word comes from, what keeps sounding when you let go, and how long a turn lasts.</p><p>The first version was a composition tool: strokes over a circular field rendered to a two, four or eight channel WAV, with DBAP and granulation. It also had radionauta, to intervene the piece live, and deriva, a public version for the phone. It is still at <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a>.</p><p>Ciudad Monstruo is made with La Sonora que Sueña and lives at <a href='https://sonirica.com/ciudad-monstruo/'>sonirica.com/ciudad-monstruo</a>. Radionautas de la Ciudad Monstruo, the piece with the collective, was selected for Mecánicas Inmersivas (CENART, Fonoteca Nacional, INBAL, ESM) and is awaiting its premiere.</p><p>Repository: <a href='https://codeberg.org/sonirica/ciudad-monstruo'>codeberg.org/sonirica/ciudad-monstruo</a></p>",
       "images": [
         {
+          "src": "./img/ciudad-monstruo-sticker-r.png",
+          "caption": "The sticker: the map with the four gestures anchored to boroughs. Mercurio in Miguel Hidalgo, letrero in Iztapalapa, sodio from Gustavo A. Madero to Milpa Alta and jardinera from Cuajimalpa to Tláhuac."
+        },
+        {
           "src": "./img/ciudad-monstruo-mapa-r.png",
-          "caption": "The map on its own, with no score or speaker layout over it. One of the variants the system generates on each load."
+          "caption": "The map on its own, with no score or speaker layout over it."
         },
         {
           "src": "./img/ciudad-monstruo-campo.jpg",
-          "caption": "Composition field. Octophonic layout over the outline of Mexico City."
+          "caption": "First version. Composition field, with the octophonic layout over the outline of Mexico City."
         },
         {
           "src": "./img/ciudad-monstruo-mapeo.jpg",
-          "caption": "Graphic-to-audio mapping: gesture speed to width and gain, trajectory to spatial movement, color to sample."
+          "caption": "First version. Graphic-to-audio mapping: gesture speed to width and gain, trajectory to spatial movement, color to sample."
         },
         "./img/cdm-foto.jpeg"
       ]

@@ -68,25 +68,29 @@ export const projects = [
 
   {
     "href": "ciudad-monstruo.html",
-    "imgSrc": "./img/ciudad-monstruo-mapa-r.png",
-    "imgAlt": "Ciudad Monstruo",
+    "imgSrc": "./img/ciudad-monstruo-sticker-r.png",
+    "imgAlt": "El mapa de la Ciudad de México con los cuatro gestos de color de Ciudad Monstruo",
     "title": "Ciudad Monstruo",
     "year": "2026",
-    "description": "Partitura gráfica interactiva y motor de audio multicanal",
+    "description": "Pieza para cuatro personas que tocan sobre el mapa de la ciudad",
     "details": {
-      "fullDescription": "<p>Ciudad Monstruo es una herramienta de composición sonora espacial. Los trazos dibujados sobre un campo circular son instrucciones de reproducción; definen cuándo, dónde y con qué muestra suena algo en el espacio.</p><p>El trazo registra la intención del cuerpo que lo hace. Un gesto lento produce un trazo ancho; uno rápido, una línea fina. El ancho no es decorativo. Aumenta la ganancia de la fuente y dispersa su posición entre los altavoces; el trazo delgado concentra el sonido en un punto preciso del campo.</p><p>Bajo la superficie gráfica hay un motor de render espacial. Renderizar recorre los trazos y produce un archivo multicanal, de dos, cuatro u ocho canales según el layout de altavoces, que se reproduce en hardware externo; el navegador solo monitorea en estéreo. La espacialización usa DBAP y las muestras no suenan en bucle sino por síntesis granular: el puntero avanza por el archivo mientras el ancho del trazo modula la densidad de los granos, produciendo una textura electroacústica continua.</p><p>La ciudad de México aparece en el campo como una presencia espectral. Vialidades, alcaldías, perímetros interiores filtrados a través de una variación procedural. Cada vez que el sistema carga genera una variante ligeramente distinta. La ciudad muta.</p><p>Una segunda interfaz, radionauta, abre la pieza a la intervención en tiempo real: hasta cuatro personas modifican el sonido desde sus dispositivos, cada una sobre una alcaldía del mapa, mientras la composición avanza.</p><p>Una tercera interfaz, deriva, es la versión pública y jugable. Sin partitura ni sincronía, cualquiera recorre el campo sonoro de la ciudad desde el navegador: elige una categoría con los colores y toca las alcaldías del mapa, donde cada una guarda muestras que suenan al deslizar el dedo. Disponible en <a href='https://cdm.ocelotl.cc/'>cdm.ocelotl.cc</a>.</p><p>Estas interfaces son la base de Radionautas de la Ciudad Monstruo, pieza generada en conjunto con La Sonora que Sueña, seleccionada para Mecánicas Inmersivas (CENART, Fonoteca Nacional, INBAL, ESM) y pendiente de estreno.</p><p>Repositorio: <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a></p>",
+      "fullDescription": "<p>Ciudad Monstruo es una pieza para cuatro personas que tocan al mismo tiempo sobre el mapa de la Ciudad de México, cada una desde su laptop. Dura entre ocho y doce minutos.</p><p>Hay cuatro colores y cada uno es un instrumento. Letrero son palabras sueltas: sostienes y la voz sigue a tu mano. Sodio son frases, pasadas por un filtro de radio. Mercurio es un clic en una alcaldía, que deja latiendo una grabación hecha ahí; el tiempo que sostienes el clic es el periodo del pulso. Jardinera es un arrastre que granula un archivo a lo largo del trazo, y despacio el trazo sale más ancho.</p><p>Nadie se queda con un color. La máquina reparte a cada quien un turno de entre 5 y 45 segundos, desfasado del de los demás. Al acabar se borra lo que tocaste y te toca el color siguiente; si lo tiene alguien más, esperas. Los silencios de la pieza salen de esa regla. En la simulación, con cuatro personas y nueve minutos, cada una pasó callada el 12 % del tiempo.</p><p>El material son 435 archivos: 73 del catálogo de la primera versión, 319 fragmentos de voz y 43 que nunca se catalogaron. En los de voz el nombre del archivo es la transcripción, y de ahí sale el corte entre letrero y sodio: hasta dos palabras es letrero, de tres en adelante es sodio.</p><p>Para ensayar en casa está el modo solo, donde tocas contra tres personas simuladas que siguen las mismas reglas, con sonido estéreo en el navegador. En concierto las laptops sólo mandan gestos por la red local, sin internet. Una máquina de audio lleva la cuenta de los turnos, suena y le devuelve a cada quien lo que pasó. Si alguien se cae, su silla la toca una persona simulada hasta que vuelve con el mismo nombre.</p><p>Esta versión se armó al revés que la primera. Antes de escribir el motor hubo tres mockups que suenan, cada uno para decidir algo que en papel no se oye: de dónde sale una palabra, qué se queda sonando cuando sueltas y cuánto dura un turno.</p><p>La primera versión era una herramienta de composición: trazos sobre un campo circular que se renderizaban a un WAV de dos, cuatro u ocho canales, con DBAP y granulación. Tenía además radionauta, para intervenir la pieza en vivo, y deriva, una versión para el público en el teléfono. Sigue en <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a>.</p><p>Ciudad Monstruo se hace con La Sonora que Sueña y vive en <a href='https://sonirica.com/ciudad-monstruo/'>sonirica.com/ciudad-monstruo</a>. Radionautas de la Ciudad Monstruo, la pieza con el colectivo, fue seleccionada para Mecánicas Inmersivas (CENART, Fonoteca Nacional, INBAL, ESM) y está pendiente de estreno.</p><p>Repositorio: <a href='https://codeberg.org/sonirica/ciudad-monstruo'>codeberg.org/sonirica/ciudad-monstruo</a></p>",
       "images": [
         {
+          "src": "./img/ciudad-monstruo-sticker-r.png",
+          "caption": "El sticker: el mapa con los cuatro gestos anclados en alcaldías. Mercurio en Miguel Hidalgo, letrero en Iztapalapa, sodio de Gustavo A. Madero a Milpa Alta y jardinera de Cuajimalpa a Tláhuac."
+        },
+        {
           "src": "./img/ciudad-monstruo-mapa-r.png",
-          "caption": "El mapa solo, sin partitura ni layout de bocinas encima. Una de las variantes que el sistema genera en cada carga."
+          "caption": "El mapa solo, sin partitura ni layout de bocinas encima."
         },
         {
           "src": "./img/ciudad-monstruo-campo.jpg",
-          "caption": "Campo de composición. Layout octofónico sobre el trazo de la Ciudad de México."
+          "caption": "Primera versión. Campo de composición, con el layout octofónico sobre el trazo de la Ciudad de México."
         },
         {
           "src": "./img/ciudad-monstruo-mapeo.jpg",
-          "caption": "Mapeo gráfico a audio: velocidad del gesto al ancho y la ganancia, trayectoria al movimiento espacial, color a la muestra."
+          "caption": "Primera versión. Mapeo gráfico a audio: velocidad del gesto al ancho y la ganancia, trayectoria al movimiento espacial, color a la muestra."
         },
         "./img/cdm-foto.jpeg"
       ]
