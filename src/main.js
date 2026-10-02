@@ -80,8 +80,8 @@ function loadContactPage() {
               <ul class="contact-links">
                   <li><a href="mailto:emilio.ocelotl@gmail.com">emilio.ocelotl@gmail.com</a></li>
                   <li><a href="https://github.com/EmilioOcelotl">github.com/EmilioOcelotl</a></li>
-                  <li><a href="https://www.instagram.com/emilio.ocelotl/">instagram.com/emilio.ocelotl</a></li>
-                  <li><a href="https://www.linkedin.com/in/emilio-ocelotl-reyes-777061ab">linkedin.com/in/emilio-ocelotl-reyes</a></li>
+                  <li><a href="https://www.instagram.com/emilioocelotl/">instagram.com/emilioocelotl</a></li>
+                  <li><a href="https://www.linkedin.com/in/emilioocelotl/">linkedin.com/in/emilioocelotl</a></li>
                   <li><a href="https://emilio.ocelotl.cc/" target="_blank" rel="noopener">emilio.ocelotl.cc</a><span class="contact-note">${uxNote}</span></li>
               </ul>
           </section>
