@@ -398,7 +398,14 @@ export const projects_en = [
     "imgAlt": "altamisa",
     "title": "Altamisa",
     "year": "2016-2018",
-    "description": "Cello, electronics, and visuals"
+    "description": "Cello, electronics, and visuals",
+    "details": {
+      "fullDescription": "<p>Cello: Iracema de Andrade. Live electronics: Emilio Ocelotl.</p><ul><li>International Cervantino Festival, in collaboration with the Mexican Center for Music and Sound Arts (CMMAS). Museo Iconográfico del Quijote, Guanajuato, October 12, 2016.</li><li>Latitudes Sonoras, MUAC, Mexico City, November 12-13, 2016.</li><li>Multimedia Center of the National Center for the Arts, Mexico City, June 2, 2017.</li><li>Fonoteca Nacional, Mexico City, June 22, 2017.</li><li>Manuel Enríquez International Forum of New Music, February 15, 2018.</li></ul>",
+      "images": [
+        "./img/altamisa2-r.jpg",
+        "./img/altaIracema-r.jpg"
+      ]
+    }
   }
 
 ];

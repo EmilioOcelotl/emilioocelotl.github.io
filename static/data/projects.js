@@ -398,7 +398,14 @@ export const projects = [
     "imgAlt": "altamisa",
     "title": "Altamisa",
     "year": "2016-2018",
-    "description": "Cello, electrónica e imagen"
+    "description": "Cello, electrónica e imagen",
+    "details": {
+      "fullDescription": "<p>Violoncello: Iracema de Andrade. Electrónica en vivo: Emilio Ocelotl.</p><ul><li>Festival Internacional Cervantino, en colaboración con el Centro Mexicano para la Música y las Artes Sonoras (CMMAS). Museo Iconográfico del Quijote, Guanajuato, 12 de octubre de 2016.</li><li>Latitudes Sonoras, MUAC, Ciudad de México, 12 y 13 de noviembre de 2016.</li><li>Centro Multimedia del Centro Nacional de las Artes, Ciudad de México, 2 de junio de 2017.</li><li>Fonoteca Nacional, Ciudad de México, 22 de junio de 2017.</li><li>Foro Internacional de Música Nueva Manuel Enríquez, 15 de febrero de 2018.</li></ul>",
+      "images": [
+        "./img/altamisa2-r.jpg",
+        "./img/altaIracema-r.jpg"
+      ]
+    }
   }
 
 ];
