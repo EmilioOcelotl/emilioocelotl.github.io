@@ -40,8 +40,29 @@ const TEXTS = {
   }
 };
 
+// Variantes del PDF. La general lleva todo lo que tiene texto; las demás son
+// una selección en orden (por href) con su propio rótulo de portada.
+// Una entrada seleccionada sin texto (fullDescription vacío) se salta con aviso.
+const VARIANTS = {
+  general: { suffix: '', select: null, texts: {} },
+  musica: {
+    suffix: '-musica',
+    select: [
+      'decoding-gesture.html',
+      'synthaxis.html',
+      'ciudad-monstruo.html',
+      'threeStudies.html',
+      'altamisa.html'
+    ],
+    texts: {
+      es: { portfolio: 'PORTAFOLIO · MÚSICA ELECTROACÚSTICA' },
+      en: { portfolio: 'PORTFOLIO · ELECTROACOUSTIC MUSIC' }
+    }
+  }
+};
+
 // Función para crear la portada
-function createCoverPage(doc, language = 'es') {
+function createCoverPage(doc, language = 'es', texts = TEXTS[language]) {
   const pageWidth = doc.page.width;
   const pageHeight = doc.page.height;
   const margin = 60;
@@ -68,7 +89,7 @@ function createCoverPage(doc, language = 'es') {
     .font(FONTS.body)
     .fontSize(11)
     .fillColor(COLORS.secondary)
-    .text(TEXTS[language].portfolio, margin, blockY + 44, { width: pageWidth - margin * 2 });
+    .text(texts.portfolio, margin, blockY + 44, { width: pageWidth - margin * 2 });
 
   doc
     .font(FONTS.body)
@@ -93,7 +114,7 @@ function createCoverPage(doc, language = 'es') {
 }
 
 // Función para crear la página de statement
-function createStatementPage(doc, language = 'es') {
+function createStatementPage(doc, language = 'es', texts = TEXTS[language]) {
   const pageWidth = doc.page.width;
   const pageHeight = doc.page.height;
   const margin = 80;
@@ -106,7 +127,7 @@ function createStatementPage(doc, language = 'es') {
     .font(FONTS.body)
     .fontSize(13)
     .fillColor(COLORS.primary)
-    .text(TEXTS[language].statementBody, margin, bodyY, {
+    .text(texts.statementBody, margin, bodyY, {
       width: textWidth,
       lineGap: 8,
       align: 'left'
@@ -526,8 +547,9 @@ function renderProject(doc, project, startY, isFirst = false, language = 'es') {
 }
 
 // Función principal para generar el PDF
-async function generatePortfolio(language = 'en') {
-  console.log(`🎨 Generando portafolio artístico (${language}) con portada...`);
+async function generatePortfolio(language = 'en', variantName = 'general') {
+  const variant = VARIANTS[variantName];
+  console.log(`🎨 Generando portafolio artístico (${language}, ${variantName}) con portada...`);
   
   // Cargar proyectos según el idioma
   // Cargar proyectos según el idioma
@@ -590,7 +612,7 @@ async function generatePortfolio(language = 'en') {
   doc.on('pageAdded', () => { pageCount++; });
   
   // Configurar pipe de salida
-  const outputFilename = language === 'en' ? 'portfolio-en.pdf' : 'portfolio.pdf';
+  const outputFilename = `portfolio${variant.suffix}${language === 'en' ? '-en' : ''}.pdf`;
   const outputPath = path.join(process.cwd(), outputFilename);
   const stream = fs.createWriteStream(outputPath);
   doc.pipe(stream);
@@ -618,18 +640,32 @@ async function generatePortfolio(language = 'en') {
   
   // 1. CREAR PORTADA
   console.log('📄 Creando portada...');
-  createCoverPage(doc, language);
+  const texts = { ...TEXTS[language], ...variant.texts[language] };
+  createCoverPage(doc, language, texts);
 
   // 2. STATEMENT
   doc.addPage();
   console.log('📄 Página de statement...');
-  createStatementPage(doc, language);
+  createStatementPage(doc, language, texts);
 
   // 3. PÁGINA DE PROYECTOS
   doc.addPage();
   console.log('📄 Página de proyectos...');
   
-  const projectsToRender = projects.filter(p => p.details && p.details.fullDescription);
+  const hasText = p => p.details && p.details.fullDescription;
+  let projectsToRender;
+  if (variant.select) {
+    projectsToRender = variant.select
+      .map(href => {
+        const p = projects.find(q => q.href === href);
+        if (!p) console.warn(`⚠️  ${href}: no existe en ${language}`);
+        else if (!hasText(p)) console.warn(`⚠️  ${href}: sin texto, se salta`);
+        return p;
+      })
+      .filter(p => p && hasText(p));
+  } else {
+    projectsToRender = projects.filter(hasText);
+  }
   
   let currentPage = 2;
   let currentY = 60;
@@ -731,15 +767,16 @@ async function generatePortfolio(language = 'en') {
 // Si se ejecuta directamente con parámetro de idioma
 if (import.meta.url === `file://${process.argv[1]}`) {
   const languageArg = process.argv.find(arg => arg === '--en' || arg === '--es');
+  const variantName = process.argv.includes('--musica') ? 'musica' : 'general';
 
   if (languageArg) {
     const language = languageArg === '--es' ? 'es' : 'en';
-    generatePortfolio(language).catch(console.error);
+    generatePortfolio(language, variantName).catch(console.error);
   } else {
     // Sin argumento: generar ambos idiomas
     (async () => {
-      await generatePortfolio('es');
-      await generatePortfolio('en');
+      await generatePortfolio('es', variantName);
+      await generatePortfolio('en', variantName);
     })().catch(console.error);
   }
 }

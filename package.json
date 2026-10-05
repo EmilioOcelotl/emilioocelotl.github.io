@@ -11,6 +11,8 @@
     "build": "parcel build ./src/index.html --public-url ./",
     "prepdf": "npm run content",
     "pdf": "node src/generate-portfolio.js",
+    "prepdf:musica": "npm run content",
+    "pdf:musica": "node src/generate-portfolio.js --musica",
     "pdf:dev": "node --watch src/generate-portfolio.js",
     "pdf:clean": "rm -f portfolio-*.pdf",
     "pdf:all": "npm run pdf && echo '✅ PDF generado en portfolio-artistico.pdf'",
