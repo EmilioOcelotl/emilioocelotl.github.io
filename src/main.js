@@ -306,6 +306,10 @@ function loadProjectDetails(project) {
     // Textos dinámicos según idioma
     const backButtonText = currentLanguage === 'es' ? 'VOLVER' : 'BACK';
 
+    // Una entrada sin cuerpo en su .md llega sin `details`: se muestra la
+    // cabecera con la imagen de la tarjeta en vez de romper la página
+    const details = project.details || { images: [project.imgSrc], fullDescription: '' };
+
     mainContent.innerHTML = `
       <div class="project-details">
         <div class="project-header">
@@ -316,16 +320,16 @@ function loadProjectDetails(project) {
           </div>
           <div class="project-carousel-col">
             <div class="carousel">
-              ${project.details.images.map(item => {
+              ${details.images.map(item => {
                 const src = typeof item === 'object' ? item.src : item;
                 const cap = typeof item === 'object' && item.caption ? item.caption : '';
                 return `<img src="${src}" ${buildSrcset(src)} sizes="(max-width: 768px) 100vw, 55vw" loading="lazy" alt="${project.title}" data-caption="${cap}">`;
               }).join('')}
-              ${project.details.images.length > 1 ? `
+              ${details.images.length > 1 ? `
                 <button class="carousel-prev" aria-label="${currentLanguage === 'es' ? 'Anterior' : 'Previous'}">&#8592;</button>
                 <button class="carousel-next" aria-label="${currentLanguage === 'es' ? 'Siguiente' : 'Next'}">&#8594;</button>
                 <div class="carousel-dots">
-                  ${project.details.images.map((_, i) => `<button class="carousel-dot${i === 0 ? ' active' : ''}" aria-label="Imagen ${i + 1}"></button>`).join('')}
+                  ${details.images.map((_, i) => `<button class="carousel-dot${i === 0 ? ' active' : ''}" aria-label="Imagen ${i + 1}"></button>`).join('')}
                 </div>
               ` : ''}
             </div>
@@ -333,21 +337,21 @@ function loadProjectDetails(project) {
           </div>
         </div>
         <div class="project-body">
-          <div class="project-full-description">${project.details.fullDescription}</div>
-          ${project.details.localVideo ? `
+          <div class="project-full-description">${details.fullDescription}</div>
+          ${details.localVideo ? `
             <div class="local-video-container">
-              <video controls poster="${project.details.videoPoster || ''}">
-                <source src="${project.details.localVideo}" type="video/mp4">
+              <video controls poster="${details.videoPoster || ''}">
+                <source src="${details.localVideo}" type="video/mp4">
                 ${currentLanguage === 'es' ? 'Tu navegador no soporta videos HTML5.' : 'Your browser does not support HTML5 video.'}
               </video>
             </div>
           ` : ''}
-          ${project.details.videoEmbed ? `
-            <div class="video-container">${project.details.videoEmbed}</div>
+          ${details.videoEmbed ? `
+            <div class="video-container">${details.videoEmbed}</div>
           ` : ''}
-          ${project.details.audioSrc ? `
+          ${details.audioSrc ? `
             <div class="audio-container">
-              ${project.details.audioSrc.map(audio => `
+              ${details.audioSrc.map(audio => `
                 <div class="audio-player">
                   <button class="audio-play" aria-label="${currentLanguage === 'es' ? 'Reproducir' : 'Play'}">
                     <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
@@ -364,8 +368,8 @@ function loadProjectDetails(project) {
               `).join('')}
             </div>
           ` : ''}
-          ${project.details.embed3d ? `
-            <div class="embed-3d-container">${project.details.embed3d}</div>
+          ${details.embed3d ? `
+            <div class="embed-3d-container">${details.embed3d}</div>
           ` : ''}
         </div>
         <div class="button-wrapper">
