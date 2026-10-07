@@ -34,4 +34,7 @@ Site: [emilioocelotl.github.io/minimapper](https://emilioocelotl.github.io/minim
 Repository: [github.com/EmilioOcelotl/minimapper](https://github.com/EmilioOcelotl/minimapper)
 
 ::: images
-minimapper-r.jpg
+minimapper-portada.jpg
+minimapper-codigo.jpg
+minimapper-edicion.jpg
+minimapper-calibracion.jpg

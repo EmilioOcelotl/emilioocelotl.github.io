@@ -169,7 +169,10 @@ export const projects_en = [
     "details": {
       "fullDescription": "<p>MiniMapper is a tool for real-time generative videomapping. Each surface is a deformable Bezier patch that can take its texture from Hydra graphics, videos, images, or cameras. It runs in the browser: there is no need to serve or install anything. Sessions can be saved at any time.</p><p>This project grew out of the friction of installing and using commercial mapping software, which also requires a local installation. MiniMapper was built on two scales: decisions that set the overall direction of the tool, and specific directions that were tested and refined in the sessions of a creativity and technology lab —such as audio reactivity and the detection of amplitude peaks in the microphone signal.</p><p>The aim was to close the distance between software that operates as a black box and small, customizable programs: the ones that cut down on technical complications and learning curves, and keep the focus on creative decisions.</p><p>Site: <a href='https://emilioocelotl.github.io/minimapper/'>emilioocelotl.github.io/minimapper</a></p><p>Repository: <a href='https://github.com/EmilioOcelotl/minimapper'>github.com/EmilioOcelotl/minimapper</a></p>",
       "images": [
-        "./img/minimapper-r.jpg"
+        "./img/minimapper-portada.jpg",
+        "./img/minimapper-codigo.jpg",
+        "./img/minimapper-edicion.jpg",
+        "./img/minimapper-calibracion.jpg"
       ]
     }
   },
