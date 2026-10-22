@@ -1,6 +1,25 @@
 export const projects = [
 
   {
+    "href": "rotor.html",
+    "imgSrc": "./img/rotor-r.jpg",
+    "imgAlt": "ROTOR",
+    "title": "Rotor",
+    "year": "2026",
+    "description": "Pieza acusmática en cinco movimientos hecha con una lavadora",
+    "details": {
+      "fullDescription": "<p>Rotor es una pieza acusmática en cinco movimientos, de 13 minutos y 41 segundos, hecha con tres grabaciones de una lavadora en la Ciudad de México, en diciembre de 2023. La forma es un palíndromo, R O T O′ R′, como el rotor que hace girar el tambor.</p><p>El acorde sale del zumbido. La red de 60 Hz pasa por el motor y da 120 Hz, y el pedal va una octava abajo. La tercera toma gira con un periodo de 1.02 a 1.13 segundos durante sus siete minutos y medio; la pieza sigue ese giro y nunca se queda en un tempo.</p><p>I es el motor y el pedal. II, dub sin piso. III, los arranques de las otras dos tomas. IV es II al revés, el tambor que va y viene. V se vuelve a llenar, frena y para, y acaba en la cola del eco.</p><p>La grabé en una sola toma en SuperCollider, con código al vuelo, y la partí como un CD, sin fades en los cortes.</p><p>Bandcamp: <a href='https://emilioocelotl.bandcamp.com/album/rotor'>emilioocelotl.bandcamp.com/album/rotor</a></p>",
+      "images": [
+        {
+          "src": "./img/rotor-r.jpg",
+          "caption": "Portada, hecha con Hydra. 2026."
+        }
+      ],
+      "videoEmbed": "<iframe style=\"border: 0; width: 100%; max-width: 700px; height: 307px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=1235466676/size=large/bgcol=333333/linkcol=00b5b2/artwork=small/tracklist=true/transparent=true/\" seamless><a href=\"https://emilioocelotl.bandcamp.com/album/rotor\">Rotor by Emilio Ocelotl</a></iframe>"
+    }
+  },
+
+  {
     "href": "decoding-gesture.html",
     "imgSrc": "./img/decoding-gesture-interfaz-r.png",
     "imgAlt": "Decoding Gesture",
@@ -68,7 +87,7 @@ export const projects = [
 
   {
     "href": "ciudad-monstruo.html",
-    "imgSrc": "./img/ciudad-monstruo-sticker-r.png",
+    "imgSrc": "./img/ciudad-monstruo-cuadrada-r.png",
     "imgAlt": "El mapa de la Ciudad de México con los cuatro gestos de color de Ciudad Monstruo",
     "title": "Ciudad Monstruo",
     "year": "2026",

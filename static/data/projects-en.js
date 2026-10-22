@@ -1,6 +1,25 @@
 export const projects_en = [
 
   {
+    "href": "rotor.html",
+    "imgSrc": "./img/rotor-r.jpg",
+    "imgAlt": "ROTOR",
+    "title": "Rotor",
+    "year": "2026",
+    "description": "Acousmatic piece in five movements made from a washing machine",
+    "details": {
+      "fullDescription": "<p>Rotor is an acousmatic piece in five movements, 13 minutes and 41 seconds long, made from three recordings of a washing machine in Mexico City, in December 2023. Its form is a palindrome, R O T O′ R′, like the rotor that turns the drum.</p><p>The chord comes from the hum. The 60 Hz mains current passes through the motor and comes out at 120 Hz, and the drone sits an octave below. The third take spins with a period of 1.02 to 1.13 seconds across its seven and a half minutes; the piece follows that spin and never settles on a tempo.</p><p>I is the motor and the drone. II, dub with no floor. III, the start-ups of the other two takes. IV is II reversed, the drum swinging back and forth. V fills up again, slows down and stops, and ends in the tail of the echo.</p><p>I recorded it in a single take in SuperCollider, live coding, and split it like a CD, with no fades at the cuts.</p><p>Bandcamp: <a href='https://emilioocelotl.bandcamp.com/album/rotor'>emilioocelotl.bandcamp.com/album/rotor</a></p>",
+      "images": [
+        {
+          "src": "./img/rotor-r.jpg",
+          "caption": "Cover, made with Hydra. 2026."
+        }
+      ],
+      "videoEmbed": "<iframe style=\"border: 0; width: 100%; max-width: 700px; height: 307px;\" src=\"https://bandcamp.com/EmbeddedPlayer/album=1235466676/size=large/bgcol=333333/linkcol=00b5b2/artwork=small/tracklist=true/transparent=true/\" seamless><a href=\"https://emilioocelotl.bandcamp.com/album/rotor\">Rotor by Emilio Ocelotl</a></iframe>"
+    }
+  },
+
+  {
     "href": "decoding-gesture.html",
     "imgSrc": "./img/decoding-gesture-interfaz-r.png",
     "imgAlt": "Decoding Gesture",
@@ -68,7 +87,7 @@ export const projects_en = [
 
   {
     "href": "ciudad-monstruo.html",
-    "imgSrc": "./img/ciudad-monstruo-sticker-r.png",
+    "imgSrc": "./img/ciudad-monstruo-cuadrada-r.png",
     "imgAlt": "The map of Mexico City with the four colored gestures of Ciudad Monstruo",
     "title": "Ciudad Monstruo",
     "year": "2026",

@@ -1,6 +1,6 @@
 ---
 href: ciudad-monstruo.html
-imgSrc: "ciudad-monstruo-sticker-r.png"
+imgSrc: "ciudad-monstruo-cuadrada-r.png"
 year: "2026"
 title.es: "Ciudad Monstruo"
 title.en: "Ciudad Monstruo"
