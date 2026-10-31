@@ -273,23 +273,61 @@ export const projects_en = [
     "imgSrc": "./img/lac-r.jpg",
     "imgAlt": "RGGTRN",
     "title": "RGGTRN",
-    "year": "2012-2019",
-    "description": "Collective of algorithmic music and audiovisual improvisation",
+    "year": "2012-2024",
+    "description": "Algorithmic dance music and audiovisual improvisation",
     "details": {
-      "fullDescription": "<p>RGGTRN (pronounced reɣɣaeˈtɾon) started in 2012 in Mexico City as ~ON, an electroacoustic and mixed music duo with Luis Navarro. Early performances included guest musicians. In 2014 we performed at Festival Databit.me in Arles, France, with Henri Marquet on guitarrón and Emmanuelle Aymès on voice. During that tour, in Bilbao, we adopted the name RGGTRN.</p><p>The work shifted toward algorithmic music for dancing and audiovisual improvisation, rooted in the Latinx context of its members. Performances at Algorave CCD (Mexico City, 2018), Algorave-Algorumba (Manizales, Colombia, 2017), International Conference on Live Coding (Madrid, 2019), and Linux Audio Conference (2019). The Bellacode tour (2017) was one of the most emblematic activities of the collective.</p>",
+      "fullDescription": "<p>RGGTRN (Reggaetron) started in 2012 in Mexico City as ~ON, an electroacoustic and mixed music duo with Luis N. Del Angel. In 2014 we played at Festival Databit.me in Arles, with Henri Marquet on guitarrón and Emmanuelle Aymès on voice. In Bilbao, on that same tour, the name came up.</p><p>The work then moved to algorithmic dance music and audiovisual improvisation: cumbia, salsa and reggaeton crossed with techno and footwork, live coded in SuperCollider and Hydra. RGGTRN has been Luis, Jessica Rodríguez, Marianne Teixido and me, in different combinations.</p><p>In 2016 we did the Algorave UK Tour through Leeds, Newcastle, Hull and London. In 2018, with support from Ibermúsicas, the Bellacode tour went through Bogotá, Manizales, Medellín, Lima and Quito, with concerts and live coding workshops. We played the ICLC in Morelia (2017) and in Madrid (2019), the Linux Audio Conference at Stanford and LiveCode.NYC in Brooklyn. In 2024, Marianne and I did a residency at CCRMA, Stanford.</p><p>Dates, audio, photos and flyers: <a href='https://rggtrn.github.io'>rggtrn.github.io</a></p>",
       "images": [
-        "./img/lac-r.jpg",
-        "./img/algoraveccd.jpg",
-        "./img/algoraveccd2-r.jpg",
-        "./img/algoraveMadrid2019.jpeg",
-        "./img/algoraveMadrid2019-2.jpeg",
-        "./img/peru-r.jpg",
-        "./img/rggtrnbanner-r.png",
-        "./img/rggtrnFull-r.jpg",
-        "./img/on-muac1.jpeg",
-        "./img/on-muac2.jpeg"
+        {
+          "src": "./img/rggtrn-portada-r.jpg",
+          "caption": "Bellacode tour, 2018."
+        },
+        {
+          "src": "./img/on-muac1.jpeg",
+          "caption": "~ON, MUAC, Mexico City."
+        },
+        {
+          "src": "./img/on-muac2.jpeg",
+          "caption": "~ON, MUAC, Mexico City."
+        },
+        {
+          "src": "./img/rggtrn-rancho2015-r.jpg",
+          "caption": "~ON, Algorave “Fiesta algorítmica”, Rancho Electrónico, Mexico City, 2015."
+        },
+        {
+          "src": "./img/rggtrnFull-r.jpg",
+          "caption": "RGGTRN."
+        },
+        {
+          "src": "./img/peru-r.jpg",
+          "caption": "Bellacode tour, Peru, 2018."
+        },
+        {
+          "src": "./img/algoraveccd.jpg",
+          "caption": "Algorave, Centro de Cultura Digital, Mexico City, 2018."
+        },
+        {
+          "src": "./img/algoraveccd2-r.jpg",
+          "caption": "Algorave, Centro de Cultura Digital, Mexico City, 2018."
+        },
+        {
+          "src": "./img/rggtrn-iclc-madrid2019-r.jpg",
+          "caption": "ICLC Algorave, Madrid, 2019."
+        },
+        {
+          "src": "./img/algoraveMadrid2019.jpeg",
+          "caption": "Algorave, Madrid, 2019."
+        },
+        {
+          "src": "./img/algoraveMadrid2019-2.jpeg",
+          "caption": "Algorave, Madrid, 2019."
+        },
+        {
+          "src": "./img/lac-r.jpg",
+          "caption": "Linux Audio Conference, CCRMA, Stanford, 2019."
+        }
       ],
-      "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/owJwB3BsclI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
+      "videoEmbed": "<iframe width='560' height='315' src='https://www.youtube.com/embed/_8BB_VcGPE8' title='RGGTRN, ICLC 2019' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>\n<iframe width='560' height='315' src='https://www.youtube.com/embed/owJwB3BsclI' title='~ON, Festival Databit.me, Arles, 2014' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
     }
   },
 

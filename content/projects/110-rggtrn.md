@@ -1,36 +1,47 @@
 ---
 href: rggtrn.html
 imgSrc: "lac-r.jpg"
-year: "2012-2019"
+year: "2012-2024"
 title.es: "RGGTRN"
 title.en: "RGGTRN"
 imgAlt.es: "RGGTRN"
 imgAlt.en: "RGGTRN"
-description.es: "Colectivo de música algorítmica e improvisación audiovisual"
-description.en: "Collective of algorithmic music and audiovisual improvisation"
+description.es: "Música algorítmica para bailar e improvisación audiovisual"
+description.en: "Algorithmic dance music and audiovisual improvisation"
 ---
 
 ::: es
-RGGTRN (reɣɣaeˈtɾon) comenzó en 2012 en Ciudad de México como ~ON, un dúo de música electroacústica y mixta con Luis Navarro. Las primeras presentaciones incluían músicos invitados. En 2014 tocamos en el Festival Databit.me, Arles, Francia, con Henri Marquet en guitarrón y Emmanuelle Aymès en voz. En Bilbao, durante esa gira, adoptamos el nombre RGGTRN.
+RGGTRN (Reggaetron) empezó en 2012 en la Ciudad de México como ~ON, un dúo de música electroacústica y mixta con Luis N. Del Angel. En 2014 tocamos en el Festival Databit.me, en Arles, con Henri Marquet en guitarrón y Emmanuelle Aymès en voz. En Bilbao, en esa misma gira, salió el nombre.
 
-El trabajo se desplazó hacia la música algorítmica para bailar y la improvisación audiovisual, vinculada al contexto Latinx de sus miembros. Presentaciones en Algorave CCD (Ciudad de México, 2018), Algorave-Algorumba (Manizales, Colombia, 2017), International Conference on Live Coding (Madrid, 2019) y Linux Audio Conference (2019). La gira con Bellacode (2017) fue una de las actividades más emblemáticas del colectivo.
+Luego el trabajo se movió a la música algorítmica para bailar y la improvisación audiovisual: cumbia, salsa y reggaeton cruzados con techno y footwork, programados en vivo con SuperCollider y Hydra. En RGGTRN hemos tocado Luis, Jessica Rodríguez, Marianne Teixido y yo, en distintas combinaciones.
+
+En 2016 hicimos el Algorave UK Tour por Leeds, Newcastle, Hull y Londres. En 2018, con apoyo de Ibermúsicas, la gira Bellacode pasó por Bogotá, Manizales, Medellín, Lima y Quito, con conciertos y talleres de live coding. Tocamos en la ICLC de Morelia (2017) y en la de Madrid (2019), en la Linux Audio Conference en Stanford y con LiveCode.NYC en Brooklyn. En 2024, Marianne y yo hicimos una residencia en CCRMA, en Stanford.
+
+Fechas, audios, fotos y flyers: [rggtrn.github.io](https://rggtrn.github.io)
 
 ::: en
-RGGTRN (pronounced reɣɣaeˈtɾon) started in 2012 in Mexico City as ~ON, an electroacoustic and mixed music duo with Luis Navarro. Early performances included guest musicians. In 2014 we performed at Festival Databit.me in Arles, France, with Henri Marquet on guitarrón and Emmanuelle Aymès on voice. During that tour, in Bilbao, we adopted the name RGGTRN.
+RGGTRN (Reggaetron) started in 2012 in Mexico City as ~ON, an electroacoustic and mixed music duo with Luis N. Del Angel. In 2014 we played at Festival Databit.me in Arles, with Henri Marquet on guitarrón and Emmanuelle Aymès on voice. In Bilbao, on that same tour, the name came up.
 
-The work shifted toward algorithmic music for dancing and audiovisual improvisation, rooted in the Latinx context of its members. Performances at Algorave CCD (Mexico City, 2018), Algorave-Algorumba (Manizales, Colombia, 2017), International Conference on Live Coding (Madrid, 2019), and Linux Audio Conference (2019). The Bellacode tour (2017) was one of the most emblematic activities of the collective.
+The work then moved to algorithmic dance music and audiovisual improvisation: cumbia, salsa and reggaeton crossed with techno and footwork, live coded in SuperCollider and Hydra. RGGTRN has been Luis, Jessica Rodríguez, Marianne Teixido and me, in different combinations.
+
+In 2016 we did the Algorave UK Tour through Leeds, Newcastle, Hull and London. In 2018, with support from Ibermúsicas, the Bellacode tour went through Bogotá, Manizales, Medellín, Lima and Quito, with concerts and live coding workshops. We played the ICLC in Morelia (2017) and in Madrid (2019), the Linux Audio Conference at Stanford and LiveCode.NYC in Brooklyn. In 2024, Marianne and I did a residency at CCRMA, Stanford.
+
+Dates, audio, photos and flyers: [rggtrn.github.io](https://rggtrn.github.io)
 
 ::: images
-lac-r.jpg
-algoraveccd.jpg
-algoraveccd2-r.jpg
-algoraveMadrid2019.jpeg
-algoraveMadrid2019-2.jpeg
-peru-r.jpg
-rggtrnbanner-r.png
-rggtrnFull-r.jpg
-on-muac1.jpeg
-on-muac2.jpeg
+rggtrn-portada-r.jpg | es: Gira Bellacode, 2018. | en: Bellacode tour, 2018.
+on-muac1.jpeg | es: ~ON, MUAC, Ciudad de México. | en: ~ON, MUAC, Mexico City.
+on-muac2.jpeg | es: ~ON, MUAC, Ciudad de México. | en: ~ON, MUAC, Mexico City.
+rggtrn-rancho2015-r.jpg | es: ~ON, Algorave «Fiesta algorítmica», Rancho Electrónico, Ciudad de México, 2015. | en: ~ON, Algorave “Fiesta algorítmica”, Rancho Electrónico, Mexico City, 2015.
+rggtrnFull-r.jpg | es: RGGTRN. | en: RGGTRN.
+peru-r.jpg | es: Gira Bellacode, Perú, 2018. | en: Bellacode tour, Peru, 2018.
+algoraveccd.jpg | es: Algorave, Centro de Cultura Digital, Ciudad de México, 2018. | en: Algorave, Centro de Cultura Digital, Mexico City, 2018.
+algoraveccd2-r.jpg | es: Algorave, Centro de Cultura Digital, Ciudad de México, 2018. | en: Algorave, Centro de Cultura Digital, Mexico City, 2018.
+rggtrn-iclc-madrid2019-r.jpg | es: Algorave de la ICLC, Madrid, 2019. | en: ICLC Algorave, Madrid, 2019.
+algoraveMadrid2019.jpeg | es: Algorave, Madrid, 2019. | en: Algorave, Madrid, 2019.
+algoraveMadrid2019-2.jpeg | es: Algorave, Madrid, 2019. | en: Algorave, Madrid, 2019.
+lac-r.jpg | es: Linux Audio Conference, CCRMA, Stanford, 2019. | en: Linux Audio Conference, CCRMA, Stanford, 2019.
 
 ::: videoEmbed
-<iframe width='560' height='315' src='https://www.youtube.com/embed/owJwB3BsclI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>
+<iframe width='560' height='315' src='https://www.youtube.com/embed/_8BB_VcGPE8' title='RGGTRN, ICLC 2019' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>
+<iframe width='560' height='315' src='https://www.youtube.com/embed/owJwB3BsclI' title='~ON, Festival Databit.me, Arles, 2014' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>
