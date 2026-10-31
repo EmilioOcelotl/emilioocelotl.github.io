@@ -284,11 +284,11 @@ export const projects_en = [
         },
         {
           "src": "./img/on-muac1.jpeg",
-          "caption": "~ON, MUAC, Mexico City."
+          "caption": "~ON, /*vivo*/, MUAC, Mexico City, 2012."
         },
         {
           "src": "./img/on-muac2.jpeg",
-          "caption": "~ON, MUAC, Mexico City."
+          "caption": "~ON, /*vivo*/, MUAC, Mexico City, 2012."
         },
         {
           "src": "./img/rggtrn-rancho2015-r.jpg",

@@ -30,8 +30,8 @@ Dates, audio, photos and flyers: [rggtrn.github.io](https://rggtrn.github.io)
 
 ::: images
 rggtrn-portada-r.jpg | es: Gira Bellacode, 2018. | en: Bellacode tour, 2018.
-on-muac1.jpeg | es: ~ON, MUAC, Ciudad de México. | en: ~ON, MUAC, Mexico City.
-on-muac2.jpeg | es: ~ON, MUAC, Ciudad de México. | en: ~ON, MUAC, Mexico City.
+on-muac1.jpeg | es: ~ON, /*vivo*/, MUAC, Ciudad de México, 2012. | en: ~ON, /*vivo*/, MUAC, Mexico City, 2012.
+on-muac2.jpeg | es: ~ON, /*vivo*/, MUAC, Ciudad de México, 2012. | en: ~ON, /*vivo*/, MUAC, Mexico City, 2012.
 rggtrn-rancho2015-r.jpg | es: ~ON, Algorave «Fiesta algorítmica», Rancho Electrónico, Ciudad de México, 2015. | en: ~ON, Algorave “Fiesta algorítmica”, Rancho Electrónico, Mexico City, 2015.
 rggtrnFull-r.jpg | es: RGGTRN. | en: RGGTRN.
 peru-r.jpg | es: Gira Bellacode, Perú, 2018. | en: Bellacode tour, Peru, 2018.
