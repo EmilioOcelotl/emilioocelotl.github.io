@@ -148,7 +148,8 @@ function parseToParagraphs(html) {
     .replace(/<\/?ol>/g, '¶')
     .replace(/<li>/g, '¶• ')
     .replace(/<\/li>/g, '')
-    .replace(/<\/?(em|emph|code|strong|b|i)>/g, '');
+    .replace(/<\/?(em|emph|code|strong|b|i)>/g, '')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));  // p. ej. /&#42;vivo&#42;/
 
   const paragraphTexts = normalized
     .split(/¶+/)

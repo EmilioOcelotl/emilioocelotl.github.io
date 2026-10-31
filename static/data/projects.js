@@ -276,14 +276,14 @@ export const projects = [
     "year": "2012-2024",
     "description": "Música algorítmica para bailar e improvisación audiovisual",
     "details": {
-      "fullDescription": "<p>RGGTRN (Reggaetron) empezó en 2012 en la Ciudad de México como ~ON, un dúo de música electroacústica y mixta con Luis N. Del Angel. En 2014 tocamos en el Festival Databit.me, en Arles, con Henri Marquet en guitarrón y Emmanuelle Aymès en voz. En Bilbao, en esa misma gira, salió el nombre.</p><p>Luego el trabajo se movió a la música algorítmica para bailar y la improvisación audiovisual: cumbia, salsa y reggaeton cruzados con techno y footwork, programados en vivo con SuperCollider y Hydra. En RGGTRN hemos tocado Luis, Jessica Rodríguez, Marianne Teixido y yo, en distintas combinaciones.</p><p>En 2016 hicimos el Algorave UK Tour por Leeds, Newcastle, Hull y Londres. En 2018, con apoyo de Ibermúsicas, la gira Bellacode pasó por Bogotá, Manizales, Medellín, Lima y Quito, con conciertos y talleres de live coding. Tocamos en la ICLC de Morelia (2017) y en la de Madrid (2019), en la Linux Audio Conference en Stanford y con LiveCode.NYC en Brooklyn. En 2024, Marianne y yo hicimos una residencia en CCRMA, en Stanford.</p><p>Fechas, audios, fotos y flyers: <a href='https://rggtrn.github.io'>rggtrn.github.io</a></p>",
+      "fullDescription": "<p>RGGTRN (Reggaetron) empezó en 2012 en la Ciudad de México como ~ON, un dúo de música electroacústica y mixta con Luis N. Del Angel. La primera vez que tocamos fue en noviembre de ese año, en el MUAC, durante /&#42;vivo&#42;/, el simposio de música y código que organizaba el Taller de Audio del Centro Multimedia. El código de Fluxus se proyectaba encima de los cubos que iba dibujando. En 2014 tocamos en el Festival Databit.me, en Arles, con Henri Marquet en guitarrón y Emmanuelle Aymès en voz. En Bilbao, en esa misma gira, salió el nombre.</p><p>Luego el trabajo se movió a la música algorítmica para bailar y la improvisación audiovisual: cumbia, salsa y reggaeton cruzados con techno y footwork, programados en vivo con SuperCollider y Hydra. En RGGTRN hemos tocado Luis, Jessica Rodríguez, Marianne Teixido y yo, en distintas combinaciones.</p><p>En 2016 hicimos el Algorave UK Tour por Leeds, Newcastle, Hull y Londres. En 2018, con apoyo de Ibermúsicas, la gira Bellacode pasó por Bogotá, Manizales, Medellín, Lima y Quito, con conciertos y talleres de live coding. Tocamos en la ICLC de Morelia (2017) y en la de Madrid (2019), en la Linux Audio Conference en Stanford y con LiveCode.NYC en Brooklyn. En 2024, Marianne y yo hicimos una residencia en CCRMA, en Stanford.</p><p>Fechas, audios, fotos y flyers: <a href='https://rggtrn.github.io'>rggtrn.github.io</a></p>",
       "images": [
         {
           "src": "./img/rggtrn-portada-r.jpg",
           "caption": "Gira Bellacode, 2018."
         },
         {
-          "src": "./img/on-muac1.jpeg",
+          "src": "./img/on-muac-vivo2012-r.jpg",
           "caption": "~ON, /*vivo*/, MUAC, Ciudad de México, 2012."
         },
         {

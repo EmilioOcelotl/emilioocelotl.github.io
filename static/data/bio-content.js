@@ -29,7 +29,8 @@ export const bioContent = {
         { name: "Algorave UK Tour", body: "Con el colectivo RGGTRN (Emilio Ocelotl Reyes, Luis Navarro del Ángel y Jessica Rodríguez). Leeds (ODI Leeds), Newcastle (Abject Gallery), Hull (The New Adelphi Club y Universidad de Hull) y Londres (Ravensbourne). Reino Unido. 29 de abril a 6 de mayo de 2016." },
         { name: "Two Computers and Flute Concert", body: "Para flauta y electrónica en vivo en colaboración con Anna Maria Raszynska y Luis Navarro. Hochschule der Künste. Berna, Suiza. 27 de octubre de 2014." },
         { name: "Festival Databit 2014", body: "Concierto audiovisual en colaboración con Henry Marquet, Emmanuelle Aymès y Luis Navarro. Bourse du Travail. Arles, Francia. 24 de octubre de 2014." },
-        { name: "La Escucha Errante", body: "Live Coding Performance en colaboración con Luis Navarro. Zorrotzaurre Art Work in Progress (ZAWP). Bilbao, España. 18 de octubre de 2014." }
+        { name: "La Escucha Errante", body: "Live Coding Performance en colaboración con Luis Navarro. Zorrotzaurre Art Work in Progress (ZAWP). Bilbao, España. 18 de octubre de 2014." },
+        { name: "/*vivo*/ Simposio Internacional de Música y Código", body: "Concierto de live coding audiovisual en colaboración con Luis Navarro, como ~ON. MUAC. Ponencias «Código y comunidad» (Fonoteca Nacional, 14 de noviembre) y «Espacio, tiempo y live coding» (Centro Multimedia del CENART, 16 de noviembre). Ciudad de México. Noviembre de 2012." }
       ],
       teaching: "Docencia",
       teachingList: [
@@ -82,7 +83,8 @@ export const bioContent = {
         { name: "Algorave UK Tour", body: "With the RGGTRN collective (Emilio Ocelotl Reyes, Luis Navarro del Ángel and Jessica Rodríguez). Leeds (ODI Leeds), Newcastle (Abject Gallery), Hull (The New Adelphi Club and University of Hull) and London (Ravensbourne). United Kingdom. April 29 to May 6, 2016." },
         { name: "Two Computers and Flute Concert", body: "For flute and live electronics in collaboration with Anna Maria Raszynska and Luis Navarro. Hochschule der Künste. Bern, Switzerland. October 27, 2014." },
         { name: "Databit 2014 Festival", body: "Audiovisual concert in collaboration with Henry Marquet, Emmanuelle Aymès and Luis Navarro. Bourse du Travail. Arles, France. October 24, 2014." },
-        { name: "La Escucha Errante", body: "Live Coding Performance in collaboration with Luis Navarro. Zorrotzaurre Art Work in Progress (ZAWP). Bilbao, Spain. October 18, 2014." }
+        { name: "La Escucha Errante", body: "Live Coding Performance in collaboration with Luis Navarro. Zorrotzaurre Art Work in Progress (ZAWP). Bilbao, Spain. October 18, 2014." },
+        { name: "/*vivo*/ International Symposium on Music and Code", body: "Audiovisual live coding concert in collaboration with Luis Navarro, as ~ON. MUAC. Talks “Código y comunidad” (Fonoteca Nacional, November 14) and “Espacio, tiempo y live coding” (Centro Multimedia, CENART, November 16). Mexico City. November 2012." }
       ],
       teaching: "Teaching",
       teachingList: [
