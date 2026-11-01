@@ -17,7 +17,7 @@ Luego el trabajo se movió a la música algorítmica para bailar y la improvisac
 
 En 2016 hicimos el Algorave UK Tour por Leeds, Newcastle, Hull y Londres. En 2018, con apoyo de Ibermúsicas, la gira Bellacode pasó por Bogotá, Manizales, Medellín, Lima y Quito, con conciertos y talleres de live coding. Tocamos en la ICLC de Morelia (2017) y en la de Madrid (2019), en la Linux Audio Conference en Stanford y con LiveCode.NYC en Brooklyn. En 2024, Marianne y yo hicimos una residencia en CCRMA, en Stanford.
 
-Fechas, audios, fotos y flyers: [rggtrn.github.io](https://rggtrn.github.io)
+Fechas, audios, fotos y flyers: [rggtrn.com](https://rggtrn.com)
 
 ::: en
 RGGTRN (Reggaetron) started in 2012 in Mexico City as ~ON, an electroacoustic and mixed music duo with Luis N. Del Angel. Our first show was that November at MUAC, during /&#42;vivo&#42;/, the music and code symposium run by the Taller de Audio at Centro Multimedia. The Fluxus code was projected over the cubes it was drawing. In 2014 we played at Festival Databit.me in Arles, with Henri Marquet on guitarrón and Emmanuelle Aymès on voice. In Bilbao, on that same tour, the name came up.
@@ -26,7 +26,7 @@ The work then moved to algorithmic dance music and audiovisual improvisation: cu
 
 In 2016 we did the Algorave UK Tour through Leeds, Newcastle, Hull and London. In 2018, with support from Ibermúsicas, the Bellacode tour went through Bogotá, Manizales, Medellín, Lima and Quito, with concerts and live coding workshops. We played the ICLC in Morelia (2017) and in Madrid (2019), the Linux Audio Conference at Stanford and LiveCode.NYC in Brooklyn. In 2024, Marianne and I did a residency at CCRMA, Stanford.
 
-Dates, audio, photos and flyers: [rggtrn.github.io](https://rggtrn.github.io)
+Dates, audio, photos and flyers: [rggtrn.com](https://rggtrn.com)
 
 ::: images
 rggtrn-portada-r.jpg | es: Gira Bellacode, 2018. | en: Bellacode tour, 2018.
