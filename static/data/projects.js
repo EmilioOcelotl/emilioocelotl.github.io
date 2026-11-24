@@ -91,9 +91,9 @@ export const projects = [
     "imgAlt": "El mapa de la Ciudad de México con los cuatro gestos de color de Ciudad Monstruo",
     "title": "Ciudad Monstruo",
     "year": "2026",
-    "description": "Pieza para cuatro personas que tocan sobre el mapa de la ciudad",
+    "description": "Sistema para cuatro personas que tocan sobre el mapa de la ciudad",
     "details": {
-      "fullDescription": "<p>Ciudad Monstruo es una pieza para cuatro personas que tocan al mismo tiempo sobre el mapa de la Ciudad de México, cada una desde su laptop. Dura entre ocho y doce minutos.</p><p>Ciudad Monstruo se hace con La Sonora que Sueña y vive en <a href='https://sonirica.com/ciudad-monstruo/'>sonirica.com/ciudad-monstruo</a>. Radionautas de la Ciudad Monstruo, la pieza con el colectivo, fue seleccionada para Mecánicas Inmersivas (CENART, Fonoteca Nacional, INBAL, ESM) y está pendiente de estreno.</p><p>La primera versión era una herramienta de composición. Sigue en <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a>.</p><p>Repositorio: <a href='https://codeberg.org/sonirica/ciudad-monstruo'>codeberg.org/sonirica/ciudad-monstruo</a></p>",
+      "fullDescription": "<p>Ciudad Monstruo es un sistema para cuatro personas que tocan al mismo tiempo sobre el mapa de la Ciudad de México, cada una desde su laptop.</p><p>Ciudad Monstruo se hace con La Sonora que Sueña y vive en <a href='https://sonirica.com/ciudad-monstruo/'>sonirica.com/ciudad-monstruo</a>. Radionautas de Ciudad Monstruo, la pieza con el colectivo, dura nueve minutos. Fue seleccionada para Mecánicas Inmersivas (CENART, Fonoteca Nacional, INBAL, ESM) y se estrenó el 22 de octubre de 2026 en el Foro Experimental Black Box del CENART.</p><p>Video del estreno: <a href='https://sonirica.com/en-vivo/mecanicas-inmersivas-3/'>sonirica.com/en-vivo/mecanicas-inmersivas-3</a></p><p>La primera versión era una herramienta de composición. Sigue en <a href='https://0xacab.org/ocelotl/ciudad-monstruo'>0xacab.org/ocelotl/ciudad-monstruo</a>.</p><p>Repositorio: <a href='https://codeberg.org/sonirica/ciudad-monstruo'>codeberg.org/sonirica/ciudad-monstruo</a></p>",
       "images": [
         {
           "src": "./img/ciudad-monstruo-sticker-r.png",
