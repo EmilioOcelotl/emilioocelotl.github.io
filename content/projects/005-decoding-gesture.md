@@ -19,16 +19,12 @@ Estrenada el 14 de agosto de 2026 en el auditorio del CMMAS, Morelia.
 
 Sitio de la obra: [teixido.cc/dg](https://teixido.cc/dg/)
 
-Repositorio: [github.com/MarianneTeixido/decoding-gesture](https://github.com/MarianneTeixido/decoding-gesture)
-
 ::: en
 Decoding Gesture is an octophonic audiovisual performance with live coding, made with Marianne Teixido. It lasts eight minutes. The performer's body, tracked with a depth camera, drives the neural synthesis of an asemic voice that is granulated and spread across eight loudspeakers. Marianne composes the sound; visual composition is by both of us, and I built the capture, the projected interface, and the bridge into SuperCollider.
 
 Premiered on 14 August 2026 at the CMMAS auditorium in Morelia, Mexico.
 
 Website: [teixido.cc/dg](https://teixido.cc/dg/)
-
-Repository: [github.com/MarianneTeixido/decoding-gesture](https://github.com/MarianneTeixido/decoding-gesture)
 
 ::: images
 decoding-gesture-interfaz-r.png | es: Las dos manos dicen AGARRADA y las dos fuentes se mueven con ellas. A los lados, las trazas de x, y y dispersión de cada mano. Captura del sistema corriendo, septiembre de 2026. | en: Both hands read AGARRADA, gripped, and both sources move with them. At either side, the x, y and dispersion traces for each hand. Captured from the running system, September 2026.

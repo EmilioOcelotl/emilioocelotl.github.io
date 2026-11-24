@@ -27,7 +27,7 @@ export const projects = [
     "year": "2026",
     "description": "Performance audiovisual octofónico con código al vuelo, con Marianne Teixido",
     "details": {
-      "fullDescription": "<p>Decoding Gesture es un performance audiovisual octofónico con código al vuelo, hecho con Marianne Teixido. Dura ocho minutos. El cuerpo de la intérprete, seguido con una cámara de profundidad, controla la síntesis neuronal de una voz asémica que se granula y se reparte entre ocho bocinas. Marianne compone el sonido; la composición visual es de las dos y yo hice la captura, la interfaz proyectada y el puente hacia SuperCollider.</p><p>Estrenada el 14 de agosto de 2026 en el auditorio del CMMAS, Morelia.</p><p>Sitio de la obra: <a href='https://teixido.cc/dg/'>teixido.cc/dg</a></p><p>Repositorio: <a href='https://github.com/MarianneTeixido/decoding-gesture'>github.com/MarianneTeixido/decoding-gesture</a></p>",
+      "fullDescription": "<p>Decoding Gesture es un performance audiovisual octofónico con código al vuelo, hecho con Marianne Teixido. Dura ocho minutos. El cuerpo de la intérprete, seguido con una cámara de profundidad, controla la síntesis neuronal de una voz asémica que se granula y se reparte entre ocho bocinas. Marianne compone el sonido; la composición visual es de las dos y yo hice la captura, la interfaz proyectada y el puente hacia SuperCollider.</p><p>Estrenada el 14 de agosto de 2026 en el auditorio del CMMAS, Morelia.</p><p>Sitio de la obra: <a href='https://teixido.cc/dg/'>teixido.cc/dg</a></p>",
       "images": [
         {
           "src": "./img/decoding-gesture-interfaz-r.png",
@@ -378,7 +378,7 @@ export const projects = [
     "year": "2021",
     "description": "PUMPUMYACHKAN Festival Asimtria",
     "details": {
-      "fullDescription": "<p>Presentación audiovisual en Cusco, Perú, en el marco del PUMPUMYACHKAN Festival Asimtria.</p><p><a href='https://ia904501.us.archive.org/25/items/memoria_pumpum16_cusco/memoria_virtual.pdf'>Memoria Pumpum 16</a></p>",
+      "fullDescription": "<p>Presentación audiovisual en Cusco, Perú, en el marco del PUMPUMYACHKAN Festival Asimtria.</p><p><a href='https://archive.org/download/memoria_pumpum16_cusco/memoria_virtual.pdf'>Memoria Pumpum 16</a></p>",
       "images": [
         "./img/cusco-r.jpg"
       ],

@@ -14,8 +14,12 @@ export const bioContent = {
       ],
       works: "Obra y presentaciones seleccionadas",
       worksList: [
-        "Ciudad Monstruo. Herramienta de composición sonora espacial. Notación gráfica y render de audio multicanal. CDMX. 2026.",
+        "Ciudad Monstruo. Pieza para cuatro personas que tocan sobre el mapa de la ciudad. Con La Sonora que Sueña. Mecánicas Inmersivas 3, Foro Experimental Black Box, CENART. Ciudad de México. 22 de octubre de 2026.",
+        "Rotor. Pieza acusmática en cinco movimientos hecha con grabaciones de una lavadora. Publicada en <a href='https://emilioocelotl.bandcamp.com/album/rotor'>Bandcamp</a>. 21 de octubre de 2026.",
+        "Decoding Gesture. Performance audiovisual octofónico con código al vuelo, con Marianne Teixido. Auditorio del CMMAS. Morelia, México. 14 de agosto de 2026.",
         "MiniMapper. Herramienta de videomapping generativo en tiempo real. 2026.",
+        "RisOSC. Impresiones risográficas con identificadores NFC y esculturas 3D. Algorítmica Íntima, Centro de Cultura Digital. Ciudad de México. 2025-2026.",
+        "Error de Synthaxis. Exploraciones sonoras y voces sintéticas, con Marianne Teixido. 20° aniversario del festival IN-SONORA, Cruce Contemporáneo. Madrid, España. Abril de 2025.",
         "Audio-Visual Sessions. Presentación de piezas fijas creadas durante la residencia de RGGTRN (Marianne Teixido y Emilio Ocelotl). Con obras de: Celeste Betancur, Brian Brown, Tatiana Catanzaro, Anna Golubkova, Lemon Guo, Nick Shaheed. 19 de enero de 2024 en CCRMA Stage, CCRMA, Stanford.",
         "Deep Structures. Concierto audiovisual en colaboración con Marianne Teixido. Presentación en NIME CDMX en Centro de Cultura Digital. Ciudad de México. 2023. Presentación en Sala Blas Galindo del Centro Nacional de las Artes en Ciudad de México. 2023.",
         { name: ".collect()", body: "Presentación en el festival realizado por TOPLAP Barcelona y Hangar. Barcelona, España. 7 a 9 de julio de 2022." },
@@ -35,7 +39,7 @@ export const bioContent = {
       teaching: "Docencia",
       teachingList: [
         "Diseño de experiencias interdisciplinarias e interactivas. Tecnológico de Monterrey. Docente. 2025.",
-        { name: "Código Creativo, Narrativa Sonora, Ética de la Tecnología y Tecnología e Iluminación", body: "CENTRO. CDMX. Docente. 2019-2025." },
+        { name: "Código Creativo, Narrativa Sonora, Ética de la Tecnología y Tecnología e Iluminación", body: "CENTRO. CDMX. Docente. 2019-2026." },
         "Oferta Curricular Interdisciplinaria. CENART. CDMX. Docente. 2023-II y 2024-II.",
         "Seminario Permanente de Tecnología Musical. Posgrado en Música UNAM. CDMX. Coordinador. Semestre 2023-I."
       ],
@@ -68,8 +72,12 @@ export const bioContent = {
       ],
       works: "Selected Works and Presentations",
       worksList: [
-        "Ciudad Monstruo. Spatial audio composition tool. Graphic notation and multichannel audio render. Mexico City. 2026.",
+        "Ciudad Monstruo. A piece for four people playing over the map of the city. With La Sonora que Sueña. Mecánicas Inmersivas 3, Foro Experimental Black Box, CENART. Mexico City. October 22, 2026.",
+        "Rotor. Acousmatic piece in five movements made from recordings of a washing machine. Released on <a href='https://emilioocelotl.bandcamp.com/album/rotor'>Bandcamp</a>. October 21, 2026.",
+        "Decoding Gesture. Octophonic audiovisual performance with live coding, with Marianne Teixido. CMMAS auditorium. Morelia, Mexico. August 14, 2026.",
         "MiniMapper. Real-time generative videomapping tool. 2026.",
+        "RisOSC. Risograph prints with NFC tags and 3D sculptures. Algorítmica Íntima, Centro de Cultura Digital. Mexico City. 2025-2026.",
+        "Error de Synthaxis. Sound explorations and synthetic voices, with Marianne Teixido. 20th anniversary of the IN-SONORA festival, Cruce Contemporáneo. Madrid, Spain. April 2025.",
         "Audio-Visual Sessions. Presentation of fixed pieces created during the RGGTRN residency (Marianne Teixido and Emilio Ocelotl). With works by: Celeste Betancur, Brian Brown, Tatiana Catanzaro, Anna Golubkova, Lemon Guo, Nick Shaheed. January 19, 2024 at CCRMA Stage, CCRMA, Stanford.",
         "Deep Structures. Audiovisual concert in collaboration with Marianne Teixido. Presentation at NIME CDMX at Centro de Cultura Digital. Mexico City. 2023. Presentation at Sala Blas Galindo of the National Center for the Arts in Mexico City. 2023.",
         { name: ".collect()", body: "Presentation at the festival organized by TOPLAP Barcelona and Hangar. Barcelona, Spain. July 7-9, 2022." },
@@ -89,7 +97,7 @@ export const bioContent = {
       teaching: "Teaching",
       teachingList: [
         "Design of interdisciplinary and interactive experiences. Tecnológico de Monterrey. Professor. 2025.",
-        { name: "Creative Code, Sound Narrative, Technology Ethics and Technology and Lighting", body: "CENTRO. CDMX. Professor. 2019-2025." },
+        { name: "Creative Code, Sound Narrative, Technology Ethics and Technology and Lighting", body: "CENTRO. CDMX. Professor. 2019-2026." },
         "Interdisciplinary Curriculum Offer. CENART. CDMX. Professor. 2023-II and 2024-II.",
         "Permanent Seminar on Music Technology. Graduate Program in Music UNAM. CDMX. Coordinator. Semester 2023-I."
       ],

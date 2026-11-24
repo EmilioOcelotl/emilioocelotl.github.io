@@ -13,12 +13,12 @@ description.en: "PUMPUMYACHKAN Festival Asimtria"
 ::: es
 Presentación audiovisual en Cusco, Perú, en el marco del PUMPUMYACHKAN Festival Asimtria.
 
-[Memoria Pumpum 16](https://ia904501.us.archive.org/25/items/memoria_pumpum16_cusco/memoria_virtual.pdf)
+[Memoria Pumpum 16](https://archive.org/download/memoria_pumpum16_cusco/memoria_virtual.pdf)
 
 ::: en
 Audiovisual performance in Cusco, Peru, as part of the PUMPUMYACHKAN Festival Asimtria.
 
-[Pumpum 16 Archive](https://ia904501.us.archive.org/25/items/memoria_pumpum16_cusco/memoria_virtual.pdf)
+[Pumpum 16 Archive](https://archive.org/download/memoria_pumpum16_cusco/memoria_virtual.pdf)
 
 ::: images
 cusco-r.jpg
